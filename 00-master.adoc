@@ -1,0 +1,26 @@
+= Roads Model
+:toc: left
+:table-stripes: even
+:sectids:
+:sectanchors:
+:sectnums:
+
+:sectnums!:
+
+==== _A Semantic Web data model used for roads information_
+
+:sectnums:
+
+include::01-metadata.adoc[]
+
+include::02-preamble.adoc[]
+
+include::03-introduction.adoc[]
+
+include::04-model.adoc[]
+
+include::05-supporting-vocabularies.adoc[]
+
+:sectnums!:
+
+include::99-bibliography.adoc[]
