@@ -1,16 +1,31 @@
-= Spatial Information Queensland - Address Model
+= Spatial Information Queensland - Roads Model
 
-This Model is Spatial Information Queensland's model for Address data and also a candidate model for all Australian & New Zealand addresses.
+This Model is Spatial Information Queensland's model for roads data and also a candidate model for all Australian & New Zealand roads.
+
+== Metadata
+
+[width=75%, frame=none, grid=none, cols="1,5"]
+|===
+|**IRI** | https://linked.data.gov.au/def/roads-model/guidance
+|**Title** | Roads Model
+|**Description** |This document is both the front page of the Queensland Land Information Roads Model's repository and a _Guidance document_ and introduces all the other elements of the Roads Model.
+|**Created** | 2022-04-01
+|**Modified** | 2023-04-18
+|**Issued** | 0000-00-00
+|**Creator** | Consortium through https://frontiersi.com.au[Frontier SI]
+|**Publisher** | https://linked.data.gov.au/org/qsi[Queensland Spatial Information]
+|**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|===
 
 This model's document is auto-built from the source file `00-master.adoc` and is viewable online at:
 
-* link:https://spatial-information-qld.github.io/address-model/model.html[QSI Address Model]
+* https://linked.data.gov.au/def/roads-model/guidance[QSI Roads Model]
 
 The repository is at:
 
-* https://github.com/Spatial-Information-QLD/address-model
+* https://github.com/Spatial-Information-QLD/roads-model
 
-To contribute to this document, see link:https://github.com/Spatial-Information-QLD/address-model/blob/main/editing.adoc[editing.adoc] on how to set up the editing environment.
+To contribute to this document, see link:https://github.com/Spatial-Information-QLD/address-model/blob/main/editing.adoc[editing instructions] on how to set up the editing environment.
 
 == Rights and License
 
