@@ -21,6 +21,10 @@ include::04-model.adoc[]
 
 include::05-supporting-vocabularies.adoc[]
 
+include::06-requirements.adoc[]
+
+include::07-validation.adoc[]
+
 :sectnums!:
 
 include::99-bibliography.adoc[]

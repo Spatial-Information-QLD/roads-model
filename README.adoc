@@ -10,7 +10,7 @@ This Model is Spatial Information Queensland's model for roads data and also a c
 |**Title** | Roads Model
 |**Description** |This document is both the front page of the Queensland Land Information Roads Model's repository and a _Guidance document_ and introduces all the other elements of the Roads Model.
 |**Created** | 2022-04-01
-|**Modified** | 2023-04-18
+|**Modified** | 2023-05-02
 |**Issued** | 0000-00-00
 |**Creator** | Consortium through https://frontiersi.com.au[Frontier SI]
 |**Publisher** | https://linked.data.gov.au/org/qsi[Queensland Spatial Information]
@@ -19,13 +19,21 @@ This Model is Spatial Information Queensland's model for roads data and also a c
 
 This model's document is auto-built from the source file `00-master.adoc` and is viewable online at:
 
-* https://linked.data.gov.au/def/roads-model/guidance[QSI Roads Model]
+* https://linked.data.gov.au/def/roads-model[QSI Roads Model]
 
 The repository is at:
 
 * https://github.com/Spatial-Information-QLD/roads-model
 
 To contribute to this document, see link:https://github.com/Spatial-Information-QLD/address-model/blob/main/editing.adoc[editing instructions] on how to set up the editing environment.
+
+=== Building Locally
+
+To build this model's documentation locally, you need to use the AsciDoctor builder for ASCIIDOC documents:
+
+```
+asciidoctor 00-master.adoc > model.html
+```
 
 == Rights and License
 

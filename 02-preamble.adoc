@@ -2,10 +2,10 @@
 
 === Abstract
 
-[NOTE]
-This Model is under test by Queensland Government and is a candidate model for Australian & New Zealand roads information. It is currently an unofficial model that is not yet published as a standard.
+A Semantic Web data model of roads information. It caters specifically for Australian & New Zealand's road modelling needs.
 
-This model was made for Queensland Spatial Information, a unit of the Queensland Department of Resources, to assist with their future address and roads database design. It is a sub-model of address information that just models roads and can be used in isloation but implements address modelling patterns and can be used within address model data and systems too.
+[NOTE]
+This model was made for Queensland Spatial Information, a unit of the Queensland Department of Resources, to assist with their future address and roads database design. It is a Component Model of their 'QSI Supermodel' which includes models for Address, Place Name and Cadastral information which are all designed to work together, however they may all be used independently too.
 
 === Namespaces
 
@@ -16,18 +16,12 @@ This model is built on a small set of well-regarded Semantic Web models which us
 |Prefix | Namespace | Description
 
 | `*roads*` | `*https://linked.data.gov.au/def/roads/*` | *Namespace for this model*
-| `addr` | `https://linked.data.gov.au/def/addr/` | Address Model namespace
-| `role` | `https://w3id.org/profile/anz-address/AddressRoleType/` | Placeholder for the Address Roles Vocabulary
-| `asgsed3` | `http://linked.data.gov.au/dataset/asgsed3/` | Australian Statistical Geographies Standard Dataset, Release 3
-| `dcterms` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
+| `asgsed3` | `https://linked.data.gov.au/dataset/asgsed3/` | Australian Statistical Geographies Standard Dataset, Release 3
+| `dcterms` | `http://purl.org/dc/terms/` | Dublin Core Terms namespace
 | `ex` | `http://example.com/` | Generic examples namespace
-| `geo` | `http://www.opengis.net/ont/geosparql#` | OGC GeoSPARQL
-| `act` | `https://w3id.org/profile/anz-address/AddressComponentType/` | This model's `AddressComponentType` vocabulary namespace
-| `actiso` | `http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/` | <<ISO19160-1>>'s `AddressComponentType` vocabulary namespace
-| `als` | `https://w3id.org/profile/anz-address/AddressLifecycleStageType/` | This model's `AddressLifecycleStageType` vocabulary namespace
-| `alsiso` | `http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageType/` | <<ISO19160-1>>'s `AddressLifecycleStageType` vocabulary namespace
-| `ast` | `https://w3id.org/profile/anz-address/AddressStatusType/` | This model's `AddressStatusType` vocabulary namespace
-| `astiso` | `http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatusType/` | <<ISO19160-1>>'s `AddressStatusType` vocabulary namespace
+| `geo` | `http://www.opengis.net/ont/geosparql#` | OGC GeoSPARQL model namespace
+| `rct` | `https://linked.data.gov.au/def/roads/ct` | Roads Component Type vocabulary namespace
+| `flct` | `https://linked.data.gov.au/def/fl/ct` | Feature Label Component Type vocabulary namespace
 | `owl` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
 | `rdfs` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
 | `sosa` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace

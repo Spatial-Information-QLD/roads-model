@@ -1,23 +1,20 @@
 == Introduction
 
-# TODO:
-The model represents address components and objects addresses relate to using structures informed by the international addressing standard, <<ISO19160-1>>. However, this model is expressed in Semantic Web form, rather than ISO19160-1's UML and XML, and this model also conforms to several generic Semantic Web models for the labelling of geospatial features, feature/geometry representation and so on. Thus, while it conceptually aligns with ISO19160-1, content must be deliberately exported via a mapping from this model to XML documents for testable ISO19160-1 conformance.
+This model represents road labelling components and the geospatial representation of roads that the labels are applied to. This style of modelling is informed by the https://linked.data.gov.au/def/addr[QSI Address Model] which, in turn, is based primarily on the international addressing standard, <<ISO19160-1>> and the Semantic Web / Knowledge Graph spatial data standard, GeoSPARQL <<GEO>>.
 
-Data from made according to this model, when stored in one of the <<RDF>> serialization formats such as <<TTL>>, is directly validatable according to this model's validator, `validator.ttl`.  See the https://spatial-information-qld.github.io/supermodel/supermodel.html#_annex_a_validators[QSI Supermodel for instruction on how to perform validation] with such a validator.
+Data made according to this model, when stored in one of the <<RDF>> serialization formats such as <<TTL>>, is directly validatable according to this model through use of validators that are supplied, see Section <<Validation>>.
 
-# TODO:
-This model does not model _all_ possible address data managers' concerns: it leaves things like the detailed modelling of spatial information to other models or extensions to this model. Also, by reusing elements from well-known Semantic Web models, this model has many "pick-up" points that can be used to join other information on to. For example, the `Resource` indicated as an `Address Component` value, may be a locally-defined simple value type - a number or string - but it may also be a complex object defined elsewhere, such as a `Locality`.
+This model does not model _all_ possible roads data managers' concerns: it leaves things like the detailed modelling of spatial information to other models or extensions to this model. Also, by reusing elements from well-known Semantic Web models, this model has many "pick-up" points that can be used to join other information on to. For example, the `Resource` indicated as an `Road Label Component` value, may be a locally-defined simple value type - a number or string - but it may also be a complex object defined elsewhere.
 
 === Sources of Requirements
 
-# TODO:
-In 2021, the Australia and New Zealand https://www.icsm.gov.au/[Intergovernmental Committee on Surveying and Mapping] established an https://www.icsm.gov.au/publications/addressing-2035[Addressing 2035 Strategy] that aimed to "provide leadership, coordination and standards for assembling, delivering and maintaining address datasets". The Strategy listed "Strategic Pillars", such as "Jurisdictional flexibility" - things for Strategy implementers to aim for - "Guiding Principles", "Overarching Pain Points" and other system/model/situation requirements. While the Strategy did not present an address model, it had an addendum that listed 10 requirements for a future address data model: https://www.icsm.gov.au/publications/addressing-strategy-information-addendum[Addendum to the Strategy]. These 10 requirements are a major source of this Address Models requirements.
+This model was initially built to allow Queensland Government to manage roads information in a manner similar to how they manage Address & Place Name information: as a collection of Feature Labels for Features which have Geometries.
 
-# TODO:
-These ICSM requirements include both specific requirements, for example to cater for "Multi-lingual and alternate name addressing", and also requirements to align with other address-related initiative which might be a source of multiple individual requirements, for example "Model interoperability" which, in its detailed description, indicates a requirement for an address model to align with a baseline set of spatial data standards that ICSM might create.
+To ensure that this model implements that Feature Labels / Features / Geometries pattern, it is a profile of the https://linked.data.gov.au/def/lf[Feature Labelling Model] which captures the pattern in generic form.
 
-# TODO:
-<<AnnexA>> lists the ICSM Addressing 2035 Strategy Addendum's 10 requirements and indicates how this model implements solutions for them.
+By profiling that model, this model remains interoperable with Address & Place Name modelling and also Cadastre modelling, of the sort implemented in the https://linked.data.gov.au/cad[Cadastre Model].
+
+Detailed requirements for this model all stem from this top-level requirement to profile the Feature Labelling Model so this requirement is the only one listed in the <<Requirements>> section.
 
 === Major Modelling Principles
 
