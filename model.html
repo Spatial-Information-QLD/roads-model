@@ -452,20 +452,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_conformance">2.3. Conformance</a></li>
 </ul>
 </li>
-<li><a href="#_introduction">3. Introduction</a></li>
-<li><a href="#_todo">TODO:</a></li>
-<li><a href="#_todo_2">TODO:</a>
+<li><a href="#_introduction">3. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#_sources_of_requirements">.1. Sources of Requirements</a></li>
+<li><a href="#_sources_of_requirements">3.1. Sources of Requirements</a></li>
+<li><a href="#_major_modelling_principles">3.2. Major Modelling Principles</a></li>
+<li><a href="#_profile_views">3.3. Profile Views</a></li>
+<li><a href="#_model_resources">3.4. Model resources</a></li>
 </ul>
 </li>
-<li><a href="#_todo_3">TODO:</a></li>
-<li><a href="#_todo_4">TODO:</a></li>
-<li><a href="#_todo_5">TODO:</a>
-<ul class="sectlevel2">
-<li><a href="#_major_modelling_principles">.1. Major Modelling Principles</a></li>
-<li><a href="#_profile_views">.2. Profile Views</a></li>
-<li><a href="#_model_resources">.3. Model resources</a></li>
 <li><a href="#_model">4. Model</a>
 <ul class="sectlevel2">
 <li><a href="#Classes">4.1. Classes</a></li>
@@ -480,9 +474,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_address_status_types">5.4. Address Status Types</a></li>
 </ul>
 </li>
+<li><a href="#_requirements">6. Requirements</a></li>
+<li><a href="#_validation">7. Validation</a></li>
 <li><a href="#_bibliography">Bibliography</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
@@ -534,7 +528,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Provenance</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This model was made for Queensland Spatial Information, a unit of the Queensland Department of Resources, to assist with their future address and roads database design. It is a sub-model of address information that just models roads and can be used in isloation but implements address modelling patterns and can be used within address model data and systems too.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This model was made for Queensland Spatial Information, a unit of the Queensland Department of Resources, to assist with their future address and roads database design. It is a Component Model of their 'QSI Supermodel' which includes models for Address, Place Name and Cadastral information which are all designed to work together, however they may all be used independently too.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
@@ -569,6 +563,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_abstract"><a class="anchor" href="#_abstract"></a>2.1. Abstract</h3>
+<div class="paragraph">
+<p>A Semantic Web data model of roads information. It caters specifically for Australian &amp; New Zealand&#8217;s road modelling needs.</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -576,13 +573,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Note</div>
 </td>
 <td class="content">
-This Model is under test by Queensland Government and is a candidate model for Australian &amp; New Zealand roads information. It is currently an unofficial model that is not yet published as a standard.
+This model was made for Queensland Spatial Information, a unit of the Queensland Department of Resources, to assist with their future address and roads database design. It is a Component Model of their 'QSI Supermodel' which includes models for Address, Place Name and Cadastral information which are all designed to work together, however they may all be used independently too.
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>This model was made for Queensland Spatial Information, a unit of the Queensland Department of Resources, to assist with their future address and roads database design. It is a sub-model of address information that just models roads and can be used in isloation but implements address modelling patterns and can be used within address model data and systems too.</p>
 </div>
 </div>
 <div class="sect2">
@@ -610,24 +604,14 @@ This Model is under test by Queensland Government and is a candidate model for A
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Namespace for this model</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/addr/" class="bare">https://linked.data.gov.au/def/addr/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address Model namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://w3id.org/profile/anz-address/AddressRoleType/" class="bare">https://w3id.org/profile/anz-address/AddressRoleType/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Placeholder for the Address Roles Vocabulary</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>asgsed3</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://linked.data.gov.au/dataset/asgsed3/" class="bare">http://linked.data.gov.au/dataset/asgsed3/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/dataset/asgsed3/" class="bare">https://linked.data.gov.au/dataset/asgsed3/</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Australian Statistical Geographies Standard Dataset, Release 3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://purl.org/dc/terms/" class="bare">http://purl.org/dc/terms/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dublin Core Terms vocabulary namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dublin Core Terms namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ex</code></p></td>
@@ -637,37 +621,17 @@ This Model is under test by Queensland Government and is a candidate model for A
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.opengis.net/ont/geosparql#" class="bare">http://www.opengis.net/ont/geosparql#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OGC GeoSPARQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OGC GeoSPARQL model namespace</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://w3id.org/profile/anz-address/AddressComponentType/" class="bare">https://w3id.org/profile/anz-address/AddressComponentType/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This model&#8217;s <code>AddressComponentType</code> vocabulary namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rct</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/roads/ct" class="bare">https://linked.data.gov.au/def/roads/ct</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Roads Component Type vocabulary namespace</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>actiso</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/" class="bare">http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponentType</code> vocabulary namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>als</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://w3id.org/profile/anz-address/AddressLifecycleStageType/" class="bare">https://w3id.org/profile/anz-address/AddressLifecycleStageType/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This model&#8217;s <code>AddressLifecycleStageType</code> vocabulary namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>alsiso</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageType/" class="bare">http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageType/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycleStageType</code> vocabulary namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ast</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://w3id.org/profile/anz-address/AddressStatusType/" class="bare">https://w3id.org/profile/anz-address/AddressStatusType/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This model&#8217;s <code>AddressStatusType</code> vocabulary namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>astiso</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatusType/" class="bare">http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatusType/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressStatusType</code> vocabulary namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flct</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/fl/ct" class="bare">https://linked.data.gov.au/def/fl/ct</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Component Type vocabulary namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>owl</code></p></td>
@@ -736,38 +700,32 @@ This Model is under test by Queensland Government and is a candidate model for A
 <div class="sect1">
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>3. Introduction</h2>
 <div class="sectionbody">
-
-</div>
-</div>
-<h1 id="_todo" class="sect0"><a class="anchor" href="#_todo"></a>TODO:</h1>
 <div class="paragraph">
-<p>The model represents address components and objects addresses relate to using structures informed by the international addressing standard, <a href="#ISO19160-1">[ISO19160-1]</a>. However, this model is expressed in Semantic Web form, rather than ISO19160-1&#8217;s UML and XML, and this model also conforms to several generic Semantic Web models for the labelling of geospatial features, feature/geometry representation and so on. Thus, while it conceptually aligns with ISO19160-1, content must be deliberately exported via a mapping from this model to XML documents for testable ISO19160-1 conformance.</p>
+<p>This model represents road labelling components and the geospatial representation of roads that the labels are applied to. This style of modelling is informed by the <a href="https://linked.data.gov.au/def/addr">QSI Address Model</a> which, in turn, is based primarily on the international addressing standard, <a href="#ISO19160-1">[ISO19160-1]</a> and the Semantic Web / Knowledge Graph spatial data standard, GeoSPARQL <a href="#GEO">[GEO]</a>.</p>
 </div>
 <div class="paragraph">
-<p>Data from made according to this model, when stored in one of the <a href="#RDF">[RDF]</a> serialization formats such as <a href="#TTL">[TTL]</a>, is directly validatable according to this model&#8217;s validator, <code>validator.ttl</code>.  See the <a href="https://spatial-information-qld.github.io/supermodel/supermodel.html#_annex_a_validators">QSI Supermodel for instruction on how to perform validation</a> with such a validator.</p>
+<p>Data made according to this model, when stored in one of the <a href="#RDF">[RDF]</a> serialization formats such as <a href="#TTL">[TTL]</a>, is directly validatable according to this model through use of validators that are supplied, see Section <a href="#_validation">Validation</a>.</p>
 </div>
-<h1 id="_todo_2" class="sect0"><a class="anchor" href="#_todo_2"></a>TODO:</h1>
 <div class="paragraph">
-<p>This model does not model <em>all</em> possible address data managers' concerns: it leaves things like the detailed modelling of spatial information to other models or extensions to this model. Also, by reusing elements from well-known Semantic Web models, this model has many "pick-up" points that can be used to join other information on to. For example, the <code>Resource</code> indicated as an <code>Address Component</code> value, may be a locally-defined simple value type - a number or string - but it may also be a complex object defined elsewhere, such as a <code>Locality</code>.</p>
+<p>This model does not model <em>all</em> possible roads data managers' concerns: it leaves things like the detailed modelling of spatial information to other models or extensions to this model. Also, by reusing elements from well-known Semantic Web models, this model has many "pick-up" points that can be used to join other information on to. For example, the <code>Resource</code> indicated as an <code>Road Label Component</code> value, may be a locally-defined simple value type - a number or string - but it may also be a complex object defined elsewhere.</p>
 </div>
 <div class="sect2">
-<h3 id="_sources_of_requirements"><a class="anchor" href="#_sources_of_requirements"></a>.1. Sources of Requirements</h3>
-
-</div>
-<h1 id="_todo_3" class="sect0"><a class="anchor" href="#_todo_3"></a>TODO:</h1>
+<h3 id="_sources_of_requirements"><a class="anchor" href="#_sources_of_requirements"></a>3.1. Sources of Requirements</h3>
 <div class="paragraph">
-<p>In 2021, the Australia and New Zealand <a href="https://www.icsm.gov.au/">Intergovernmental Committee on Surveying and Mapping</a> established an <a href="https://www.icsm.gov.au/publications/addressing-2035">Addressing 2035 Strategy</a> that aimed to "provide leadership, coordination and standards for assembling, delivering and maintaining address datasets". The Strategy listed "Strategic Pillars", such as "Jurisdictional flexibility" - things for Strategy implementers to aim for - "Guiding Principles", "Overarching Pain Points" and other system/model/situation requirements. While the Strategy did not present an address model, it had an addendum that listed 10 requirements for a future address data model: <a href="https://www.icsm.gov.au/publications/addressing-strategy-information-addendum">Addendum to the Strategy</a>. These 10 requirements are a major source of this Address Models requirements.</p>
+<p>This model was initially built to allow Queensland Government to manage roads information in a manner similar to how they manage Address &amp; Place Name information: as a collection of Feature Labels for Features which have Geometries.</p>
 </div>
-<h1 id="_todo_4" class="sect0"><a class="anchor" href="#_todo_4"></a>TODO:</h1>
 <div class="paragraph">
-<p>These ICSM requirements include both specific requirements, for example to cater for "Multi-lingual and alternate name addressing", and also requirements to align with other address-related initiative which might be a source of multiple individual requirements, for example "Model interoperability" which, in its detailed description, indicates a requirement for an address model to align with a baseline set of spatial data standards that ICSM might create.</p>
+<p>To ensure that this model implements that Feature Labels / Features / Geometries pattern, it is a profile of the <a href="https://linked.data.gov.au/def/lf">Feature Labelling Model</a> which captures the pattern in generic form.</p>
 </div>
-<h1 id="_todo_5" class="sect0"><a class="anchor" href="#_todo_5"></a>TODO:</h1>
 <div class="paragraph">
-<p><a href="#AnnexA">[AnnexA]</a> lists the ICSM Addressing 2035 Strategy Addendum&#8217;s 10 requirements and indicates how this model implements solutions for them.</p>
+<p>By profiling that model, this model remains interoperable with Address &amp; Place Name modelling and also Cadastre modelling, of the sort implemented in the <a href="https://linked.data.gov.au/cad">Cadastre Model</a>.</p>
+</div>
+<div class="paragraph">
+<p>Detailed requirements for this model all stem from this top-level requirement to profile the Feature Labelling Model so this requirement is the only one listed in the <a href="#_requirements">Requirements</a> section.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_major_modelling_principles"><a class="anchor" href="#_major_modelling_principles"></a>.1. Major Modelling Principles</h3>
+<h3 id="_major_modelling_principles"><a class="anchor" href="#_major_modelling_principles"></a>3.2. Major Modelling Principles</h3>
 <div class="paragraph">
 <p>Major modelling principles present in this model are:</p>
 </div>
@@ -797,7 +755,7 @@ This Model is under test by Queensland Government and is a candidate model for A
 <div class="title">Figure 2. Address / Addressable Object and Feature / Geometry differentiation overview</div>
 </div>
 <div class="sect3">
-<h4 id="_feature_feature_labelling_differentiation"><a class="anchor" href="#_feature_feature_labelling_differentiation"></a>.1.1. Feature / Feature Labelling differentiation</h4>
+<h4 id="_feature_feature_labelling_differentiation"><a class="anchor" href="#_feature_feature_labelling_differentiation"></a>3.2.1. Feature / Feature Labelling differentiation</h4>
 <div class="paragraph">
 <p>This model details the elements of an <em>address</em> but not details of the spatial objects that addresses are assigned to. The general conceptual split of address/spatial object follows the Address/AddressableObject split in ISO19160-1 <a href="#ISO19160-1">[ISO19160-1]</a>. Addresses are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature.</p>
 </div>
@@ -809,7 +767,7 @@ This Model is under test by Queensland Government and is a candidate model for A
 </div>
 </div>
 <div class="sect3">
-<h4 id="_feature_geometry_differentiation"><a class="anchor" href="#_feature_geometry_differentiation"></a>.1.2. Feature / Geometry differentiation</h4>
+<h4 id="_feature_geometry_differentiation"><a class="anchor" href="#_feature_geometry_differentiation"></a>3.2.2. Feature / Geometry differentiation</h4>
 <div class="paragraph">
 <p>(Geo)spatial objects referenced by this model are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <a href="#ISO19101-1">[ISO19101-1]</a> and their expression in the Semantic Web spatial standard <a href="#GEO">[GEO]</a>.</p>
 </div>
@@ -818,7 +776,7 @@ This Model is under test by Queensland Government and is a candidate model for A
 </div>
 </div>
 <div class="sect3">
-<h4 id="_geocodes"><a class="anchor" href="#_geocodes"></a>.1.3. Geocodes</h4>
+<h4 id="_geocodes"><a class="anchor" href="#_geocodes"></a>3.2.3. Geocodes</h4>
 <div class="paragraph">
 <p>Geocodes are point geometries associated with an address that can be used by mapping applications to locate the address, or part of an addressable object, on a map.</p>
 </div>
@@ -828,7 +786,7 @@ This Model is under test by Queensland Government and is a candidate model for A
 </div>
 </div>
 <div class="sect2">
-<h3 id="_profile_views"><a class="anchor" href="#_profile_views"></a>.2. Profile Views</h3>
+<h3 id="_profile_views"><a class="anchor" href="#_profile_views"></a>3.3. Profile Views</h3>
 <div class="paragraph">
 <p>Addresses have multiple roles: they indicate places with names (or Features with Labels), they are things to be managed by data holders, and they have statuses, lifecycles and so on. Sometimes we are only interested in one of these aspects of an Address or one <em>profile</em> and not the total Address information held. We may also be interested only in a reduced set of properties of an Address even when others within that role are present, e.g. the current status, not all the statues an Address has ever had. Finally, different implementers of this model may want to implement different jurisdictional profiles of the entire model that, for example, mandate records for that jurisdiction&#8217;s system&#8217;s use of Addresses that would be meaningless outside that jurisdiction.</p>
 </div>
@@ -840,7 +798,7 @@ This Model is under test by Queensland Government and is a candidate model for A
 </div>
 </div>
 <div class="sect2">
-<h3 id="_model_resources"><a class="anchor" href="#_model_resources"></a>.3. Model resources</h3>
+<h3 id="_model_resources"><a class="anchor" href="#_model_resources"></a>3.4. Model resources</h3>
 <div class="paragraph">
 <p>This document is this model&#8217;s "Specification" which is its authoritative, human-readable, definition document. This model also contains other resources with other roles:</p>
 </div>
@@ -892,6 +850,8 @@ This Model is under test by Queensland Government and is a candidate model for A
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_model"><a class="anchor" href="#_model"></a>4. Model</h2>
@@ -2690,6 +2650,22 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 </div>
 </div>
 <div class="sect1">
+<h2 id="_requirements"><a class="anchor" href="#_requirements"></a>6. Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Blah</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_validation"><a class="anchor" href="#_validation"></a>7. Validation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Blah</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_bibliography"><a class="anchor" href="#_bibliography"></a>Bibliography</h2>
 <div class="sectionbody">
 <div class="ulist">
@@ -2743,7 +2719,7 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-26 03:09:31 UTC
+Last updated 2023-05-02 01:27:37 UTC
 </div>
 </div>
 </body>
