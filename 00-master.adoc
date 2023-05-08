@@ -9,6 +9,10 @@
 
 ==== _A Semantic Web data model used for roads information_
 
+[[fig-overview]]
+.An overview of this model
+image::img/overview.png[width=75%]
+
 :sectnums:
 
 include::01-metadata.adoc[]
