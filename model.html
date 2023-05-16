@@ -904,7 +904,7 @@ This model does not attempt to assist with detail geospatial or physical road mo
 <p><a href="#LifecycleStage">Lifecycle Stage</a></p>
 </li>
 <li>
-<p><a href="#FeatureLabelLifecycleStageType">Lifecycle Stage Type</a></p>
+<p><a href="#FeatureLabelLifecycleStageType">Feature Label Lifecycle Stage Type</a></p>
 </li>
 </ul>
 </div>
@@ -958,17 +958,17 @@ This model does not attempt to assist with detail geospatial or physical road mo
 ex:road-label-1
   a roads:RoadLabel ;
   fl:isLabelFor &lt;some-external-object&gt; ;
-  roads:hasFeatureLabelComponent
+  fl:hasFeatureLabelComponent
     [
-      roads:hasValue "Yundah" ;
+      fl:hasValue "Yundah" ;
       fl:hasComponentType rct:RoadName ;
     ] ,
     [
-      roads:hasValue st:Street ;
+      fl:hasValue st:Street ;
       fl:hasComponentType rct:RoadType ;
     ] ,
     [
-      roads:hasValueText "South" ;
+      fl:hasValueText "South" ;
       fl:hasComponentType rct:RoadSuffix ;
     ] ;
 .</code></pre>
@@ -994,7 +994,7 @@ ex:road-label-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:[Road Model]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:RoadObject</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1023,14 +1023,14 @@ ex:road-label-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasAddress">has address</a>, <a href="http://www.opengis.net/ont/geosparql#"><code>geo:hasGeometry</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasFeatureLabel">has feature label</a>, <a href="http://www.opengis.net/ont/geosparql#hasGeometry"><code>geo:hasGeometry</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle"># ex:parcel-x is inferred to be a Road Object
-# due to the property roads:hasFeatureLabel indicated for it
+# due to the property fl:hasFeatureLabel indicated for it
 # that in tern indicates a Road Label instance
 
 ex:parcel-aggregate-x fl:hasFeatureLabel ex:road-label-1 .
@@ -1062,7 +1062,7 @@ ex:road-label-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:FeatureLabelComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:FeatureLabelComponent</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1106,17 +1106,17 @@ ex:road-label-1
 ex:road-1
   a roads:RoadLabel ;
   fl:isLabelFor &lt;some-external-object&gt; ;
-  roads:hasFeatureLabelComponent
+  fl:hasFeatureLabelComponent
     [
-      roads:hasValue "Yundah" ;
+      fl:hasValue "Yundah" ;
       fl:hasComponentType rct:RoadName ;
     ] ,
     [
-      roads:hasValue st:Street ;
+      fl:hasValue st:Street ;
       fl:hasComponentType rct:RoadType ;
     ] ,
     [
-      roads:hasValueText "South" ;
+      fl:hasValueText "South" ;
       fl:hasComponentType rct:RoadSuffix ;
     ] ;
 .</code></pre>
@@ -1182,17 +1182,17 @@ ex:road-1
 ex:road-1
   a roads:RoadLabel ;
   fl:isLabelFor &lt;some-external-object&gt; ;
-  roads:hasFeatureLabelComponent
+  fl:hasFeatureLabelComponent
     [
-      roads:hasValue "Yundah" ;
+      fl:hasValue "Yundah" ;
       fl:hasComponentType rct:RoadName ;
     ] ,
     [
-      roads:hasValue st:Street ;
+      fl:hasValue st:Street ;
       fl:hasComponentType rct:RoadType ;
     ] ,
     [
-      roads:hasValueText "South" ;
+      fl:hasValueText "South" ;
       fl:hasComponentType rct:RoadSuffix ;
     ] ;
 .</code></pre>
@@ -1224,7 +1224,7 @@ ex:road-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:AddressLifecycleStage</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:LifecycleStage</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1259,7 +1259,7 @@ ex:road-1
 # one current and one past
 ex:road-label-x
   a roads:RoadLabel ;
-  roads:hasLifeCycleStage [
+  fl:hasLifeCycleStage [
     # this Stage has ceased
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
@@ -1306,7 +1306,7 @@ ls:proposed
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:FeatureLabelLifecycleStageType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:FeatureLabelLifecycleStageType</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1345,7 +1345,7 @@ ls:proposed
 # which then indicates its type
 ex:addr-1
   a roads:RoadLabel ;
-  roads:hasLifeCycleStage [
+  fl:hasLifeCycleStage [
     ...
     dcterms:type ls:proposed ;
   ] ;
@@ -1363,22 +1363,16 @@ ex:addr-1
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#isAddressFor">is address for</a></p>
+<p><a href="#isFeatureLabelFor">is feature label for</a></p>
 </li>
 <li>
-<p><a href="#hasAddress">has address</a></p>
+<p><a href="#hasFeatureLabel">has feature label</a></p>
 </li>
 <li>
-<p><a href="#hasAddressComponent">has address component</a></p>
+<p><a href="#hasFeatureLabelComponent">has feature label component</a></p>
 </li>
 <li>
-<p><a href="#hasAddressRole">has address role</a></p>
-</li>
-<li>
-<p><a href="#hasGeocode">has geocode</a></p>
-</li>
-<li>
-<p><a href="#hasLifecycleStage">has lifecycle stage </a></p>
+<p><a href="#hasLifecycleStage">has lifecycle stage</a></p>
 </li>
 <li>
 <p><a href="#hasValue">has value</a></p>
@@ -1389,7 +1383,7 @@ ex:addr-1
 </ul>
 </div>
 <div class="sect3">
-<h4 id="isAddressFor"><a class="anchor" href="#isAddressFor"></a>4.2.1. is address for</h4>
+<h4 id="isFeatureLabelFor"><a class="anchor" href="#isFeatureLabelFor"></a>4.2.1. is address for</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1404,19 +1398,19 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:isAddressFor</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:isFeatureLabelFor</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">is address for</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is feature label for</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an Addressable Object that an Address is allocated to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates a Feature that a Feature Label is allocated to</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sub-property Of</p></td>
@@ -1424,7 +1418,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inverse Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasAddress">has address</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasFeatureLabel">has feature label</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -1432,21 +1426,26 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">Address</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl/FeatureLabel">Feature Label</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#RoadObject">Addressable Object</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature">Feature</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># the Address ex:addr-1 is allocated to
-# some-addressable-object
-ex:addr-1
-  a roads:Address ;
-  roads:isAddressFor &lt;some-addressable-object&gt; ;
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># a geospatial Road Object instance, which is a specialised form of Feature
+ex:road-x
+    a ex:Road ;
+.
+
+# Road Label, which is a specialised form of Feature Label
+ex:road-label-1
+  a roads:RoadLabel ;
+  fl:isLabelFor ex:road-x ;
+  ...
 .</code></pre>
 </div>
 </div></div></td>
@@ -1455,7 +1454,7 @@ ex:addr-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasAddress"><a class="anchor" href="#hasAddress"></a>4.2.2. has address</h4>
+<h4 id="hasFeatureLabel"><a class="anchor" href="#hasFeatureLabel"></a>4.2.2. has feature label</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1470,7 +1469,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasAddress</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:hasFeatureLabel</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1478,15 +1477,15 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an Address has been allocated for an Addressable Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates a Feature Label has been allocated for a Feature</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inverse Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isAddressFor">is address for</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isFeatureLabelFor">is address for</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -1494,25 +1493,27 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#RoadObject">Addressable Object</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature">Feature</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">Address</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl/FeatureLabel">Feature Label</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># the roads:RoadObject, some-addressable-object,
-# indicates an address with roads:hasAddress
-&lt;some-addressable-object&gt;
-  a roads:RoadObject ;
-  roads:hasAddress ex:addr-1 ;
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># a geospatial Road Object instance, which is a specialised form of Feature
+ex:road-x
+    a ex:Road ;
+    fl:hasFeatureLabel ex:road-label-1 ;
+    ...
 .
 
-ex:addr-1
-  a roads:Address ;
+# Road Label, which is a specialised form of Feature Label
+ex:road-label-1
+  a roads:RoadLabel ;
+  ...
 .</code></pre>
 </div>
 </div></div></td>
@@ -1521,7 +1522,7 @@ ex:addr-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasAddressComponent"><a class="anchor" href="#hasAddressComponent"></a>4.2.3. has address component</h4>
+<h4 id="hasFeatureLabelComponent"><a class="anchor" href="#hasFeatureLabelComponent"></a>4.2.3. has feature label component</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1536,19 +1537,19 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasAddressComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:hasFeatureLabelComponent</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">has address component</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has feature label component</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an Address Component of an Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates a component of a Feature Label</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -1556,24 +1557,26 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">Address</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl/FeatureLabel">Feature Label</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressComponent">Address Component</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#FeatureLabelComponent">Feature Label Component</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># an Address has an Address Component, a street number, indicated
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># a Road Label, a specialised form of Feature Label,
+# has a Feature Label Component, a street name, indicated
 ex:addr-1
-  a roads:Address ;
-  roads:hasAddressComponent [
-      roads:hasValue 20 ;
-      fl:hasComponentType addrct:streetNumber ;
+  a roads:RoadLabel ;
+  fl:hasFeatureLabelComponent [
+      fl:hasValue "Yundah" ;
+      fl:hasComponentType addrct:streetName ;
     ] ,
-...</code></pre>
+  ...
+.</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -1581,7 +1584,7 @@ ex:addr-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasAddressComponentType"><a class="anchor" href="#hasAddressComponentType"></a>4.2.4. has address component type</h4>
+<h4 id="hasFeatureLabelComponentType"><a class="anchor" href="#hasFeatureLabelComponentType"></a>4.2.4. has feature label component type</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1596,19 +1599,19 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasAddressComponentType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:hasFeatureLabelComponentType</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">has address component type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has feature label component type</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an Addresses Component&#8217;s type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an Feature Label Component&#8217;s type</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -1616,25 +1619,25 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressComponent">Address Component</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#FeatureLabelComponent">Feature Label Component</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressComponentType">Address Component Type</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#FeatureLabelComponentType">Feature Label Component Type</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># an Address has an Address Component with its type,
-# street number, indicated
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># a Road Label's Feature Label Component, indicates its type, a street name
 ex:addr-1
-  a roads:Address ;
-  roads:hasAddressComponent [
-      roads:hasValue 20 ;
-      fl:hasComponentType addrct:streetNumber ;
+  a roads:RoadLabel ;
+  fl:hasFeatureLabelComponent [
+      fl:hasValue "Yundah" ;
+      fl:hasComponentType addrct:streetName ;
     ] ,
-...</code></pre>
+  ...
+.</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -1642,7 +1645,7 @@ ex:addr-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasAddressRole"><a class="anchor" href="#hasAddressRole"></a>4.2.5. has address role</h4>
+<h4 id="hasLifecycleStage"><a class="anchor" href="#hasLifecycleStage"></a>4.2.5. has lifecycle stage</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1657,131 +1660,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasAddressRole</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">has address component type</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an Address Role for an Address</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s AddressPosition class and properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">[Address]</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressRole">Address Role</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with two roles
-ex:addr-1
-  a roads:Address ;
-  roads:hasAddressRole
-    ex:emergencyAccess ,
-    buildingAccessPoint ;
-    ...</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="hasGeocode"><a class="anchor" href="#hasGeocode"></a>4.2.6. has geocode</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasGeocode</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">has geocode</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates a refined, that is a very accurate or specific, geometry, usually a point, for an Address qualified by the Geocode Type - how it was generated.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from the G-NAF&#8217;s expression of Address position</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This property, along with hasRole, allows multiple Addresses with different locations to be allocated to Addressable Objects and for those addresses to be used for different purposes. The location indicated by this property should be within/on/next to the location of the Addressable Object this Address is for, within some acceptable tolerance.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">[Address]</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Geocode">[Geocode]</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a Geocode and a role
-ex:addr-1
-  a roads:Address ;
-    roads:hasGeocode [
-      dcterms:type geocodeType:DF ;  # Driveway Frontage
-      geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ;
-    ] ;
-    addre:hasRole roads:buildingAccessPoint ;
-    ...</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="hasLifecycleStage"><a class="anchor" href="#hasLifecycleStage"></a>4.2.7. has lifecycle stage</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasLifecycleStage</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:hasLifecycleStage</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1789,11 +1668,11 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an Addresses' Lifecycle Stage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates a Resources' Lifecycle Stage</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -1801,21 +1680,21 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">Address</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdf:Resource</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressLifecycleStage">Address Lifecycle Stage</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl/FeatureLabel">Lifecycle Stage</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with two Lifecycle Stages indicated:
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># A Road Label with two Lifecycle Stages indicated:
 # one current and one past
-ex:addr-1
-  a roads:Address ;
-  roads:hasLifeCycleStage [
+ex:road-label-1
+  a roads:RoadLabel ;
+  fl:hasLifeCycleStage [
     # this Stage has ceased
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
@@ -1838,7 +1717,7 @@ ex:addr-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasValue"><a class="anchor" href="#hasValue"></a>4.2.8. has value</h4>
+<h4 id="hasValue"><a class="anchor" href="#hasValue"></a>4.2.6. has value</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1853,7 +1732,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasValue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:hasValue</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1861,11 +1740,11 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the value of an Address Component</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the value of a Feature Label Component</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -1873,7 +1752,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressComponent">Address Component</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#FeatureLabelComponent">Feature Label Component</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
@@ -1884,23 +1763,23 @@ ex:addr-1
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:addr-1
-  a roads:Address ;
-  roads:hasAddressComponent
+  a roads:RoadLabel ;
+  fl:hasFeatureLabelComponent
     [
       # "StreetNumber" type
-      roads:hasValue 20 ;
+      fl:hasValue 20 ;
       fl:hasComponentType addrct:streetNumber ;
     ] ,
     [
       # "StreetName" type
-      roads:hasValue "Oxford" ;
+      fl:hasValue "Oxford" ;
       fl:hasComponentType addrct:thoroughfareName ;
     ] ,
     [
       # "Locality" type
-      roads:hasValue &lt;http://example.com/lga/1234&gt; ;
+      fl:hasValue &lt;http://example.com/lga/1234&gt; ;
       # textual value of complex object
-      roads:hasValueText "Shorncliffe" ;
+      fl:hasValueText "Shorncliffe" ;
       fl:hasComponentType addrct:locality ;
     ] ,
     ...</code></pre>
@@ -1911,7 +1790,7 @@ ex:addr-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasValueText"><a class="anchor" href="#hasValueText"></a>4.2.9. has value text</h4>
+<h4 id="hasValueText"><a class="anchor" href="#hasValueText"></a>4.2.7. has value text</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1926,7 +1805,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasValueText</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:hasValueText</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1961,25 +1840,25 @@ ex:addr-1
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:addr-1
-  a roads:Address ;
-  roads:hasAddressComponent
+  a roads:RoadsLabel ;
+  fl:hasFeatureLabelComponent
     [
       # "StreetNumber" type
-      roads:hasValue 20 ;
-      roads:hasValueText "20" ;
+      fl:hasValue 20 ;
+      fl:hasValueText "20" ;
       fl:hasComponentType addrct:streetNumber ;
     ] ,
     [
       # "StreetName" type
-      roads:hasValue "Oxford" ;
-      roads:hasValueText "Oxford" ;
+      fl:hasValue "Oxford" ;
+      fl:hasValueText "Oxford" ;
       fl:hasComponentType addrct:thoroughfareName ;
     ] ,
     [
       # "Locality" type
-      roads:hasValue &lt;http://example.com/lga/1234&gt; ;
+      fl:hasValue &lt;http://example.com/lga/1234&gt; ;
       # textual value of complex object
-      roads:hasValueText "Shorncliffe" ;
+      fl:hasValueText "Shorncliffe" ;
       fl:hasComponentType addrct:locality ;
     ] ,
     ...</code></pre>
@@ -2280,23 +2159,38 @@ ex:road-x
     a ex:Road ;
 .
 
-# Yundah Street South
+# Yundah Street South with Feature Label and Lifecycle Stages indicated
 ex:road-label-1
   a roads:RoadLabel ;
   fl:isLabelFor ex:road-x ;
-  roads:hasFeatureLabelComponent
+  fl:hasFeatureLabelComponent
     [
-      roads:hasValue "Yundah" ;
+      fl:hasValue "Yundah" ;
       fl:hasComponentType rct:RoadName ;
     ] ,
     [
-      roads:hasValue st:Street ;
+      fl:hasValue st:Street ;
       fl:hasComponentType rct:RoadType ;
     ] ,
     [
-      roads:hasValueText "South" ;
+      fl:hasValueText "South" ;
       fl:hasComponentType rct:RoadSuffix ;
     ] ;
+  roads:hasLifeCycleStage [
+    # this Stage has ceased
+    time:hasTime [
+      time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
+      time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
+    ] ;
+    dcterms:type ls:proposed ;
+  ] ,
+  [
+    # this Stage is still in effect - no hasEnd given
+    time:hasTime [
+      time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
+    ] ;
+    dcterms:type ls:current ;
+  ] ,
 .</code></pre>
 </div>
 </div>
@@ -2362,7 +2256,7 @@ ex:road-label-1
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-16 03:06:29 UTC
+Last updated 2023-05-16 03:39:02 UTC
 </div>
 </div>
 </body>
