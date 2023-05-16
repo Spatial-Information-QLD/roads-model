@@ -9,7 +9,7 @@ This model depends on several vocabularies to give specific values to typing pro
 This vocabulary is a specialised form of <<ISO19160-1>>'s `AddressComponentType` vocabulary. The original 8 concepts from that standard are not included as they apply either to addresses or provide only one component type for roads - `thoroughfareName.
 
 |===
-| IRI | Name | | Description | Status | Expected Form | Usage directive
+| IRI | Name | Description | Status | Expected Form | Usage directive
 
 | `rct:RoadPrefix` | Road Prefix | A literal initial part of a road's label that comes before the road's name | original | literal | Use
 | `rct:RoadName` | Road Name | The literal name of the road, without any expression of the road's type | original | literal | Use
