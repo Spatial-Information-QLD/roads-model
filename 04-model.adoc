@@ -9,11 +9,11 @@ This model defines some Classes and Properties and also requires certain existin
 === Classes
 
 * <<RoadLabel>>
-* <<RoadObject, Road Object>>
-* <<FeatureLabelComponent, Feature Label Component>>
-* <<FeatureLabelComponentType, Feature Label Component Type>>
-* <<LifecycleStage, Lifecycle Stage>>
-* <<FeatureLabelLifecycleStageType, Lifecycle Stage Type>>
+* <<RoadObject>>
+* <<FeatureLabelComponent>>
+* <<FeatureLabelComponentType>>
+* <<LifecycleStage>>
+* <<FeatureLabelLifecycleStageType>>
 
 [[RoadLabel]]
 ==== Road Label
@@ -36,17 +36,17 @@ a| [source,turtle]
 ex:road-label-1
   a roads:RoadLabel ;
   fl:isLabelFor <some-external-object> ;
-  roads:hasFeatureLabelComponent
+  fl:hasFeatureLabelComponent
     [
-      roads:hasValue "Yundah" ;
+      fl:hasValue "Yundah" ;
       fl:hasComponentType rct:RoadName ;
     ] ,
     [
-      roads:hasValue st:Street ;
+      fl:hasValue st:Street ;
       fl:hasComponentType rct:RoadType ;
     ] ,
     [
-      roads:hasValueText "South" ;
+      fl:hasValueText "South" ;
       fl:hasComponentType rct:RoadSuffix ;
     ] ;
 .
@@ -60,7 +60,7 @@ ex:road-label-1
 |===
 | Property | Value
 
-| IRI | `roads:[Road Model]`
+| IRI | `roads:RoadObject`
 | Preferred Label | Road Object
 | Definition | A geospatial object that is unambiguously identified by a Road Label.
 
@@ -69,12 +69,12 @@ Examples of types of RoadObjects are a sequences of cadastral parcels of type _r
 | Sub-class Of | https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature[`geo:Feature`]
 | Provenance | Specialised from <<GEO>>'s Feature class, as used in <<FL>>
 | Scope note | Judgement as to what makes for a permissible RoadObject rests with the implementer. This model's technical requirements are only that the object is a legal `geo:Feature` object, thus implementers may make Road Objects of almost anything.
-| Expected Properties | <<hasAddress>>, http://www.opengis.net/ont/geosparql#[`geo:hasGeometry`]
+| Expected Properties | <<hasFeatureLabel>>, http://www.opengis.net/ont/geosparql#hasGeometry[`geo:hasGeometry`]
 | Example 
 a| [source,turtle]
 ----
 # ex:parcel-x is inferred to be a Road Object
-# due to the property roads:hasFeatureLabel indicated for it
+# due to the property fl:hasFeatureLabel indicated for it
 # that in tern indicates a Road Label instance
 
 ex:parcel-aggregate-x fl:hasFeatureLabel ex:road-label-1 .
@@ -94,7 +94,7 @@ ex:road-label-1
 |===
 | Property | Value
 
-| IRI | `roads:FeatureLabelComponent`
+| IRI | `fl:FeatureLabelComponent`
 | Preferred Label | Feature Label Component
 | Definition | A component that is a constituent part of a Feature Label
 | Is Defined By | https://linked.data.gov.au/def/fl[Feature Labelling Model]
@@ -117,17 +117,17 @@ a| [source,turtle]
 ex:road-1
   a roads:RoadLabel ;
   fl:isLabelFor <some-external-object> ;
-  roads:hasFeatureLabelComponent
+  fl:hasFeatureLabelComponent
     [
-      roads:hasValue "Yundah" ;
+      fl:hasValue "Yundah" ;
       fl:hasComponentType rct:RoadName ;
     ] ,
     [
-      roads:hasValue st:Street ;
+      fl:hasValue st:Street ;
       fl:hasComponentType rct:RoadType ;
     ] ,
     [
-      roads:hasValueText "South" ;
+      fl:hasValueText "South" ;
       fl:hasComponentType rct:RoadSuffix ;
     ] ;
 .
@@ -159,17 +159,17 @@ a| [source,turtle]
 ex:road-1
   a roads:RoadLabel ;
   fl:isLabelFor <some-external-object> ;
-  roads:hasFeatureLabelComponent
+  fl:hasFeatureLabelComponent
     [
-      roads:hasValue "Yundah" ;
+      fl:hasValue "Yundah" ;
       fl:hasComponentType rct:RoadName ;
     ] ,
     [
-      roads:hasValue st:Street ;
+      fl:hasValue st:Street ;
       fl:hasComponentType rct:RoadType ;
     ] ,
     [
-      roads:hasValueText "South" ;
+      fl:hasValueText "South" ;
       fl:hasComponentType rct:RoadSuffix ;
     ] ;
 .
@@ -187,7 +187,7 @@ image::img/roads-lifecycle.png[]
 |===
 | Property | Value
 
-| IRI | `roads:AddressLifecycleStage`
+| IRI | `fl:LifecycleStage`
 | Preferred Label | Address Lifecycle Stage
 | Definition | Represents the different lifecycle stages of an Address
 | Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
@@ -203,7 +203,7 @@ a| [source,turtle]
 # one current and one past
 ex:road-label-x
   a roads:RoadLabel ;
-  roads:hasLifeCycleStage [
+  fl:hasLifeCycleStage [
     # this Stage has ceased
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
@@ -238,7 +238,7 @@ ls:proposed
 |===
 | Property | Value
 
-| IRI | `roads:FeatureLabelLifecycleStageType`
+| IRI | `fl:FeatureLabelLifecycleStageType`
 | Preferred Label | Address Lifecycle Stage Type
 | Definition | Code that specifies the kind of Address Lifecycle Stage
 | Is Defined By | https://linked.data.gov.au/def/fl[Feature Labelling Model]
@@ -255,7 +255,7 @@ a| [source,turtle]
 # which then indicates its type
 ex:addr-1
   a roads:RoadLabel ;
-  roads:hasLifeCycleStage [
+  fl:hasLifeCycleStage [
     ...
     dcterms:type ls:proposed ;
   ] ;
@@ -267,185 +267,135 @@ ex:addr-1
 [[Properties]]
 === Properties
 
-* <<isAddressFor, is address for>>
-* <<hasAddress, has address>>
-* <<hasAddressComponent, has address component>>
-* <<hasAddressRole, has address role>>
-* <<hasGeocode, has geocode>>
-* <<hasLifecycleStage, has lifecycle stage >>
+* <<isFeatureLabelFor, is feature label for>>
+* <<hasFeatureLabel, has feature label>>
+* <<hasFeatureLabelComponent, has feature label component>>
+* <<hasLifecycleStage, has lifecycle stage>>
 * <<hasValue, has value>>
 * <<hasValueText, has value text>>
 
-[[isAddressFor]]
+[[isFeatureLabelFor]]
 ==== is address for
 
 [cols="2,6"]
 |===
 | Property | Value
 
-| IRI | `roads:isAddressFor`
-| Preferred Label | is address for
-| Definition | Indicates an Addressable Object that an Address is allocated to
-| Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
+| IRI | `fl:isFeatureLabelFor`
+| Preferred Label | is feature label for
+| Definition | Indicates a Feature that a Feature Label is allocated to
+| Is Defined By | https://linked.data.gov.au/def/fl[Feature Labelling Model]
 | Sub-property Of | http://www.w3.org/2000/01/rdf-schema#label[`rdfs:label`]
-| Inverse Of | <<hasAddress>>
+| Inverse Of | <<hasFeatureLabel>>
 | Provenance | Derived from <<ISO19160-1>>'s object relations
-| Domain | <<Address, Address>>
-| Range | <<RoadObject, Addressable Object>>
+| Domain | https://linked.data.gov.au/def/fl/FeatureLabel[Feature Label]
+| Range | https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature[Feature]
 | Example 
 a| [source,turtle]
 ----
-# the Address ex:addr-1 is allocated to
-# some-addressable-object
-ex:addr-1
-  a roads:Address ;
-  roads:isAddressFor <some-addressable-object> ;
+# a geospatial Road Object instance, which is a specialised form of Feature
+ex:road-x
+    a ex:Road ;
+.
+
+# Road Label, which is a specialised form of Feature Label
+ex:road-label-1
+  a roads:RoadLabel ;
+  fl:isLabelFor ex:road-x ;
+  ...
 .
 ----
 |===
 
-[[hasAddress]]
-==== has address
+[[hasFeatureLabel]]
+==== has feature label
 
 [cols="2,6"]
 |===
 | Property | Value
 
-| IRI | `roads:hasAddress`
+| IRI | `fl:hasFeatureLabel`
 | Preferred Label | has address
-| Definition | Indicates an Address has been allocated for an Addressable Object
-| Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
-| Inverse Of | <<isAddressFor>>
+| Definition | Indicates a Feature Label has been allocated for a Feature
+| Is Defined By | https://linked.data.gov.au/def/fl[Feature Labelling Model]
+| Inverse Of | <<isFeatureLabelFor>>
 | Provenance | Derived from <<ISO19160-1>>'s object relations
-| Domain | <<RoadObject, Addressable Object>>
-| Range | <<Address, Address>>
+| Domain | https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature[Feature]
+| Range | https://linked.data.gov.au/def/fl/FeatureLabel[Feature Label]
 | Example 
 a| [source,turtle]
 ----
-# the roads:RoadObject, some-addressable-object,
-# indicates an address with roads:hasAddress 
-<some-addressable-object>
-  a roads:RoadObject ;
-  roads:hasAddress ex:addr-1 ;
-.
-
-ex:addr-1
-  a roads:Address ;
-.
-----
-|===
-
-[[hasAddressComponent]]
-==== has address component
-
-[cols="2,6"]
-|===
-| Property | Value
-
-| IRI | `roads:hasAddressComponent`
-| Preferred Label | has address component
-| Definition | Indicates an Address Component of an Address
-| Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
-| Provenance | Derived from <<ISO19160-1>>'s object relations
-| Domain | <<Address, Address>>
-| Range | <<AddressComponent, Address Component>>
-| Example 
-a| [source,turtle]
-----
-# an Address has an Address Component, a street number, indicated
-ex:addr-1
-  a roads:Address ;
-  roads:hasAddressComponent [
-      roads:hasValue 20 ;
-      fl:hasComponentType addrct:streetNumber ;
-    ] ,
-...
-----
-|===
-
-[[hasAddressComponentType]]
-==== has address component type
-
-[cols="2,6"]
-|===
-| Property | Value
-
-| IRI | `roads:hasAddressComponentType`
-| Preferred Label | has address component type
-| Definition | Indicates an Addresses Component's type
-| Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
-| Provenance | Derived from <<ISO19160-1>>'s object relations
-| Domain | <<AddressComponent, Address Component>>
-| Range | <<AddressComponentType, Address Component Type>>
-| Example 
-a| [source,turtle]
-----
-# an Address has an Address Component with its type,
-# street number, indicated
-ex:addr-1
-  a roads:Address ;
-  roads:hasAddressComponent [
-      roads:hasValue 20 ;
-      fl:hasComponentType addrct:streetNumber ;
-    ] ,
-...
-----
-|===
-
-[[hasAddressRole]]
-==== has address role
-
-[cols="2,6"]
-|===
-| Property | Value
-
-| IRI | `roads:hasAddressRole`
-| Preferred Label | has address component type
-| Definition | Indicates an Address Role for an Address
-| Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
-| Provenance | Derived from <<ISO19160-1>>'s AddressPosition class and properties
-| Domain | <<Address>>
-| Range | <<AddressRole, Address Role>>
-| Example 
-a| [source,turtle]
-----
-# An Address with two roles
-ex:addr-1
-  a roads:Address ;
-  roads:hasAddressRole 
-    ex:emergencyAccess ,
-    buildingAccessPoint ;
-    ... 
-----
-|===
-
-[[hasGeocode]]
-==== has geocode
-
-[cols="2,6"]
-|===
-| Property | Value
-
-| IRI | `roads:hasGeocode`
-| Preferred Label | has geocode
-| Definition | Indicates a refined, that is a very accurate or specific, geometry, usually a point, for an Address qualified by the Geocode Type - how it was generated.
-| Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
-| Provenance | Derived from the G-NAF's expression of Address position
-| Scope Note | This property, along with hasRole, allows multiple Addresses with different locations to be allocated to Addressable Objects and for those addresses to be used for different purposes. The location indicated by this property should be within/on/next to the location of the Addressable Object this Address is for, within some acceptable tolerance.
-| Domain | <<Address>>
-| Range | <<Geocode>>
-| Example 
-a| [source,turtle]
-----
-# An Address with a Geocode and a role
-ex:addr-1
-  a roads:Address ;
-    roads:hasGeocode [
-      dcterms:type geocodeType:DF ;  # Driveway Frontage
-      geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ; 
-    ] ;
-    addre:hasRole roads:buildingAccessPoint ;
+# a geospatial Road Object instance, which is a specialised form of Feature
+ex:road-x
+    a ex:Road ;
+    fl:hasFeatureLabel ex:road-label-1 ;
     ...
+.
+
+# Road Label, which is a specialised form of Feature Label
+ex:road-label-1
+  a roads:RoadLabel ;
+  ...
+.
+----
+|===
+
+[[hasFeatureLabelComponent]]
+==== has feature label component
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `fl:hasFeatureLabelComponent`
+| Preferred Label | has feature label component
+| Definition | Indicates a component of a Feature Label
+| Is Defined By | https://linked.data.gov.au/def/fl[Feature Labelling Model]
+| Provenance | Derived from <<ISO19160-1>>'s object relations
+| Domain | https://linked.data.gov.au/def/fl/FeatureLabel[Feature Label]
+| Range | <<FeatureLabelComponent>>
+| Example 
+a| [source,turtle]
+----
+# a Road Label, a specialised form of Feature Label,
+# has a Feature Label Component, a street name, indicated
+ex:addr-1
+  a roads:RoadLabel ;
+  fl:hasFeatureLabelComponent [
+      fl:hasValue "Yundah" ;
+      fl:hasComponentType addrct:streetName ;
+    ] ,
+  ...
+.
+----
+|===
+
+[[hasFeatureLabelComponentType]]
+==== has feature label component type
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `fl:hasFeatureLabelComponentType`
+| Preferred Label | has feature label component type
+| Definition | Indicates an Feature Label Component's type
+| Is Defined By | https://linked.data.gov.au/def/fl[Feature Labelling Model]
+| Provenance | Derived from <<ISO19160-1>>'s object relations
+| Domain | <<FeatureLabelComponent>>
+| Range | <<FeatureLabelComponentType>>
+| Example 
+a| [source,turtle]
+----
+# a Road Label's Feature Label Component, indicates its type, a street name
+ex:addr-1
+  a roads:RoadLabel ;
+  fl:hasFeatureLabelComponent [
+      fl:hasValue "Yundah" ;
+      fl:hasComponentType addrct:streetName ;
+    ] ,
+  ...
+.
 ----
 |===
 
@@ -456,21 +406,21 @@ ex:addr-1
 |===
 | Property | Value
 
-| IRI | `roads:hasLifecycleStage`
+| IRI | `fl:hasLifecycleStage`
 | Preferred Label | has lifecycle stage
-| Definition | Indicates an Addresses' Lifecycle Stage
-| Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
+| Definition | Indicates a Resources' Lifecycle Stage
+| Is Defined By | https://linked.data.gov.au/def/fl[Feature Labelling Model]
 | Provenance | Derived from <<ISO19160-1>>'s object relations
-| Domain | <<Address, Address>>
-| Range | <<AddressLifecycleStage, Address Lifecycle Stage>>
+| Domain | `rdf:Resource`
+| Range | https://linked.data.gov.au/def/fl/FeatureLabel[Lifecycle Stage]
 | Example 
 a| [source,turtle]
 ----
-# An Address with two Lifecycle Stages indicated:
+# A Road Label with two Lifecycle Stages indicated:
 # one current and one past
-ex:addr-1
-  a roads:Address ;
-  roads:hasLifeCycleStage [
+ex:road-label-1
+  a roads:RoadLabel ;
+  fl:hasLifeCycleStage [
     # this Stage has ceased
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
@@ -496,34 +446,34 @@ ex:addr-1
 |===
 | Property | Value
 
-| IRI | `roads:hasValue`
+| IRI | `fl:hasValue`
 | Preferred Label | has value
-| Definition | Indicates the value of an Address Component
-| Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
+| Definition | Indicates the value of a Feature Label Component
+| Is Defined By | https://linked.data.gov.au/def/fl[Feature Labelling Model]
 | Provenance | Derived from <<ISO19160-1>>'s AddressComponent object's properties
-| Domain | <<AddressComponent, Address Component>>
+| Domain | <<FeatureLabelComponent>>
 | Range | http://www.w3.org/2000/01/rdf-schema#Resource[`rdfs:Resource`] (IRI or literal)
 | Example
 a| [source,turtle]
 ----
 ex:addr-1
-  a roads:Address ;
-  roads:hasAddressComponent
+  a roads:RoadLabel ;
+  fl:hasFeatureLabelComponent
     [
       # "StreetNumber" type
-      roads:hasValue 20 ;
+      fl:hasValue 20 ;
       fl:hasComponentType addrct:streetNumber ;
     ] ,
     [
       # "StreetName" type
-      roads:hasValue "Oxford" ;
+      fl:hasValue "Oxford" ;
       fl:hasComponentType addrct:thoroughfareName ;
     ] ,
     [
       # "Locality" type
-      roads:hasValue <http://example.com/lga/1234> ;
+      fl:hasValue <http://example.com/lga/1234> ;
       # textual value of complex object
-      roads:hasValueText "Shorncliffe" ;
+      fl:hasValueText "Shorncliffe" ;
       fl:hasComponentType addrct:locality ;
     ] ,
     ...
@@ -537,7 +487,7 @@ ex:addr-1
 |===
 | Property | Value
 
-| IRI | `roads:hasValueText`
+| IRI | `fl:hasValueText`
 | Preferred Label | has value
 | Definition | Indicates the textual rendering of an Address Component
 | Scope note | This property is to be used to represent the textual value of Address Components that are literals and also complex objects. For a literal, the same value will be present for hasValue and hasValueText, e.g. a street number of 20 or a property name of "Bonnie Doon", however for a complex object, e.g. the locality `<http://example.com/lga/1234>`, a textual representation of it must be selected. Likely a simple name for the object will do, i.e. a Locality name or a Street Locality name.
@@ -549,25 +499,25 @@ ex:addr-1
 a| [source,turtle]
 ----
 ex:addr-1
-  a roads:Address ;
-  roads:hasAddressComponent
+  a roads:RoadsLabel ;
+  fl:hasFeatureLabelComponent
     [
       # "StreetNumber" type
-      roads:hasValue 20 ;
-      roads:hasValueText "20" ;
+      fl:hasValue 20 ;
+      fl:hasValueText "20" ;
       fl:hasComponentType addrct:streetNumber ;
     ] ,
     [
       # "StreetName" type
-      roads:hasValue "Oxford" ;
-      roads:hasValueText "Oxford" ;
+      fl:hasValue "Oxford" ;
+      fl:hasValueText "Oxford" ;
       fl:hasComponentType addrct:thoroughfareName ;
     ] ,
     [
       # "Locality" type
-      roads:hasValue <http://example.com/lga/1234> ;
+      fl:hasValue <http://example.com/lga/1234> ;
       # textual value of complex object
-      roads:hasValueText "Shorncliffe" ;
+      fl:hasValueText "Shorncliffe" ;
       fl:hasComponentType addrct:locality ;
     ] ,
     ...

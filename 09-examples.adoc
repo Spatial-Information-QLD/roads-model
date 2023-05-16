@@ -9,23 +9,38 @@ ex:road-x
     a ex:Road ;
 .
 
-# Yundah Street South
+# Yundah Street South with Feature Label and Lifecycle Stages indicated
 ex:road-label-1
   a roads:RoadLabel ;
   fl:isLabelFor ex:road-x ;
-  roads:hasFeatureLabelComponent
+  fl:hasFeatureLabelComponent
     [
-      roads:hasValue "Yundah" ;
+      fl:hasValue "Yundah" ;
       fl:hasComponentType rct:RoadName ;
     ] ,
     [
-      roads:hasValue st:Street ;
+      fl:hasValue st:Street ;
       fl:hasComponentType rct:RoadType ;
     ] ,
     [
-      roads:hasValueText "South" ;
+      fl:hasValueText "South" ;
       fl:hasComponentType rct:RoadSuffix ;
     ] ;
+  roads:hasLifeCycleStage [
+    # this Stage has ceased
+    time:hasTime [
+      time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
+      time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
+    ] ;
+    dcterms:type ls:proposed ;
+  ] ,
+  [
+    # this Stage is still in effect - no hasEnd given
+    time:hasTime [
+      time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
+    ] ;
+    dcterms:type ls:current ;
+  ] ,
 .
 ----
 
