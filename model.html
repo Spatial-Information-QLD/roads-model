@@ -468,14 +468,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_supporting_vocabularies">5. Supporting Vocabularies</a>
 <ul class="sectlevel2">
-<li><a href="#_address_component_types">5.1. Address Component Types</a></li>
-<li><a href="#_address_lifecycle_stage_types">5.2. Address Lifecycle Stage Types</a></li>
-<li><a href="#_address_role_types">5.3. Address Role Types</a></li>
-<li><a href="#_address_status_types">5.4. Address Status Types</a></li>
+<li><a href="#_feature_label_component_types_for_roads">5.1. Feature Label Component Types for Roads</a></li>
 </ul>
 </li>
 <li><a href="#_requirements">6. Requirements</a></li>
-<li><a href="#_validation">7. Validation</a></li>
+<li><a href="#_requirements_list">7. Requirements List</a></li>
+<li><a href="#_validation">8. Validation</a></li>
+<li><a href="#_templating">9. Templating</a>
+<ul class="sectlevel2">
+<li><a href="#_basic_template">9.1. Basic Template</a></li>
+<li><a href="#_short_form_template">9.2. Short Form Template</a></li>
+</ul>
+</li>
+<li><a href="#_examples">10. Examples</a></li>
 <li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
@@ -509,7 +514,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definition</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Semantic Web data model of roads information. It caters specifically for Australian &amp; New Zealand&#8217;s road modelling needs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Semantic Web data model of roads information. It caters specifically for Australian &amp; New Zealand&#8217;s road labelling (naming) needs.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Created</strong></p></td>
@@ -517,7 +522,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2023-04-11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2023-04-16</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -569,7 +574,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_abstract"><a class="anchor" href="#_abstract"></a>2.1. Abstract</h3>
 <div class="paragraph">
-<p>A Semantic Web data model of roads information. It caters specifically for Australian &amp; New Zealand&#8217;s road modelling needs.</p>
+<p>A Semantic Web data model of roads information. It caters specifically for Australian &amp; New Zealand&#8217;s road labelling (naming) needs.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -609,11 +614,6 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Namespace for this model</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>asgsed3</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/dataset/asgsed3/" class="bare">https://linked.data.gov.au/dataset/asgsed3/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Australian Statistical Geographies Standard Dataset, Release 3</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://purl.org/dc/terms/" class="bare">http://purl.org/dc/terms/</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dublin Core Terms namespace</p></td>
@@ -634,9 +634,14 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <td class="tableblock halign-left valign-top"><p class="tableblock">Roads Component Type vocabulary namespace</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flct</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/fl/ct" class="bare">https://linked.data.gov.au/def/fl/ct</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Component Type vocabulary namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/fl/" class="bare">https://linked.data.gov.au/def/fl/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Model namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ls</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/fl/ls/" class="bare">https://linked.data.gov.au/def/fl/ls/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Lifecycle State Type vocabulary namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>owl</code></p></td>
@@ -644,9 +649,19 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <td class="tableblock halign-left valign-top"><p class="tableblock">Web Ontology Language ontology namespace</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rct</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/rct/" class="bare">https://linked.data.gov.au/def/rct/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Component Type Vocabulary for Roads namespace</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdfs</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2000/01/rdf-schema#" class="bare">http://www.w3.org/2000/01/rdf-schema#</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RDF Schema ontology namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>st</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/streetType/" class="bare">https://linked.data.gov.au/def/streetType/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ICSM&#8217;s Street Types vocabulary namespace (not implemented yet)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sosa</code></p></td>
@@ -706,27 +721,36 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>3. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This model represents road labelling components and the geospatial representation of roads that the labels are applied to. This style of modelling is informed by the <a href="https://linked.data.gov.au/def/addr">QSI Address Model</a> which, in turn, is based primarily on the international addressing standard, <a href="#ISO19160-1">[ISO19160-1]</a> and the Semantic Web / Knowledge Graph spatial data standard, GeoSPARQL <a href="#GEO">[GEO]</a>.</p>
+<p>This model facilitates applying Road Label objects, with potentially many subcomponents, to the geospatial representation of roads - Road Objects. This style of feature label / geospatial feature modelling is informed inherited from the <a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a> that this model extends.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This model does not attempt to assist with detail geospatial or physical road modelling: it only provides an association between labelling components and geospatial representations of the road established using other models. This model also does not link road objects to other, related, objects, such as Localities. Such linking should be represented with Feature / Feature topological relations, such as those within GeoSPARQL <a href="#GEO">[GEO]</a>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Data made according to this model, when stored in one of the <a href="#RDF">[RDF]</a> serialization formats such as <a href="#TTL">[TTL]</a>, is directly validatable according to this model through use of validators that are supplied, see Section <a href="#_validation">Validation</a>.</p>
 </div>
-<div class="paragraph">
-<p>This model does not model <em>all</em> possible roads data managers' concerns: it leaves things like the detailed modelling of spatial information to other models or extensions to this model. Also, by reusing elements from well-known Semantic Web models, this model has many "pick-up" points that can be used to join other information on to. For example, the <code>Resource</code> indicated as an <code>Road Label Component</code> value, may be a locally-defined simple value type - a number or string - but it may also be a complex object defined elsewhere.</p>
-</div>
 <div class="sect2">
 <h3 id="_sources_of_requirements"><a class="anchor" href="#_sources_of_requirements"></a>3.1. Sources of Requirements</h3>
 <div class="paragraph">
-<p>This model was initially built to allow Queensland Government to manage roads information in a manner similar to how they manage Address &amp; Place Name information: as a collection of Feature Labels for Features which have Geometries.</p>
+<p>This model was initially built to allow Queensland Government to manage roads labelling information in a manner similar to how they manage Address &amp; Geographic Name information: as a collection of Feature Labels for Features which have Geometries. This introduces requirements to both facilitate complex labelling and align with Address etc. modelling.</p>
 </div>
 <div class="paragraph">
-<p>To ensure that this model implements that Feature Labels / Features / Geometries pattern, it is a profile of the <a href="https://linked.data.gov.au/def/lf">Feature Labelling Model</a> which captures the pattern in generic form.</p>
+<p>To ensure that this model implements that Feature Labels / Features / Geometries pattern, it is a profile of the <a href="https://linked.data.gov.au/def/lf">Feature Labelling Model</a> which captures the pattern in generic form and is also profiled by Queensland Government&#8217;s Address &amp; Geographic Names Models. Figure <a href="#fig-roads-spatial">Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations</a> overviews this. This introduces the requirement for all Roads Model information to conform to the Feature Labels Model - the necessary requirement for profiling.</p>
 </div>
 <div class="paragraph">
-<p>By profiling that model, this model remains interoperable with Address &amp; Place Name modelling and also Cadastre modelling, of the sort implemented in the <a href="https://linked.data.gov.au/cad">Cadastre Model</a>.</p>
+<p>By profiling that model, this model also remains interoperable with detailed spatial object modelling, for example of the sort implemented in the <a href="https://linked.data.gov.au/cad">Cadastre Model</a>.</p>
 </div>
 <div class="paragraph">
-<p>Detailed requirements for this model all stem from this top-level requirement to profile the Feature Labelling Model so this requirement is the only one listed in the <a href="#_requirements">Requirements</a> section.</p>
+<p>Detailed requirements for this model all stem from these top-level requirements. The individual requirements are listed in the <a href="#_requirements">Requirements</a> section.</p>
 </div>
 </div>
 <div class="sect2">
@@ -743,9 +767,6 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <p>Feature / Geometry differentiation</p>
 </li>
 <li>
-<p>Geocodes</p>
-</li>
-<li>
 <p>Profile Views</p>
 </li>
 </ol>
@@ -753,50 +774,41 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <div class="paragraph">
 <p>These principles are explained in the following sub-sections and the first two reference the following figure.</p>
 </div>
-<div id="fig-address-spatial" class="imageblock">
+<div id="fig-roads-spatial" class="imageblock">
 <div class="content">
-<img src="img/address-spatial.png" alt="address spatial">
+<img src="img/roads-spatial.png" alt="roads spatial" width="75%">
 </div>
-<div class="title">Figure 3. Address / Addressable Object and Feature / Geometry differentiation overview</div>
+<div class="title">Figure 3. Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations</div>
 </div>
 <div class="sect3">
 <h4 id="_feature_feature_labelling_differentiation"><a class="anchor" href="#_feature_feature_labelling_differentiation"></a>3.2.1. Feature / Feature Labelling differentiation</h4>
 <div class="paragraph">
-<p>This model details the elements of an <em>address</em> but not details of the spatial objects that addresses are assigned to. The general conceptual split of address/spatial object follows the Address/AddressableObject split in ISO19160-1 <a href="#ISO19160-1">[ISO19160-1]</a>. Addresses are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature.</p>
+<p>This model details the elements of a road label but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of label/spatial object follows the Address/AddressableObject split in ISO19160-1 <a href="#ISO19160-1">[ISO19160-1]</a>. Addresses there are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature and Road Labels here are considered a simple case of that.</p>
 </div>
 <div class="paragraph">
 <p>This allows for the representation, and ultimately the management, of labels - text, numbers, identifiers, references - separately to the management of spatial objects.</p>
 </div>
 <div class="paragraph">
-<p>This Feature / Feature Labelling separation applies to Place Names, Roads and Administrative Areas as well as Addresses and this expression of Feature / Feature Labelling separation for addressing is a formal profile of the more general <em>Feature Labelling Model</em> <a href="#FLM">[FLM]</a>. There are other profiles for those other domains. The FLM, this model and the other FLM profiles are all pat of Queensland Spatial Information&#8217;s <a href="https://spatial-information-qld.github.io/supermodel/supermodel.html"><em>Supermodel</em></a> which is an enterprise data model for multi-model data integration.</p>
+<p>This Feature / Feature Labelling separation applies to Geographic Names, Roads and Administrative Areas as well as Addresses and this expression of Feature / Feature Labelling separation for addressing is a formal profile of the more general <em>Feature Labelling Model</em> <a href="#FLM">[FLM]</a>. There are other profiles for those other domains. The FLM, this model and the other FLM profiles are all pat of Queensland Spatial Information&#8217;s <a href="https://spatial-information-qld.github.io/supermodel/supermodel.html"><em>Supermodel</em></a> which is an enterprise data model for multi-model data integration.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_feature_geometry_differentiation"><a class="anchor" href="#_feature_geometry_differentiation"></a>3.2.2. Feature / Geometry differentiation</h4>
 <div class="paragraph">
-<p>(Geo)spatial objects referenced by this model are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <a href="#ISO19101-1">[ISO19101-1]</a> and their expression in the Semantic Web spatial standard <a href="#GEO">[GEO]</a>.</p>
+<p>(Geo)spatial objects referenced by this model&#8217;s labelling objects (Road Labels) are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. See Figure <a href="#fig-roads-spatial">Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations</a>. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <a href="#ISO19101-1">[ISO19101-1]</a> and their expression in the Semantic Web spatial standard <a href="#GEO">[GEO]</a>.</p>
 </div>
 <div class="paragraph">
-<p>This Feature / Geometry distinction allows individual spatial objects to have multiple Geometries: different resolutions, in different coordinate systems and even sets of Geometries that have different roles or that show variation over time.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_geocodes"><a class="anchor" href="#_geocodes"></a>3.2.3. Geocodes</h4>
-<div class="paragraph">
-<p>Geocodes are point geometries associated with an address that can be used by mapping applications to locate the address, or part of an addressable object, on a map.</p>
-</div>
-<div class="paragraph">
-<p>Since geocodes are directly related to an Address and are only indirectly related to an Addressable Object, in this model they are modelled as a specialised form of Features with a Geometry used to indicate the point location. The Address relates to the Geocode in a similar way to an Address relating to an Addressable Object however the Address isn&#8217;t the address <em>for</em> the Addressable Object but rather the Geocode is another kind of object associated with the Address with a <em>role</em> indicated, e.g. a particular Geocode might indicate the "property centroid" or perhaps it&#8217;s the "deliveries point" of a large building address.</p>
+<p>This Feature / Geometry distinction allows individual spatial objects to have multiple Geometries: different resolutions, in different coordinate systems and even sets of Geometries that have different roles or that show variation over time. This would allow Road Objects to have spatiallity represented with road centrelines, area polygons from cadastre etc., all at the same time, by linking those different spatial representations - the Geometries - to the single conceptual entity - the Feature.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_profile_views"><a class="anchor" href="#_profile_views"></a>3.3. Profile Views</h3>
 <div class="paragraph">
-<p>Addresses have multiple roles: they indicate places with names (or Features with Labels), they are things to be managed by data holders, and they have statuses, lifecycles and so on. Sometimes we are only interested in one of these aspects of an Address or one <em>profile</em> and not the total Address information held. We may also be interested only in a reduced set of properties of an Address even when others within that role are present, e.g. the current status, not all the statues an Address has ever had. Finally, different implementers of this model may want to implement different jurisdictional profiles of the entire model that, for example, mandate records for that jurisdiction&#8217;s system&#8217;s use of Addresses that would be meaningless outside that jurisdiction.</p>
+<p>Road Labels have multiple roles: they indicate places with names (or Features with Labels), they are things to be managed by data holders, and they have statuses, lifecycles and so on. Sometimes we are only interested in one of these aspects of a Road Label or one <em>profile</em> and not the total information held. We may also be interested only in a reduced set of properties of a Road Label even when others within that role are present, e.g. the current status, not all the statues an Address has ever had. Finally, different implementers of this model may want to implement different jurisdictional profiles of the model that, for example, mandate certain information be stored for Road Labels, that may be meaningless outside that jurisdiction.</p>
 </div>
 <div class="paragraph">
-<p>All of these sorts of <em>profiles</em> of Addresses are handled in a similar way in this model: they are declared Profiles of the model that may implement additional ruls and/or requirements on data, however they must always conform to the main Address Model itself.</p>
+<p>All of these sorts of <em>profiles</em> of Road Labels are handled in a similar way in this model: they are declared Profiles of the model that may implement additional rules and/or requirements on data, however they must always conform to the main Roads Model itself.</p>
 </div>
 <div class="paragraph">
 <p>Profile modelling is given in <a href="#PROF">[PROF]</a> and requesting profiles from data conforming to a model is given in <a href="#CONNEGP">[CONNEGP]</a>.</p>
@@ -829,29 +841,34 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_supporting_vocabularies">Supporting Vocabularies</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Vocabulary</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The codelist vocabularies developed for this model and links to others  defined elsewhere but used by this model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The codelist vocabularies developed for this model and links to others defined elsewhere but used by this model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AnnexA">[AnnexA]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_requirements">Requirements</a> Section</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Guidance</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The Requirements addressed by this model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AnnexB">[AnnexB]</a> &amp; <a href="https://github.com/Spatial-Information-QLD/address-model/blob/main/validator.ttl">Validator</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_validation">Validation</a> Section &amp; <a href="https://github.com/Spatial-Information-QLD/roads-model/blob/main/validator.ttl">SHACL Validator</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Validation</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The machine-readable validator file used to validate data claiming conformance to this model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AnnexC">[AnnexC]</a>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_templating">Templating</a> Section</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Guidance</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The template logic used for Basic and Short Form templates</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_examples">Examples</a> Section
 &amp;
-<a href="https://github.com/Spatial-Information-QLD/address-model/tree/main/extended-examples">Extended example data files</a></p></td>
+<a href="https://github.com/Spatial-Information-QLD/roads-model/tree/main/extended-examples">Extended example data files</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Example</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Examples of data conforming, and some not conforming, to this model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AnnexD">[AnnexD]</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Example</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstration implementations of this model in various database forms</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/Spatial-Information-QLD/roads-model">Code Repository</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Code Repository</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The online, version control, repository containing all the resources of this model</p></td>
 </tr>
 </tbody>
 </table>
@@ -872,27 +889,27 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#Address">Address</a></p>
+<p><a href="#RoadLabel">Road Label</a></p>
 </li>
 <li>
-<p><a href="#AddressableObject">Addressable Object</a></p>
+<p><a href="#RoadObject">Road Object</a></p>
 </li>
 <li>
-<p><a href="#AddressComponent">Address Component</a></p>
+<p><a href="#FeatureLabelComponent">Feature Label Component</a></p>
 </li>
 <li>
-<p><a href="#AddressLifecycleStage">Address Lifecycle Stage</a></p>
+<p><a href="#FeatureLabelComponentType">Feature Label Component Type</a></p>
 </li>
 <li>
-<p><a href="#AddressRole">Address Role</a></p>
+<p><a href="#LifecycleStage">Lifecycle Stage</a></p>
 </li>
 <li>
-<p><a href="#Geocode">Geocode</a></p>
+<p><a href="#FeatureLabelLifecycleStageType">Lifecycle Stage Type</a></p>
 </li>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="Address"><a class="anchor" href="#Address"></a>4.1.1. Address</h4>
+<h4 id="RoadLabel"><a class="anchor" href="#RoadLabel"></a>4.1.1. Road Label</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -907,67 +924,52 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:Address</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:RoadLabel</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Label</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Address class represents structured information that allows unambiguous determination of an object for the purposes of identification and location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Road Label class represents structured information that allows unambiguous determination of a Road Object for the purposes of identification and location</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature"><code>geo:Feature</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl/FeatureLabel"><code>fl:FeatureLabel</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>Address</code> class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specialised from <a href="#FL">[FL]</a>'s Feature Label class</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isAddressFor">is address for</a>, <a href="#hasAddressComponent">has address component</a>, <a href="#hasAddressRole">has address role</a>, <a href="#hasLifecycleStage">has lifecycle stage</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isLabelFor">[isLabelFor]</a>, <a href="#hasLabelComponent">[hasLabelComponent]</a>, <a href="#hasLifecycleStage">has lifecycle stage</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:addr-1
-  a addr:Address ;
-  addr:isAddressFor &lt;some-external-object&gt; ;
-  addr:hasAddressComponent
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># Yundah Street South
+ex:road-label-1
+  a roads:RoadLabel ;
+  fl:isLabelFor &lt;some-external-object&gt; ;
+  roads:hasFeatureLabelComponent
     [
-      addr:hasValue 20 ;
-      addr:hasComponentType addrct:streetNumber ;
+      roads:hasValue "Yundah" ;
+      fl:hasComponentType rct:RoadName ;
     ] ,
     [
-      addr:hasValue "Oxford" ;
-      addr:hasComponentType addrct:thoroughfareName ;
+      roads:hasValue st:Street ;
+      fl:hasComponentType rct:RoadType ;
     ] ,
     [
-      addr:hasValue strt:Place ;
-      addr:hasValueText "Place" ;
-      addr:hasComponentType addct:StreetType ;
-    ] ,
-    [
-      addr:hasValue &lt;LGA2021/1234&gt; ;
-      addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:locality ;
-    ] ,
-    [
-      addr:hasValue &lt;STE2021/6&gt; ;
-      addr:hasValueText "Queensland" ;
-      addr:hasComponentType addct:StateOrTerritory ;
-    ] ,
-    [
-      addr:hasValue &lt;AUS2021/AUS&gt; ;
-      addr:hasValueText "Australia" ;
-      addr:hasComponentType addct:Nation ;
+      roads:hasValueText "South" ;
+      fl:hasComponentType rct:RoadSuffix ;
     ] ;
 .</code></pre>
 </div>
@@ -977,7 +979,7 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 </table>
 </div>
 <div class="sect3">
-<h4 id="AddressableObject"><a class="anchor" href="#AddressableObject"></a>4.1.2. Addressable Object</h4>
+<h4 id="RoadObject"><a class="anchor" href="#RoadObject"></a>4.1.2. Road Object</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -992,20 +994,20 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:AddressableObject</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:[Road Model]</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Addressable Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Object</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An object that is unambiguously determined by an address.</p>
-<p class="tableblock">Examples of types of AddressableObjects are a building, a dwelling or a land parcel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A geospatial object that is unambiguously identified by a Road Label.</p>
+<p class="tableblock">Examples of types of RoadObjects are a sequences of cadastral parcels of type <em>road</em>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
@@ -1013,11 +1015,11 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressableObject</code> class and its associated codelist of subtypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specialised from <a href="#GEO">[GEO]</a>'s Feature class, as used in <a href="#FL">[FL]</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Judgement as to what makes for a permissable AddressableObject rests with the implementer. This model&#8217;s technical requirements are only that the object is a legal <code>geo:Feature</code> object, thus implementers may make Addressable Objects of almost anything.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Judgement as to what makes for a permissible RoadObject rests with the implementer. This model&#8217;s technical requirements are only that the object is a legal <code>geo:Feature</code> object, thus implementers may make Road Objects of almost anything.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
@@ -1027,19 +1029,17 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># ex:parcel-x is inferred to be an Addressable object
-# due to the property addr:hasAddress indicated for it
-ex:parcel-x addr:hasAddress ex:addr-1 .
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># ex:parcel-x is inferred to be a Road Object
+# due to the property roads:hasFeatureLabel indicated for it
+# that in tern indicates a Road Label instance
 
-# this object is declared to be an Addressable Object
-&lt;http://example.com/building/y&gt;
-  a addr:AddressableObject ;
-  rdfs:label "Building Y" ;
-.
+ex:parcel-aggregate-x fl:hasFeatureLabel ex:road-label-1 .
 
-# ex:admin-area-z is inferred to be an Addressable Object
-# due to the property addr:isAddressFor indicating it
-ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
+# this object is declared to be a Road Label
+ex:road-label-1
+  a roads:RoadLabel ;
+  ...
+.</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -1047,7 +1047,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 </table>
 </div>
 <div class="sect3">
-<h4 id="AddressComponent"><a class="anchor" href="#AddressComponent"></a>4.1.3. Address Component</h4>
+<h4 id="FeatureLabelComponent"><a class="anchor" href="#FeatureLabelComponent"></a>4.1.3. Feature Label Component</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1062,19 +1062,19 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:AddressComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:FeatureLabelComponent</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address Component</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Component</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A component that is a constituent part of an address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A component that is a constituent part of a Feature Label</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
@@ -1082,13 +1082,13 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponent</code> class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived by the Feature Labelling Model, derived in concept from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponent</code> class</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address Components can be literals - numbers, words etc. - or complex ojects - Localities, districtes etc. If the Address Component is a complex object, a textual representation of it must be provided when a textual rendering of all of an Addresses' component are required, for example for letter printing.</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Components can be literals - numbers, words etc. - or complex objects - Localities, water feature etc. If the Feature Label Component is a complex object, a textual representation of it must be provided when a textual rendering of all of an Feature Labels' components are required, for example for letter printing.</p>
 <p class="tableblock">Complex objects are preferred for use over literals when the object referred to has independent identity.</p>
-<p class="tableblock">Ordering of Address Components, for example for letter printing, is not fixed within this model but should be implemented with a positioning preference system utilising the Address Component&#8217;s <code>addr:hasComponentType</code> values which should come from a controlled vocabulary of Address Component Type values.</p></td>
+<p class="tableblock">Ordering of Feature Label Components, for example for letter printing, is not fixed within this model but should be implemented with a positioning preference system utilising the Feature Label Component&#8217;s <code>fl:hasComponentType</code> values which should come from a controlled vocabulary of Feature Label Component Type values. This may be a template.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
@@ -1098,27 +1098,28 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:addr-1
-  a addr:Address ;
-  addr:hasAddressComponent
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># here ex:road-1 indicated three Feature Label Components
+# that may be printed as 'Yundah Street South'
+# or perhaps in short form, using another template:
+# 'Yundah St Sth'
+
+ex:road-1
+  a roads:RoadLabel ;
+  fl:isLabelFor &lt;some-external-object&gt; ;
+  roads:hasFeatureLabelComponent
     [
-      # a simple numerical literal - street number
-      addr:hasValue 20 ;
-      addr:hasComponentType addrct:streetNumber ;
+      roads:hasValue "Yundah" ;
+      fl:hasComponentType rct:RoadName ;
     ] ,
     [
-      # a simple literal - street name
-      addr:hasValue "Oxford" ;
-      addr:hasComponentType addrct:thoroughfareName ;
+      roads:hasValue st:Street ;
+      fl:hasComponentType rct:RoadType ;
     ] ,
     [
-      # complex object - a Locality
-      addr:hasValue &lt;http://example.com/lga/1234&gt; ;
-      # textual value of complex object
-      addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:locality ;
-    ] ,
-    ...</code></pre>
+      roads:hasValueText "South" ;
+      fl:hasComponentType rct:RoadSuffix ;
+    ] ;
+.</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -1126,7 +1127,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 </table>
 </div>
 <div class="sect3">
-<h4 id="AddressComponentType"><a class="anchor" href="#AddressComponentType"></a>4.1.4. Address Component Type</h4>
+<h4 id="FeatureLabelComponentType"><a class="anchor" href="#FeatureLabelComponentType"></a>4.1.4. Feature Label Component Type</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1141,19 +1142,19 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:AddressComponentType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:FeatureLabelComponentType</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address Component Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Component Type</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Code that specifies the kind of address component</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The kind of Feature Label Component</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
@@ -1161,12 +1162,12 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponent</code> class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>addressComponentType</code> codelist</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An Address Component&#8217;s type should be indicated with values from a controlled vocabulary - a code list.</p>
-<p class="tableblock">A SKOS vocabulary of Address Component Types is suplied with this ontology.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Feature Label Component&#8217;s type should be indicated with values from a controlled vocabulary - a code list.</p>
+<p class="tableblock">A SKOS vocabulary of Road Model component types is supplied with this model, see <a href="#_supporting_vocabularies">Supporting Vocabularies</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
@@ -1176,27 +1177,25 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:addr-1
-  a addr:Address ;
-  addr:hasAddressComponent
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># three Feature Label Component Types are indicated here
+# by the fl:hasComponentType property
+ex:road-1
+  a roads:RoadLabel ;
+  fl:isLabelFor &lt;some-external-object&gt; ;
+  roads:hasFeatureLabelComponent
     [
-      # "StreetNumber" type
-      addr:hasValue 20 ;
-      addr:hasComponentType addrct:streetNumber ;
+      roads:hasValue "Yundah" ;
+      fl:hasComponentType rct:RoadName ;
     ] ,
     [
-      # "StreetName" type
-      addr:hasValue "Oxford" ;
-      addr:hasComponentType addrct:thoroughfareName ;
+      roads:hasValue st:Street ;
+      fl:hasComponentType rct:RoadType ;
     ] ,
     [
-      # "Locality" type
-      addr:hasValue &lt;http://example.com/lga/1234&gt; ;
-      # textual value of complex object
-      addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:locality ;
-    ] ,
-    ...</code></pre>
+      roads:hasValueText "South" ;
+      fl:hasComponentType rct:RoadSuffix ;
+    ] ;
+.</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -1204,12 +1203,12 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 </table>
 </div>
 <div class="sect3">
-<h4 id="AddressLifecycleStage"><a class="anchor" href="#AddressLifecycleStage"></a>4.1.5. Address Lifecycle Stage</h4>
-<div id="fig-lifecycle-stages" class="imageblock">
+<h4 id="LifecycleStage"><a class="anchor" href="#LifecycleStage"></a>4.1.5. Lifecycle Stage</h4>
+<div id="fig-lifecycle" class="imageblock">
 <div class="content">
-<img src="img/lifecycle-stages.png" alt="lifecycle stages">
+<img src="img/roads-lifecycle.png" alt="roads lifecycle">
 </div>
-<div class="title">Figure 4. An example Address, <code>QLD186906</code>, with Lifecycle Stages</div>
+<div class="title">Figure 4. A) An example Road Label, <code>road-label-x</code>, with Lifecycle Stages and B) An example Feature Label Component part of a Road Label with a Lifecycle Stage indicated</div>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -1225,7 +1224,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:AddressLifecycleStage</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:AddressLifecycleStage</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1237,7 +1236,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -1246,8 +1245,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An Address Lifecycle Stage&#8217;s type should be indicated with values from a controlled vocabulary - a code list.</p>
-<p class="tableblock">A SKOS vocabulary of Address Lifecycle Stages is suplied with this ontology.</p>
-<p class="tableblock">In this model, these Lifecycle Stages are defined for use with Addresses only, not also Address Components, as per ISO19160-1.</p></td>
+<p class="tableblock">A SKOS vocabulary of Address Lifecycle Stages is supplied with this model.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
@@ -1259,29 +1257,29 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with two Lifecycle Stages indicated:
 # one current and one past
-ex:addr-1
-  a addr:Address ;
-  addr:hasLifeCycleStage [
+ex:road-label-x
+  a roads:RoadLabel ;
+  roads:hasLifeCycleStage [
     # this Stage has ceased
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
       time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    dcterms:type addrls:proposed ;
+    dcterms:type ls:proposed ;
   ] ,
   [
     # this Stage is still in effect - no hasEnd given
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    dcterms:type addrls:current ;
+    dcterms:type ls:current ;
   ] ,
 .
 
 # The Address Lifecycle Stage 'proposed'
 # from the Address Lifecycle Stage Types vocabulary
 # indicating only some properties
-addrls:proposed
+ls:proposed
     a skos:Concept ;
     ...
     skos:prefLabel "Proposed" ;
@@ -1293,7 +1291,7 @@ addrls:proposed
 </table>
 </div>
 <div class="sect3">
-<h4 id="AddressLifecycleStageType"><a class="anchor" href="#AddressLifecycleStageType"></a>4.1.6. Address Lifecycle Stage Type</h4>
+<h4 id="FeatureLabelLifecycleStageType"><a class="anchor" href="#FeatureLabelLifecycleStageType"></a>4.1.6. Feature Label Lifecycle Stage Type</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1308,7 +1306,7 @@ addrls:proposed
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:AddressLifecycleStageType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:FeatureLabelLifecycleStageType</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1320,7 +1318,7 @@ addrls:proposed
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
@@ -1328,12 +1326,12 @@ addrls:proposed
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycle</code> class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycle</code> class' codelist of types</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An Address Address Lifecycle Stage&#8217;s type should be indicated with values from a controlled vocabulary - a code list.</p>
-<p class="tableblock">A SKOS vocabulary of Address Lifecycle Stage Types is suplied with this ontology.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Feature Label Lifecycle Stage&#8217;s type should be indicated with values from a controlled vocabulary - a code list.</p>
+<p class="tableblock">A SKOS vocabulary of Lifecycle Stage Types is supplied with the Feature Labelling Model <a href="#FL">[FL]</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
@@ -1343,208 +1341,16 @@ addrls:proposed
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a Lifecycle Stages indicated
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># A Road Label with a Lifecycle Stages indicated
 # which then indicates its type
 ex:addr-1
-  a addr:Address ;
-  addr:hasLifeCycleStage [
+  a roads:RoadLabel ;
+  roads:hasLifeCycleStage [
     ...
-    dcterms:type addrls:proposed ;
+    dcterms:type ls:proposed ;
   ] ;
   ...
 .</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="AddressRole"><a class="anchor" href="#AddressRole"></a>4.1.7. Address Role</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:AddressRole</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address Role</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AddressRole represents a task for which this Address may be used</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressPosition</code> &amp; <code>AddressPositionType</code> classes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ISO19160-1 does not contain an <code>AddressRole</code> class but instead an <code>AddressPosition</code> class with positioning and role properties. This Standard make role a direct property of <code>Address</code> instead and provides for a positional qualifier (qualified against the position of the <code>AddressableObject</code>) instead to allow whole addresses to carry role tasking.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standard properties for a SKOS Concept</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with two roles
-ex:addr-1
-  a addr:Address ;
-  addr:hasAddressRole
-    ex:emergencyAccess ,
-    buildingAccessPoint ;
-    ...</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="Geocode"><a class="anchor" href="#Geocode"></a>4.1.8. Geocode</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:Geocode</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geocode</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Feature used to position other Features and to carry typing or provenance of that position</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/ont/geosparql#"><code>geo:Feature</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from the G-NAF&#8217;s expression of Address position</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicating a Geocode for an Address with the property hasGeocode is a direct method of locating the Address. Addresses either may or must also be located by ference to an Addressable Object which has a Geometry, depending on business rules.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:type</code> - to indicate a type, as per the <a href="https://linked.data.gov.au/dataset/gnaf/code/geocodeType">Geocode Type</a> vocabulary</p>
-<p class="tableblock"><code>geo:hasGeometry</code> - to indicate the position of the Geocode. A GeoSPARQL <code>Geometry</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a Geocode and a role
-ex:addr-1
-  a addr:Address ;
-    addr:hasGeocode [
-      a addr:Geocode ;
-      dcterms:type geocodeType:DF ;  # Driveway Frontage
-      geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ;
-    ] ;
-    addre:hasRole addr:buildingAccessPoint ;
-    ...</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="GeocodeType"><a class="anchor" href="#GeocodeType"></a>4.1.9. Geocode Type</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:GeocodeType</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geocode Type</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The type of Geocode, typically determined by creation method</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from the G-NAF&#8217;s Geocode Type codelist</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standard properties for a SKOS Concept</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a Geocode with its type given (geocodeType:DF)
-ex:addr-1
-  a addr:Address ;
-    addr:hasGeocode [
-      a addr:Geocode ;
-      dcterms:type geocodeType:DF ;  # Driveway Frontage
-      geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ;
-    ] ;
-    addre:hasRole addr:buildingAccessPoint ;
-    ...</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -1598,7 +1404,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:isAddressFor</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:isAddressFor</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1610,7 +1416,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sub-property Of</p></td>
@@ -1630,7 +1436,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressableObject">Addressable Object</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#RoadObject">Addressable Object</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
@@ -1639,8 +1445,8 @@ ex:addr-1
 <pre class="highlight"><code class="language-turtle" data-lang="turtle"># the Address ex:addr-1 is allocated to
 # some-addressable-object
 ex:addr-1
-  a addr:Address ;
-  addr:isAddressFor &lt;some-addressable-object&gt; ;
+  a roads:Address ;
+  roads:isAddressFor &lt;some-addressable-object&gt; ;
 .</code></pre>
 </div>
 </div></div></td>
@@ -1664,7 +1470,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:hasAddress</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasAddress</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1676,7 +1482,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inverse Of</p></td>
@@ -1688,7 +1494,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressableObject">Addressable Object</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#RoadObject">Addressable Object</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
@@ -1698,15 +1504,15 @@ ex:addr-1
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># the addr:AddressableObject, some-addressable-object,
-# indicates an address with addr:hasAddress
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># the roads:RoadObject, some-addressable-object,
+# indicates an address with roads:hasAddress
 &lt;some-addressable-object&gt;
-  a addr:AddressableObject ;
-  addr:hasAddress ex:addr-1 ;
+  a roads:RoadObject ;
+  roads:hasAddress ex:addr-1 ;
 .
 
 ex:addr-1
-  a addr:Address ;
+  a roads:Address ;
 .</code></pre>
 </div>
 </div></div></td>
@@ -1730,7 +1536,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:hasAddressComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasAddressComponent</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1742,7 +1548,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -1762,10 +1568,10 @@ ex:addr-1
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle"># an Address has an Address Component, a street number, indicated
 ex:addr-1
-  a addr:Address ;
-  addr:hasAddressComponent [
-      addr:hasValue 20 ;
-      addr:hasComponentType addrct:streetNumber ;
+  a roads:Address ;
+  roads:hasAddressComponent [
+      roads:hasValue 20 ;
+      fl:hasComponentType addrct:streetNumber ;
     ] ,
 ...</code></pre>
 </div>
@@ -1790,7 +1596,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:hasAddressComponentType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasAddressComponentType</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1802,7 +1608,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -1823,10 +1629,10 @@ ex:addr-1
 <pre class="highlight"><code class="language-turtle" data-lang="turtle"># an Address has an Address Component with its type,
 # street number, indicated
 ex:addr-1
-  a addr:Address ;
-  addr:hasAddressComponent [
-      addr:hasValue 20 ;
-      addr:hasComponentType addrct:streetNumber ;
+  a roads:Address ;
+  roads:hasAddressComponent [
+      roads:hasValue 20 ;
+      fl:hasComponentType addrct:streetNumber ;
     ] ,
 ...</code></pre>
 </div>
@@ -1851,7 +1657,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:hasAddressRole</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasAddressRole</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1863,7 +1669,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -1871,7 +1677,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">Address</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">[Address]</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
@@ -1883,8 +1689,8 @@ ex:addr-1
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with two roles
 ex:addr-1
-  a addr:Address ;
-  addr:hasAddressRole
+  a roads:Address ;
+  roads:hasAddressRole
     ex:emergencyAccess ,
     buildingAccessPoint ;
     ...</code></pre>
@@ -1910,7 +1716,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:hasGeocode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasGeocode</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1922,7 +1728,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -1934,11 +1740,11 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">Address</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">[Address]</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Geocode">Geocode</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Geocode">[Geocode]</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
@@ -1946,12 +1752,12 @@ ex:addr-1
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a Geocode and a role
 ex:addr-1
-  a addr:Address ;
-    addr:hasGeocode [
+  a roads:Address ;
+    roads:hasGeocode [
       dcterms:type geocodeType:DF ;  # Driveway Frontage
       geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ;
     ] ;
-    addre:hasRole addr:buildingAccessPoint ;
+    addre:hasRole roads:buildingAccessPoint ;
     ...</code></pre>
 </div>
 </div></div></td>
@@ -1975,7 +1781,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:hasLifecycleStage</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasLifecycleStage</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1987,7 +1793,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -2008,21 +1814,21 @@ ex:addr-1
 <pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with two Lifecycle Stages indicated:
 # one current and one past
 ex:addr-1
-  a addr:Address ;
-  addr:hasLifeCycleStage [
+  a roads:Address ;
+  roads:hasLifeCycleStage [
     # this Stage has ceased
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
       time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    dcterms:type addrls:proposed ;
+    dcterms:type ls:proposed ;
   ] ,
   [
     # this Stage is still in effect - no hasEnd given
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    dcterms:type addrls:current ;
+    dcterms:type ls:current ;
   ] ,
 .</code></pre>
 </div>
@@ -2047,7 +1853,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:hasValue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasValue</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -2059,7 +1865,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -2078,24 +1884,24 @@ ex:addr-1
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:addr-1
-  a addr:Address ;
-  addr:hasAddressComponent
+  a roads:Address ;
+  roads:hasAddressComponent
     [
       # "StreetNumber" type
-      addr:hasValue 20 ;
-      addr:hasComponentType addrct:streetNumber ;
+      roads:hasValue 20 ;
+      fl:hasComponentType addrct:streetNumber ;
     ] ,
     [
       # "StreetName" type
-      addr:hasValue "Oxford" ;
-      addr:hasComponentType addrct:thoroughfareName ;
+      roads:hasValue "Oxford" ;
+      fl:hasComponentType addrct:thoroughfareName ;
     ] ,
     [
       # "Locality" type
-      addr:hasValue &lt;http://example.com/lga/1234&gt; ;
+      roads:hasValue &lt;http://example.com/lga/1234&gt; ;
       # textual value of complex object
-      addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:locality ;
+      roads:hasValueText "Shorncliffe" ;
+      fl:hasComponentType addrct:locality ;
     ] ,
     ...</code></pre>
 </div>
@@ -2120,7 +1926,7 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:hasValueText</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:hasValueText</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -2136,7 +1942,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">ANZ National Address Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
@@ -2155,26 +1961,26 @@ ex:addr-1
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:addr-1
-  a addr:Address ;
-  addr:hasAddressComponent
+  a roads:Address ;
+  roads:hasAddressComponent
     [
       # "StreetNumber" type
-      addr:hasValue 20 ;
-      addr:hasValueText "20" ;
-      addr:hasComponentType addrct:streetNumber ;
+      roads:hasValue 20 ;
+      roads:hasValueText "20" ;
+      fl:hasComponentType addrct:streetNumber ;
     ] ,
     [
       # "StreetName" type
-      addr:hasValue "Oxford" ;
-      addr:hasValueText "Oxford" ;
-      addr:hasComponentType addrct:thoroughfareName ;
+      roads:hasValue "Oxford" ;
+      roads:hasValueText "Oxford" ;
+      fl:hasComponentType addrct:thoroughfareName ;
     ] ,
     [
       # "Locality" type
-      addr:hasValue &lt;http://example.com/lga/1234&gt; ;
+      roads:hasValue &lt;http://example.com/lga/1234&gt; ;
       # textual value of complex object
-      addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:locality ;
+      roads:hasValueText "Shorncliffe" ;
+      fl:hasComponentType addrct:locality ;
     ] ,
     ...</code></pre>
 </div>
@@ -2190,455 +1996,70 @@ ex:addr-1
 <h2 id="_supporting_vocabularies"><a class="anchor" href="#_supporting_vocabularies"></a>5. Supporting Vocabularies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This model uses many vocabularies to give specific values to classification properties for <code>Address</code>, <code>AddressComponent</code> and to qualify relationships within the model. This section lists those vocabularies and summarises their content but not their full content which is instead linked to.</p>
-</div>
-<div class="paragraph">
-<p>Four vocabularies expected for use with this model are defined here, within the model. Others are defined elsewhere, mainly ICSM vocabularies derived from AS4189 or the G-NAF.</p>
-</div>
-<div class="paragraph">
-<p>Those defined here are:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#_address_component_types">Address Component Types</a></p>
-</li>
-<li>
-<p><a href="#_address_lifecycle_stage_types">Address Lifecycle Stage Types</a></p>
-</li>
-<li>
-<p><a href="#_address_role_types">Address Role Types</a></p>
-</li>
-<li>
-<p><a href="#_address_status_types">Address Status Types</a></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Three of these vocabularies are derived from vocabularies (codelists) within <a href="#ISO19160-1">[ISO19160-1]</a> but all are extended for use here. The remaining vocabulary - Address Role Types - is derived from the various elements of <a href="#ISO19160-1">[ISO19160-1]</a> but not directly from one vocabulary.</p>
-</div>
-<div class="paragraph">
-<p>Those defined as ICSM vocabularies:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Address Types</p>
-</li>
-<li>
-<p>Address Alias Types</p>
-</li>
-<li>
-<p>Address Role Types</p>
-</li>
-<li>
-<p>Flat Types</p>
-</li>
-<li>
-<p>Geocode Types</p>
-</li>
-<li>
-<p>Level Types</p>
-</li>
-<li>
-<p>Street Suffix Types</p>
-</li>
-<li>
-<p>Street Types</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Hyperlinks to these vocabularies will be provided as soon as persistent identifiers for them are issued. Until then, the content of these vocabularies can be found within the submission to register them: <a href="https://github.com/GeoscienceAustralia/icsm-vocabs/pull/13/files" class="bare">https://github.com/GeoscienceAustralia/icsm-vocabs/pull/13/files</a>.
-</td>
-</tr>
-</table>
+<p>This model depends on several vocabularies to give specific values to typing properties for <code>FeatureLabelComponent</code>, <code>LifecycelStage</code> and so on. Only one of those vocabularies is defined here - <a href="#_feature_label_component_types_for_roads">Feature Label Component Types for Roads</a>. All other vocabularies are defined in the Feature Labelling Model <a href="#FL">[FL]</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="_address_component_types"><a class="anchor" href="#_address_component_types"></a>5.1. Address Component Types</h3>
+<h3 id="_feature_label_component_types_for_roads"><a class="anchor" href="#_feature_label_component_types_for_roads"></a>5.1. Feature Label Component Types for Roads</h3>
 <div class="paragraph">
-<p>This vocabulary is an extended version of <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponentType</code> vocabulary. The original 8 concepts from the standard are included however only one of them - <code>postcode</code> - is suggested for use within this model. An additional 19 concepts are taken from address elements in the G-NAF, such as <code>numberFirstSuffix</code>. A further 4 concepts have also been added during the design of this model to cater for newly understood future ANZ addressing needs, such as <code>placeName</code> and <code>indigenousPlaceName</code>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://spatial-information-qld.github.io/address-model/AnzAddressComponentTypes.html">full documentation</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://spatial-information-qld.github.io/address-model/AnzAddressComponentTypes.ttl">machine-readable form</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<p>This vocabulary is a specialised form of <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponentType</code> vocabulary. The original 8 concepts from that standard are not included as they apply either to addresses or provide only one component type for roads - `thoroughfareName.</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">IRI</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Status</th>
+<th class="tableblock halign-left valign-top">Expected Form</th>
 <th class="tableblock halign-left valign-top">Usage directive</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>actiso:addressedObjectIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rct:RoadPrefix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Prefix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A literal initial part of a road&#8217;s label that comes before the road&#8217;s name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Do not use: handled by <code>Address</code>/<code>AddressableObject</code> relation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">literal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rct:RoadName</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>actiso:administrativeAreaName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The literal name of the road, without any expression of the road&#8217;s type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Do not use: use object reference types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">literal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rct:RoadType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Type</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>actiso:countryCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A reference to the type of the road, selected from a controlled list of road (street) types</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Do not use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>actiso:countryName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object reference</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>actiso:localityName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No not use: use <code>act:locality</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>actiso:postOfficeName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Do not use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>actiso:postcode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>actiso:thoroughfareName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Do not use, use <code>act:streetLocality</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:buildingName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:lotNumberPrefix</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:lotNumber</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:lotNumberSuffix</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:flatTypeCode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:flatNumberPrefix</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:flatNumber</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:flatNumberSuffix</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:levelTypeCode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:levelNumberPrefix</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:levelNumber</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:levelNumberSuffix</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:numberFirstPrefix</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:numberFirst</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:numberFirstSuffix</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:numberLastPrefix</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:numberLast</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:numberLastSuffix</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:streetLocality</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:locality</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (G-NAF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:stateOrTerritory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:propertyName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (this model)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:placeName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (this model)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>act:indigenousPlaceName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addition (this model)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rct:RoadSuffix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Suffix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A literal initial part of a road&#8217;s label that comes after the road&#8217;s name and type value</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect2">
-<h3 id="_address_lifecycle_stage_types"><a class="anchor" href="#_address_lifecycle_stage_types"></a>5.2. Address Lifecycle Stage Types</h3>
 <div class="paragraph">
-<p>This vocabulary is currently as per <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycleStage</code> vocabulary, however it is expected that this vocabulary will be extended early in its use in Australia/NZ as it is know that jurisdictions within ANZ use other statuses</p>
+<p>This vocabulary is available in machine-readable form at <strong><a href="https://linked.data.gov.au/def/rct" class="bare">https://linked.data.gov.au/def/rct</a></strong>.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://spatial-information-qld.github.io/address-model/AnzAddressLifecycleStageTypes.html">full documentation</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://spatial-information-qld.github.io/address-model/AnzAddressLifecycleStageTypes.ttl">machine-readable form</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">IRI</th>
-<th class="tableblock halign-left valign-top">Status</th>
-<th class="tableblock halign-left valign-top">Usage directive</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>alsiso:current</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>alsiso:proposed</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>alsiso:rejected</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>alsiso:reserved</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>alsiso:retired</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>alsiso:unknown</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_address_role_types"><a class="anchor" href="#_address_role_types"></a>5.3. Address Role Types</h3>
 <div class="paragraph">
-<p>This vocabulary is inspired by <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressPosition</code> and <code>AddressPositionType</code> classes and the often repeated need in ANZ to assign purposes to Addresses. All elements are original in this model.</p>
+<p>Three of the four elements above are literal values, e.g. a Road Name of "Yundah". The exception is Road Type which sould be a reference to a Road (Street) Type controlled vocabulary object, such as an instance of a Concepts from Australia&#8217;s ICSM&#8217;s <em>StreetTypes</em> vocabulary. A textual representation for Road Type can be acquired from such an object by importing one of its potentially many labels.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://spatial-information-qld.github.io/address-model/AnzAddressRoleTypes.html">full documentation</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://spatial-information-qld.github.io/address-model/AnzAddressRoleTypes.ttl">machine-readable form</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 50%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">IRI</th>
-<th class="tableblock halign-left valign-top">Status</th>
-<th class="tableblock halign-left valign-top">Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Usage directive</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:deliveries</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">deliveries</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An address to use for deliveries</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:emergencyAccess</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">emergency access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An address to use for emergency services' access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:serviceConnectionPoint</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">service connection point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An address at which utility services are connected</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:siteOffice</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">site office</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_address_status_types"><a class="anchor" href="#_address_status_types"></a>5.4. Address Status Types</h3>
-<div class="paragraph">
-<p>This vocabulary is an extended version of <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressStatus</code> vocabulary.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://spatial-information-qld.github.io/address-model/AnzAddressStatusTypes.html">full documentation</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://spatial-information-qld.github.io/address-model/AnzAddressStatusTypes.ttl">machine-readable form</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 66.6668%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">IRI</th>
-<th class="tableblock halign-left valign-top">Status</th>
-<th class="tableblock halign-left valign-top">Usage directive</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>astiso:official</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>astiso:unknown</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>astiso:unofficial</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
@@ -2646,15 +2067,241 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 <h2 id="_requirements"><a class="anchor" href="#_requirements"></a>6. Requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Blah</p>
+<p>Here are the itemised Requirements referenced in the<a href="#_sources_of_requirements">Sources of Requirements</a> subsection of the <a href="#_introduction">Introduction</a> and note for them on how this model satisfies them.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_validation"><a class="anchor" href="#_validation"></a>7. Validation</h2>
+<h2 id="_requirements_list"><a class="anchor" href="#_requirements_list"></a>7. Requirements List</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 50.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Req01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>MUST</em> align with Address modelling</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profiles from the Feature Labelling Model which the QSI Address Model also profiles from</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Req02</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>MUST</em> implement the Feature Labels / Features / Geometries relationships of the Feature Labelling Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profiles from the Feature Labelling Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Req03</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>MUST</em> be interoperable with detailed spatial object modelling, for example of the sort implemented in the Cadastre Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profiles from the Feature Labelling Model which associated Feature Labels with Features which may have any form of further detailed modelling</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_validation"><a class="anchor" href="#_validation"></a>8. Validation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Blah</p>
+<p><em>This section will be completed when Business Rules for Road Labels are determined - etc. June, 2023</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_templating"><a class="anchor" href="#_templating"></a>9. Templating</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To present - on screen or in print form - the consolidated label for a Road, the Feature Label Components of a Road Label need to be assembled in a particular order and perhaps processes to make contractions etc. The logic for this is not contained in the Classes or Properties of the model but in this Templating section.</p>
+</div>
+<div class="paragraph">
+<p>Users of this model are free to implement additional templates and template logic to suit their needs.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_template"><a class="anchor" href="#_basic_template"></a>9.1. Basic Template</h3>
+<div class="paragraph">
+<p>This template assembled the Road Label&#8217;s Feature Label Components in the most basic manner, which is also the manner expected to be used most commonly.</p>
+</div>
+<div class="paragraph">
+<p>The template, in EBNF form <a href="#ISO-IEC-14977">[ISO-IEC-14977]</a>, is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>space = " "
+extended_letters = "A" | "B" | "C" | "D" | "E" | "F" | "G"
+       | "H" | "I" | "J" | "K" | "L" | "M" | "N"
+       | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
+       | "V" | "W" | "X" | "Y" | "Z" | "a" | "b"
+       | "c" | "d" | "e" | "f" | "g" | "h" | "i"
+       | "j" | "k" | "l" | "m" | "n" | "o" | "p"
+       | "q" | "r" | "s" | "t" | "u" | "v" | "w"
+       | "x" | "y" | "z" | " " | "-" ;
+prefix = extended_letters
+prefix_spaced = prefix, space
+name = extended_letters
+type = extended_letters
+type_spaced = space, type
+suffix = extended_letters
+suffix_spaced = space, suffix
+
+road_label = [prefix_spaced], name, [type_spaced], [suffix_spaced]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Consider a Road Label with the following Feature Label Components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Road Name, value text "Yundah"</p>
+</li>
+<li>
+<p>Road Type, value text "Street"</p>
+</li>
+<li>
+<p>Road Suffix, value text "South"</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The template would result in this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>space = " "
+name = "Yundah"
+type = "Street"
+type_spaced = " Street"
+suffix = "South"
+suffix_spaced = " South"
+
+road_label = "Yundah Street South"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_short_form_template"><a class="anchor" href="#_short_form_template"></a>9.2. Short Form Template</h3>
+<div class="paragraph">
+<p>This Short Form Template is an example of an alternative template to the Basic Template above.</p>
+</div>
+<div class="paragraph">
+<p>This template uses the same layout logic as the Basic Template but makes certain contractions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Street Type</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Street &#8594; St</p>
+</li>
+<li>
+<p>Road &#8594; Rd</p>
+</li>
+<li>
+<p>Crescent &#8594; Crs</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Etc., as per address regulations such as AS 4590.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Street Suffix</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>North &#8594; Nth</p>
+</li>
+<li>
+<p>South &#8594; Sth</p>
+</li>
+<li>
+<p>East &#8594; Est</p>
+</li>
+<li>
+<p>West &#8594; Wst</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Consider a Road Label with the following Feature Label Components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Road Name, value text "Yundah"</p>
+</li>
+<li>
+<p>Road Type, value text "Street"</p>
+</li>
+<li>
+<p>Road Suffix, value text "South"</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This template&#8217;s result for these values will be calculated as per the Basic Template example with the same input values but with the contractions from the lists above applied result in:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Yundah St Sth</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>10. Examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This model contains examples per Class and Property in the <a href="#_model">Model</a> section as well as for each template within in the <a href="#_templating">Templating</a> section. The examples are all versions of the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># a geospatial Road Object instance
+ex:road-x
+    a ex:Road ;
+.
+
+# Yundah Street South
+ex:road-label-1
+  a roads:RoadLabel ;
+  fl:isLabelFor ex:road-x ;
+  roads:hasFeatureLabelComponent
+    [
+      roads:hasValue "Yundah" ;
+      fl:hasComponentType rct:RoadName ;
+    ] ,
+    [
+      roads:hasValue st:Street ;
+      fl:hasComponentType rct:RoadType ;
+    ] ,
+    [
+      roads:hasValueText "South" ;
+      fl:hasComponentType rct:RoadSuffix ;
+    ] ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The example above prints out as "Yundah Street South" using the <em>Basic Template</em> provided in the <a href="#_templating">Templating</a> section and "Yundah St Sth" using that section&#8217;s <em>Short Form Template</em>.</p>
 </div>
 </div>
 </div>
@@ -2667,10 +2314,13 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 <p><a id="CONNEGP"></a> [CONNEGP] World Wide Web Consortium, <em>Content Negotiation by Profile</em>, W3C Working Draft (20 March 2022). <a href="https://w3c.github.io/dx-connegp/connegp/" class="bare">https://w3c.github.io/dx-connegp/connegp/</a></p>
 </li>
 <li>
-<p><a id="FLM"></a> [FLM] The State of Queensland (Department of Resources). <em>Feature Labelling Model</em>. Semantic Web data model (2023). <a href="https://linked.data.gov.au/def/flm" class="bare">https://linked.data.gov.au/def/flm</a></p>
+<p><a id="FL"></a> [FLM] The State of Queensland (Department of Resources). <em>Feature Labelling Model</em>. Semantic Web data model (2023). <a href="https://linked.data.gov.au/def/fl" class="bare">https://linked.data.gov.au/def/fl</a></p>
 </li>
 <li>
 <p><a id="GEO"></a> [GEO] Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1</em> (2021). OGC Implementation Specification. <a href="http://www.opengis.net/doc/IS/geosparql/1.1" class="bare">http://www.opengis.net/doc/IS/geosparql/1.1</a></p>
+</li>
+<li>
+<p><a id="ISO-IEC-14977"></a> [ISO-IEC-14977] International Organization for Standardization, <em>ISO/IEC 14977 : 1996(E): Extended Backus–Naur form</em>. International Organization for Standardization (1996). <a href="https://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf" class="bare">https://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf</a></p>
 </li>
 <li>
 <p><a id="ISO19101-1"></a> [ISO19101-1] International Organization for Standardization, <em>ISO 19101-1:2014 Geographic information — Reference model — Part 1: Fundamentals</em> (2014)</p>
@@ -2712,7 +2362,7 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-08 21:07:24 UTC
+Last updated 2023-05-16 03:06:29 UTC
 </div>
 </div>
 </body>
