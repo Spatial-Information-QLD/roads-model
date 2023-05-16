@@ -471,16 +471,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_feature_label_component_types_for_roads">5.1. Feature Label Component Types for Roads</a></li>
 </ul>
 </li>
-<li><a href="#_requirements">6. Requirements</a></li>
-<li><a href="#_requirements_list">7. Requirements List</a></li>
-<li><a href="#_validation">8. Validation</a></li>
-<li><a href="#_templating">9. Templating</a>
+<li><a href="#_requirements">6. Requirements</a>
 <ul class="sectlevel2">
-<li><a href="#_basic_template">9.1. Basic Template</a></li>
-<li><a href="#_short_form_template">9.2. Short Form Template</a></li>
+<li><a href="#_requirements_list">6.1. Requirements List</a></li>
 </ul>
 </li>
-<li><a href="#_examples">10. Examples</a></li>
+<li><a href="#_validation">7. Validation</a></li>
+<li><a href="#_templating">8. Templating</a>
+<ul class="sectlevel2">
+<li><a href="#_basic_template">8.1. Basic Template</a></li>
+<li><a href="#_short_form_template">8.2. Short Form Template</a></li>
+</ul>
+</li>
+<li><a href="#_examples">9. Examples</a></li>
 <li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
@@ -1948,11 +1951,8 @@ ex:road-label-1
 <div class="paragraph">
 <p>Here are the itemised Requirements referenced in the<a href="#_sources_of_requirements">Sources of Requirements</a> subsection of the <a href="#_introduction">Introduction</a> and note for them on how this model satisfies them.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_requirements_list"><a class="anchor" href="#_requirements_list"></a>7. Requirements List</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_requirements_list"><a class="anchor" href="#_requirements_list"></a>6.1. Requirements List</h3>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1986,8 +1986,9 @@ ex:road-label-1
 </table>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_validation"><a class="anchor" href="#_validation"></a>8. Validation</h2>
+<h2 id="_validation"><a class="anchor" href="#_validation"></a>7. Validation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>This section will be completed when Business Rules for Road Labels are determined - etc. June, 2023</em></p>
@@ -1995,7 +1996,7 @@ ex:road-label-1
 </div>
 </div>
 <div class="sect1">
-<h2 id="_templating"><a class="anchor" href="#_templating"></a>9. Templating</h2>
+<h2 id="_templating"><a class="anchor" href="#_templating"></a>8. Templating</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To present - on screen or in print form - the consolidated label for a Road, the Feature Label Components of a Road Label need to be assembled in a particular order and perhaps processes to make contractions etc. The logic for this is not contained in the Classes or Properties of the model but in this Templating section.</p>
@@ -2004,7 +2005,7 @@ ex:road-label-1
 <p>Users of this model are free to implement additional templates and template logic to suit their needs.</p>
 </div>
 <div class="sect2">
-<h3 id="_basic_template"><a class="anchor" href="#_basic_template"></a>9.1. Basic Template</h3>
+<h3 id="_basic_template"><a class="anchor" href="#_basic_template"></a>8.1. Basic Template</h3>
 <div class="paragraph">
 <p>This template assembled the Road Label&#8217;s Feature Label Components in the most basic manner, which is also the manner expected to be used most commonly.</p>
 </div>
@@ -2066,7 +2067,7 @@ road_label = "Yundah Street South"</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_short_form_template"><a class="anchor" href="#_short_form_template"></a>9.2. Short Form Template</h3>
+<h3 id="_short_form_template"><a class="anchor" href="#_short_form_template"></a>8.2. Short Form Template</h3>
 <div class="paragraph">
 <p>This Short Form Template is an example of an alternative template to the Basic Template above.</p>
 </div>
@@ -2147,7 +2148,7 @@ road_label = "Yundah Street South"</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_examples"><a class="anchor" href="#_examples"></a>10. Examples</h2>
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>9. Examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This model contains examples per Class and Property in the <a href="#_model">Model</a> section as well as for each template within in the <a href="#_templating">Templating</a> section. The examples are all versions of the following:</p>
@@ -2256,7 +2257,7 @@ ex:road-label-1
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-16 03:39:02 UTC
+Last updated 2023-05-16 03:40:05 UTC
 </div>
 </div>
 </body>
