@@ -10,5 +10,5 @@ Here are the itemised Requirements referenced in the<<Sources of Requirements>> 
 
 | Req01 | _MUST_ align with Address modelling | Profiles from the Feature Labelling Model which the QSI Address Model also profiles from
 | Req02 | _MUST_ implement the Feature Labels / Features / Geometries relationships of the Feature Labelling Model | Profiles from the Feature Labelling Model
-| Req03 | _MUST_ be interoperable with detailed spatial object modelling, for example of the sort implemented in the Cadastre Model | Profiles from the Feature Labelling Model which associated Feature Labels with Features which may have any form of further detailed modelling
+| Req03 | _MUST_ be interoperable with detailed spatial object modelling, for example of the sort implemented in the Cadastre Model | Profiles from the Feature Labelling Model which associated Feature Labels with Features which may have any form of further detailed modelling.
 |===
