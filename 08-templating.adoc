@@ -1,0 +1,82 @@
+== Templating
+
+To present - on screen or in print form - the consolidated label for a Road, the Feature Label Components of a Road Label need to be assembled in a particular order and perhaps processes to make contractions etc. The logic for this is not contained in the Classes or Properties of the model but in this Templating section.
+
+Users of this model are free to implement additional templates and template logic to suit their needs.
+
+=== Basic Template
+
+This template assembled the Road Label's Feature Label Components in the most basic manner, which is also the manner expected to be used most commonly.
+
+The template, in EBNF form <<ISO-IEC-14977>>, is:
+
+```
+space = " "
+extended_letters = "A" | "B" | "C" | "D" | "E" | "F" | "G"
+       | "H" | "I" | "J" | "K" | "L" | "M" | "N"
+       | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
+       | "V" | "W" | "X" | "Y" | "Z" | "a" | "b"
+       | "c" | "d" | "e" | "f" | "g" | "h" | "i"
+       | "j" | "k" | "l" | "m" | "n" | "o" | "p"
+       | "q" | "r" | "s" | "t" | "u" | "v" | "w"
+       | "x" | "y" | "z" | " " | "-" ;
+prefix = extended_letters
+prefix_spaced = prefix, space
+name = extended_letters
+type = extended_letters
+type_spaced = space, type
+suffix = extended_letters
+suffix_spaced = space, suffix
+
+road_label = [prefix_spaced], name, [type_spaced], [suffix_spaced]
+```
+
+Consider a Road Label with the following Feature Label Components:
+
+* Road Name, value text "Yundah"
+* Road Type, value text "Street"
+* Road Suffix, value text "South"
+
+The template would result in this:
+
+```
+space = " "
+name = "Yundah"
+type = "Street"
+type_spaced = " Street"
+suffix = "South"
+suffix_spaced = " South"
+
+road_label = "Yundah Street South"
+```
+
+=== Short Form Template
+
+This Short Form Template is an example of an alternative template to the Basic Template above.
+
+This template uses the same layout logic as the Basic Template but makes certain contractions:
+
+* *Street Type*
+** Street -> St
+** Road -> Rd
+** Crescent -> Crs
+
+Etc., as per address regulations such as AS 4590.
+
+* *Street Suffix*
+** North -> Nth
+** South -> Sth
+** East -> Est
+** West -> Wst
+
+Consider a Road Label with the following Feature Label Components:
+
+* Road Name, value text "Yundah"
+* Road Type, value text "Street"
+* Road Suffix, value text "South"
+
+This template's result for these values will be calculated as per the Basic Template example with the same input values but with the contractions from the lists above applied result in:
+
+```
+Yundah St Sth
+```

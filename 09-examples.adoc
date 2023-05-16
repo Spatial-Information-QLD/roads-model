@@ -1,0 +1,32 @@
+== Examples
+
+This model contains examples per Class and Property in the <<Model>> section as well as for each template within in the <<Templating>> section. The examples are all versions of the following:
+
+[source,turtle]
+----
+# a geospatial Road Object instance
+ex:road-x
+    a ex:Road ;
+.
+
+# Yundah Street South
+ex:road-label-1
+  a roads:RoadLabel ;
+  fl:isLabelFor ex:road-x ;
+  roads:hasFeatureLabelComponent
+    [
+      roads:hasValue "Yundah" ;
+      fl:hasComponentType rct:RoadName ;
+    ] ,
+    [
+      roads:hasValue st:Street ;
+      fl:hasComponentType rct:RoadType ;
+    ] ,
+    [
+      roads:hasValueText "South" ;
+      fl:hasComponentType rct:RoadSuffix ;
+    ] ;
+.
+----
+
+The example above prints out as "Yundah Street South" using the _Basic Template_ provided in the <<Templating>> section and "Yundah St Sth" using that section's _Short Form Template_.

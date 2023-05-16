@@ -29,6 +29,10 @@ include::06-requirements.adoc[]
 
 include::07-validation.adoc[]
 
+include::08-templating.adoc[]
+
+include::09-examples.adoc[]
+
 :sectnums!:
 
 include::99-bibliography.adoc[]

@@ -2,7 +2,7 @@
 
 === Abstract
 
-A Semantic Web data model of roads information. It caters specifically for Australian & New Zealand's road modelling needs.
+A Semantic Web data model of roads information. It caters specifically for Australian & New Zealand's road labelling (naming) needs.
 
 [NOTE]
 This model was made for Queensland Spatial Information, a unit of the Queensland Department of Resources, to assist with their future address and roads database design. It is a Component Model of their 'QSI Supermodel' which includes models for Address, Place Name and Cadastral information which are all designed to work together, however they may all be used independently too.
@@ -16,14 +16,16 @@ This model is built on a small set of well-regarded Semantic Web models which us
 |Prefix | Namespace | Description
 
 | `*roads*` | `*https://linked.data.gov.au/def/roads/*` | *Namespace for this model*
-| `asgsed3` | `https://linked.data.gov.au/dataset/asgsed3/` | Australian Statistical Geographies Standard Dataset, Release 3
 | `dcterms` | `http://purl.org/dc/terms/` | Dublin Core Terms namespace
 | `ex` | `http://example.com/` | Generic examples namespace
 | `geo` | `http://www.opengis.net/ont/geosparql#` | OGC GeoSPARQL model namespace
 | `rct` | `https://linked.data.gov.au/def/roads/ct` | Roads Component Type vocabulary namespace
-| `flct` | `https://linked.data.gov.au/def/fl/ct` | Feature Label Component Type vocabulary namespace
+| `fl` | `https://linked.data.gov.au/def/fl/` | Feature Label Model namespace
+| `ls` | `https://linked.data.gov.au/def/fl/ls/` | Feature Label Lifecycle State Type vocabulary namespace
 | `owl` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
+| `rct` | `https://linked.data.gov.au/def/rct/` | Feature Label Component Type Vocabulary for Roads namespace
 | `rdfs` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
+| `st` | `https://linked.data.gov.au/def/streetType/` | ICSM's Street Types vocabulary namespace (not implemented yet)
 | `sosa` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
 | `skos` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
 | `time` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace

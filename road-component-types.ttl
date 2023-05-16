@@ -1,0 +1,77 @@
+PREFIX : <https://linked.data.gov.au/def/rct/>
+PREFIX cs: <https://linked.data.gov.au/def/rct>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sdo: <https://schema.org/>
+PREFIX reg: <http://purl.org/linked-data/registry#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX status: <http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+cs:
+    a skos:ConceptScheme ;
+    dcterms:created "2023-05-16"^^xsd:date ;
+    dcterms:creator <https://linked.data.gov.au/org/qsi> ;
+    dcterms:issued "2023-05-16"^^xsd:date ;
+    dcterms:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    dcterms:modified "2023-05-16"^^xsd:date ;
+    dcterms:publisher <https://linked.data.gov.au/org/qsi> ;
+    dcterms:rights "(c) The State of Queensland (Department of Resources), 2023" ;
+    dcterms:source "https://linked.data.gov.au/def/roads"^^xsd:anyURI ;
+    reg:status status:stable ;
+    skos:definition "Types of Feature C=Label Component used to characterise roads (street)' labels'"@en ;
+    skos:hasTopConcept
+        :roadPrefix ,
+        :roadName ,
+        :roadType ,
+        :roadSuffix ;
+    skos:prefLabel "Feature Label Component Types for Roads"@en ;
+    skos:scopeNote "This vocabulary may be extended if road names are found to be better represented by more/other component types."
+.
+
+<https://linked.data.gov.au/org/qsi>
+    a sdo:Organization ;
+    sdo:description "The unit within Queensland Government that manages fundamental spatial information for the State."@en ;
+    sdo:name "Queensland Spatial Information" ;
+    sdo:url "https://qldspatial.information.qld.gov.au"^^xsd:anyURI ;
+.
+
+:roadPrefix
+    a skos:Concept ;
+    dcterms:provenance "Created for Queensland Spatial Information's Cadastre & Address Model project, 2023"@en ;
+    rdfs:isDefinedBy cs: ;
+    reg:status status:original ;
+    skos:definition "A literal initial part of a road's label that comes before the road's name"@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Road Prefix"@en ;
+.
+
+:roadName
+    a skos:Concept ;
+    dcterms:provenance "Created for Queensland Spatial Information's Cadastre & Address Model project, 2023"@en ;
+    rdfs:isDefinedBy cs: ;
+    reg:status status:original ;
+    skos:definition "The literal name of the road, without any expression of the road's type"@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Road Name"@en ;
+.
+
+:roadType
+    a skos:Concept ;
+    dcterms:provenance "Created for Queensland Spatial Information's Cadastre & Address Model project, 2023"@en ;
+    rdfs:isDefinedBy cs: ;
+    reg:status status:original ;
+    skos:definition "A reference to the type of the road, selected from a controlled list of road (street) types"@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Road Type"@en ;
+.
+
+:roadSuffix
+    a skos:Concept ;
+    dcterms:provenance "Created for Queensland Spatial Information's Cadastre & Address Model project, 2023"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A literal initial part of a road's label that comes after the road's name and type value"@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Road Suffix"@en ;
+.

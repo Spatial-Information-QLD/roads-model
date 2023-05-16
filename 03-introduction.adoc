@@ -1,20 +1,20 @@
 == Introduction
 
-This model represents road labelling components and the geospatial representation of roads that the labels are applied to. This style of modelling is informed by the https://linked.data.gov.au/def/addr[QSI Address Model] which, in turn, is based primarily on the international addressing standard, <<ISO19160-1>> and the Semantic Web / Knowledge Graph spatial data standard, GeoSPARQL <<GEO>>.
+This model facilitates applying Road Label objects, with potentially many subcomponents, to the geospatial representation of roads - Road Objects. This style of feature label / geospatial feature modelling is informed inherited from the https://linked.data.gov.au/def/fl[Feature Labelling Model] that this model extends.
+
+NOTE: This model does not attempt to assist with detail geospatial or physical road modelling: it only provides an association between labelling components and geospatial representations of the road established using other models. This model also does not link road objects to other, related, objects, such as Localities. Such linking should be represented with Feature / Feature topological relations, such as those within GeoSPARQL <<GEO>>.
 
 Data made according to this model, when stored in one of the <<RDF>> serialization formats such as <<TTL>>, is directly validatable according to this model through use of validators that are supplied, see Section <<Validation>>.
 
-This model does not model _all_ possible roads data managers' concerns: it leaves things like the detailed modelling of spatial information to other models or extensions to this model. Also, by reusing elements from well-known Semantic Web models, this model has many "pick-up" points that can be used to join other information on to. For example, the `Resource` indicated as an `Road Label Component` value, may be a locally-defined simple value type - a number or string - but it may also be a complex object defined elsewhere.
-
 === Sources of Requirements
 
-This model was initially built to allow Queensland Government to manage roads information in a manner similar to how they manage Address & Place Name information: as a collection of Feature Labels for Features which have Geometries.
+This model was initially built to allow Queensland Government to manage roads labelling information in a manner similar to how they manage Address & Geographic Name information: as a collection of Feature Labels for Features which have Geometries. This introduces requirements to both facilitate complex labelling and align with Address etc. modelling.
 
-To ensure that this model implements that Feature Labels / Features / Geometries pattern, it is a profile of the https://linked.data.gov.au/def/lf[Feature Labelling Model] which captures the pattern in generic form.
+To ensure that this model implements that Feature Labels / Features / Geometries pattern, it is a profile of the https://linked.data.gov.au/def/lf[Feature Labelling Model] which captures the pattern in generic form and is also profiled by Queensland Government's Address & Geographic Names Models. Figure <<fig-roads-spatial>> overviews this. This introduces the requirement for all Roads Model information to conform to the Feature Labels Model - the necessary requirement for profiling.
 
-By profiling that model, this model remains interoperable with Address & Place Name modelling and also Cadastre modelling, of the sort implemented in the https://linked.data.gov.au/cad[Cadastre Model].
+By profiling that model, this model also remains interoperable with detailed spatial object modelling, for example of the sort implemented in the https://linked.data.gov.au/cad[Cadastre Model].
 
-Detailed requirements for this model all stem from this top-level requirement to profile the Feature Labelling Model so this requirement is the only one listed in the <<Requirements>> section.
+Detailed requirements for this model all stem from these top-level requirements. The individual requirements are listed in the <<Requirements>> section.
 
 === Major Modelling Principles
 
@@ -22,40 +22,33 @@ Major modelling principles present in this model are:
 
 . Feature / Feature Labelling differentiation
 . Feature / Geometry differentiation
-. Geocodes
 . Profile Views
 
 These principles are explained in the following sub-sections and the first two reference the following figure.
 
-[[fig-address-spatial]]
-.Address / Addressable Object and Feature / Geometry differentiation overview
-image::img/address-spatial.png[]
+[[fig-roads-spatial]]
+.Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations
+image::img/roads-spatial.png[width="75%"]
 
 ==== Feature / Feature Labelling differentiation
 
-This model details the elements of an _address_ but not details of the spatial objects that addresses are assigned to. The general conceptual split of address/spatial object follows the Address/AddressableObject split in ISO19160-1 <<ISO19160-1>>. Addresses are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature.
+This model details the elements of a road label but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of label/spatial object follows the Address/AddressableObject split in ISO19160-1 <<ISO19160-1>>. Addresses there are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature and Road Labels here are considered a simple case of that.
 
 This allows for the representation, and ultimately the management, of labels - text, numbers, identifiers, references - separately to the management of spatial objects.
 
-This Feature / Feature Labelling separation applies to Place Names, Roads and Administrative Areas as well as Addresses and this expression of Feature / Feature Labelling separation for addressing is a formal profile of the more general _Feature Labelling Model_ <<FLM>>. There are other profiles for those other domains. The FLM, this model and the other FLM profiles are all pat of Queensland Spatial Information's https://spatial-information-qld.github.io/supermodel/supermodel.html[_Supermodel_] which is an enterprise data model for multi-model data integration.
+This Feature / Feature Labelling separation applies to Geographic Names, Roads and Administrative Areas as well as Addresses and this expression of Feature / Feature Labelling separation for addressing is a formal profile of the more general _Feature Labelling Model_ <<FLM>>. There are other profiles for those other domains. The FLM, this model and the other FLM profiles are all pat of Queensland Spatial Information's https://spatial-information-qld.github.io/supermodel/supermodel.html[_Supermodel_] which is an enterprise data model for multi-model data integration.
 
 ==== Feature / Geometry differentiation
 
-(Geo)spatial objects referenced by this model are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <<ISO19101-1>> and their expression in the Semantic Web spatial standard <<GEO>>.
+(Geo)spatial objects referenced by this model's labelling objects (Road Labels) are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. See Figure <<fig-roads-spatial>>. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <<ISO19101-1>> and their expression in the Semantic Web spatial standard <<GEO>>.
 
-This Feature / Geometry distinction allows individual spatial objects to have multiple Geometries: different resolutions, in different coordinate systems and even sets of Geometries that have different roles or that show variation over time.
-
-==== Geocodes
-
-Geocodes are point geometries associated with an address that can be used by mapping applications to locate the address, or part of an addressable object, on a map.
-
-Since geocodes are directly related to an Address and are only indirectly related to an Addressable Object, in this model they are modelled as a specialised form of Features with a Geometry used to indicate the point location. The Address relates to the Geocode in a similar way to an Address relating to an Addressable Object however the Address isn't the address _for_ the Addressable Object but rather the Geocode is another kind of object associated with the Address with a _role_ indicated, e.g. a particular Geocode might indicate the "property centroid" or perhaps it's the "deliveries point" of a large building address.
+This Feature / Geometry distinction allows individual spatial objects to have multiple Geometries: different resolutions, in different coordinate systems and even sets of Geometries that have different roles or that show variation over time. This would allow Road Objects to have spatiallity represented with road centrelines, area polygons from cadastre etc., all at the same time, by linking those different spatial representations - the Geometries - to the single conceptual entity - the Feature.
 
 === Profile Views
 
-Addresses have multiple roles: they indicate places with names (or Features with Labels), they are things to be managed by data holders, and they have statuses, lifecycles and so on. Sometimes we are only interested in one of these aspects of an Address or one _profile_ and not the total Address information held. We may also be interested only in a reduced set of properties of an Address even when others within that role are present, e.g. the current status, not all the statues an Address has ever had. Finally, different implementers of this model may want to implement different jurisdictional profiles of the entire model that, for example, mandate records for that jurisdiction's system's use of Addresses that would be meaningless outside that jurisdiction.
+Road Labels have multiple roles: they indicate places with names (or Features with Labels), they are things to be managed by data holders, and they have statuses, lifecycles and so on. Sometimes we are only interested in one of these aspects of a Road Label or one _profile_ and not the total information held. We may also be interested only in a reduced set of properties of a Road Label even when others within that role are present, e.g. the current status, not all the statues an Address has ever had. Finally, different implementers of this model may want to implement different jurisdictional profiles of the model that, for example, mandate certain information be stored for Road Labels, that may be meaningless outside that jurisdiction.
 
-All of these sorts of _profiles_ of Addresses are handled in a similar way in this model: they are declared Profiles of the model that may implement additional ruls and/or requirements on data, however they must always conform to the main Address Model itself.
+All of these sorts of _profiles_ of Road Labels are handled in a similar way in this model: they are declared Profiles of the model that may implement additional rules and/or requirements on data, however they must always conform to the main Roads Model itself.
 
 Profile modelling is given in <<PROF>> and requesting profiles from data conforming to a model is given in <<CONNEGP>>.
 
@@ -68,11 +61,12 @@ This document is this model's "Specification" which is its authoritative, human-
 | Resource | Role | Notes
 
 | https://spatial-information-qld.github.io/address-model/model.ttl[Ontology] | _Schema_ | The technical, machine-readable, version of this model
-| <<Supporting Vocabularies>> | _Vocabulary_ | The codelist vocabularies developed for this model and links to others  defined elsewhere but used by this model
-| <<AnnexA>> | _Guidance_ | The Requirements addressed by this model
-| <<AnnexB>> & https://github.com/Spatial-Information-QLD/address-model/blob/main/validator.ttl[Validator] | _Validation_ | The machine-readable validator file used to validate data claiming conformance to this model
-| <<AnnexC>>
+| <<Supporting Vocabularies>> | _Vocabulary_ | The codelist vocabularies developed for this model and links to others defined elsewhere but used by this model
+| <<Requirements>> Section | _Guidance_ | The Requirements addressed by this model
+| <<Validation>> Section & https://github.com/Spatial-Information-QLD/roads-model/blob/main/validator.ttl[SHACL Validator] | _Validation_ | The machine-readable validator file used to validate data claiming conformance to this model
+| <<Templating>> Section | _Guidance_ | The template logic used for Basic and Short Form templates
+| <<Examples>> Section
 &
-https://github.com/Spatial-Information-QLD/address-model/tree/main/extended-examples[Extended example data files] | _Example_ | Examples of data conforming, and some not conforming, to this model
-| <<AnnexD>> | _Example_ | Demonstration implementations of this model in various database forms
+https://github.com/Spatial-Information-QLD/roads-model/tree/main/extended-examples[Extended example data files] | _Example_ | Examples of data conforming, and some not conforming, to this model
+| https://github.com/Spatial-Information-QLD/roads-model[Code Repository] | _Code Repository_ | The online, version control, repository containing all the resources of this model
 |===
