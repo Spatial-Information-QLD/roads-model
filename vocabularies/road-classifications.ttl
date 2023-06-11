@@ -1,15 +1,15 @@
+PREFIX : <https://linked.data.gov.au/def/road-classifications/>
 PREFIX cs: <https://linked.data.gov.au/def/road-classifications>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX isoroles: <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX rc: <https://linked.data.gov.au/def/road-classifications/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-rc:bikeway
+:bikeway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Designated path primarily for bicycle use."@en ;
@@ -19,7 +19,7 @@ rc:bikeway
     skos:topConceptOf cs: ;
 .
 
-rc:busway
+:busway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "A road which is wholly dedicated as a bus-only transit way. This does not include bus lanes on roads with other trafficability."@en ;
@@ -29,7 +29,7 @@ rc:busway
     skos:topConceptOf cs: ;
 .
 
-rc:connector
+:connector
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "Collector road"@en ;
@@ -40,7 +40,7 @@ rc:connector
     skos:topConceptOf cs: ;
 .
 
-rc:ferry
+:ferry
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Route that is undertaken by a public ferry used for the transportation of vehicles and/or pedestrians."@en ;
@@ -50,7 +50,7 @@ rc:ferry
     skos:topConceptOf cs: ;
 .
 
-rc:highway
+:highway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "Arterial road"@en ;
@@ -61,7 +61,7 @@ rc:highway
     skos:topConceptOf cs: ;
 .
 
-rc:local
+:local
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Provides property access. These generally have addresses assigned against them. These roads may be privately owned roads that are connected and open to the public network. Includes service roads that may share the same name as higher order roads. Previously referred to under coded value 5."@en ;
@@ -71,7 +71,7 @@ rc:local
     skos:topConceptOf cs: ;
 .
 
-rc:mall
+:mall
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "A road or passage whose main purpose is to provide access to pedestrians but may allow some vehicular access."@en ;
@@ -81,7 +81,7 @@ rc:mall
     skos:topConceptOf cs: ;
 .
 
-rc:motorway
+:motorway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Roads which are of importance in a national sense, and/or are a major interstate through route, and/or are principal connector roads between capitals and/or major regions and or key towns/commercial centres/inter-transport hubs. Also exhibit separated carriageways and unhindered, regulated traffic flow through use of grade-separated crossings and entry/exit ramps (e.g. Pacific Motorway)."@en ;
@@ -91,7 +91,7 @@ rc:motorway
     skos:topConceptOf cs: ;
 .
 
-rc:restricted
+:restricted
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Road that may have a physical barrier to entry. Road designed to provide access within a property and may not necessarily be part of the public road network. These generally do not have addresses and include driveways and tracks on private property. Roads that are privately owned but allow general public access should not be included in this category."@en ;
@@ -101,7 +101,7 @@ rc:restricted
     skos:topConceptOf cs: ;
 .
 
-rc:secondary
+:secondary
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "Sub-arterial road"@en ;
@@ -112,7 +112,7 @@ rc:secondary
     skos:topConceptOf cs: ;
 .
 
-rc:track
+:track
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Access tracks and fire trails."@en ;
@@ -122,7 +122,7 @@ rc:track
     skos:topConceptOf cs: ;
 .
 
-rc:unconstructed
+:unconstructed
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "Paper road"@en ;
@@ -133,7 +133,7 @@ rc:unconstructed
     skos:topConceptOf cs: ;
 .
 
-rc:walkway
+:walkway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Designated path primarily for pedestrian use."@en ;
@@ -160,23 +160,23 @@ cs:
     dcterms:identifier "road-classifications"^^xsd:token ;
     dcterms:modified "2023-05-16"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/icsm> ;
-    owl:versionIRI rc:1.0 ;
+    owl:versionIRI :1.0 ;
     owl:versionInfo "1.0" ;
-    skos:definition "This vocabulary describes hierarchy classification types for roads. "@en ;
+    skos:definition "This vocabulary describes hierarchy classification types for roads"@en ;
     skos:hasTopConcept
-        rc:bikeway ,
-        rc:busway ,
-        rc:connector ,
-        rc:ferry ,
-        rc:highway ,
-        rc:local ,
-        rc:mall ,
-        rc:motorway ,
-        rc:restricted ,
-        rc:secondary ,
-        rc:track ,
-        rc:unconstructed ,
-        rc:walkway ;
+        :bikeway ,
+        :busway ,
+        :connector ,
+        :ferry ,
+        :highway ,
+        :local ,
+        :mall ,
+        :motorway ,
+        :restricted ,
+        :secondary ,
+        :track ,
+        :unconstructed ,
+        :walkway ;
     skos:historyNote "This vocabulary contains hierarchy classification types for roads, sourced from Queensland Roads and Tracks data. "@en ;
     skos:prefLabel "Road Classifications"@en ;
     prov:qualifiedAttribution [

@@ -1,3 +1,4 @@
+PREFIX : <https://linked.data.gov.au/def/road-types/>
 PREFIX cs: <https://linked.data.gov.au/def/road-types>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -5,11 +6,10 @@ PREFIX isoroles: <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsibl
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX rt: <https://linked.data.gov.au/def/road-types/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-rt:access
+:access
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "ACCS"@en ;
@@ -20,7 +20,7 @@ rt:access
     skos:topConceptOf cs: ;
 .
 
-rt:access-road
+:access-road
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Access Road"@en ;
@@ -30,7 +30,7 @@ rt:access-road
     skos:topConceptOf cs: ;
 .
 
-rt:alley
+:alley
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -42,7 +42,7 @@ rt:alley
     skos:topConceptOf cs: ;
 .
 
-rt:alleyway
+:alleyway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "ALWY"@en ;
@@ -53,7 +53,7 @@ rt:alleyway
     skos:topConceptOf cs: ;
 .
 
-rt:amble
+:amble
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "AMBL"@en ;
@@ -64,7 +64,7 @@ rt:amble
     skos:topConceptOf cs: ;
 .
 
-rt:anchorage
+:anchorage
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "ANCG"@en ;
@@ -75,7 +75,7 @@ rt:anchorage
     skos:topConceptOf cs: ;
 .
 
-rt:annex
+:annex
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "ANNX"@en ;
@@ -86,7 +86,7 @@ rt:annex
     skos:topConceptOf cs: ;
 .
 
-rt:approach
+:approach
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -98,7 +98,7 @@ rt:approach
     skos:topConceptOf cs: ;
 .
 
-rt:ara
+:ara
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "ARA"@en ;
@@ -109,7 +109,7 @@ rt:ara
     skos:topConceptOf cs: ;
 .
 
-rt:arcade
+:arcade
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -121,7 +121,7 @@ rt:arcade
     skos:topConceptOf cs: ;
 .
 
-rt:arterial
+:arterial
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "ARTL"@en ;
@@ -132,7 +132,7 @@ rt:arterial
     skos:topConceptOf cs: ;
 .
 
-rt:artery
+:artery
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "ARTY"@en ;
@@ -143,7 +143,7 @@ rt:artery
     skos:topConceptOf cs: ;
 .
 
-rt:avenue
+:avenue
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -155,7 +155,7 @@ rt:avenue
     skos:topConceptOf cs: ;
 .
 
-rt:banan
+:banan
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BA"@en ;
@@ -166,7 +166,7 @@ rt:banan
     skos:topConceptOf cs: ;
 .
 
-rt:bank
+:bank
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BANK"@en ;
@@ -177,7 +177,7 @@ rt:bank
     skos:topConceptOf cs: ;
 .
 
-rt:bay
+:bay
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BAY"@en ;
@@ -188,7 +188,7 @@ rt:bay
     skos:topConceptOf cs: ;
 .
 
-rt:beach
+:beach
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BCH"@en ;
@@ -199,7 +199,7 @@ rt:beach
     skos:topConceptOf cs: ;
 .
 
-rt:belt
+:belt
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BELT"@en ;
@@ -210,7 +210,7 @@ rt:belt
     skos:topConceptOf cs: ;
 .
 
-rt:bend
+:bend
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BEND"@en ;
@@ -221,7 +221,7 @@ rt:bend
     skos:topConceptOf cs: ;
 .
 
-rt:boardwalk
+:boardwalk
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -233,7 +233,7 @@ rt:boardwalk
     skos:topConceptOf cs: ;
 .
 
-rt:boulevard
+:boulevard
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -245,7 +245,7 @@ rt:boulevard
     skos:topConceptOf cs: ;
 .
 
-rt:bowl
+:bowl
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BOWL"@en ;
@@ -256,7 +256,7 @@ rt:bowl
     skos:topConceptOf cs: ;
 .
 
-rt:brace
+:brace
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BR"@en ;
@@ -267,7 +267,7 @@ rt:brace
     skos:topConceptOf cs: ;
 .
 
-rt:brae
+:brae
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BRAE"@en ;
@@ -278,7 +278,7 @@ rt:brae
     skos:topConceptOf cs: ;
 .
 
-rt:break
+:break
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -290,7 +290,7 @@ rt:break
     skos:topConceptOf cs: ;
 .
 
-rt:bridge
+:bridge
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BDGE"@en ;
@@ -301,7 +301,7 @@ rt:bridge
     skos:topConceptOf cs: ;
 .
 
-rt:broadwalk
+:broadwalk
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BRDWLK"@en ;
@@ -312,7 +312,7 @@ rt:broadwalk
     skos:topConceptOf cs: ;
 .
 
-rt:broadway
+:broadway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BDWY"@en ;
@@ -323,7 +323,7 @@ rt:broadway
     skos:topConceptOf cs: ;
 .
 
-rt:brow
+:brow
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BROW"@en ;
@@ -334,7 +334,7 @@ rt:brow
     skos:topConceptOf cs: ;
 .
 
-rt:busway
+:busway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BSWY"@en ;
@@ -345,7 +345,7 @@ rt:busway
     skos:topConceptOf cs: ;
 .
 
-rt:bypass
+:bypass
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -357,7 +357,7 @@ rt:bypass
     skos:topConceptOf cs: ;
 .
 
-rt:byway
+:byway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "BYWY"@en ;
@@ -368,7 +368,7 @@ rt:byway
     skos:topConceptOf cs: ;
 .
 
-rt:causeway
+:causeway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CSWY"@en ;
@@ -379,7 +379,7 @@ rt:causeway
     skos:topConceptOf cs: ;
 .
 
-rt:centre
+:centre
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CTR"@en ;
@@ -390,7 +390,7 @@ rt:centre
     skos:topConceptOf cs: ;
 .
 
-rt:centreway
+:centreway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CNWY"@en ;
@@ -401,7 +401,7 @@ rt:centreway
     skos:topConceptOf cs: ;
 .
 
-rt:chase
+:chase
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -413,7 +413,7 @@ rt:chase
     skos:topConceptOf cs: ;
 .
 
-rt:circle
+:circle
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -425,7 +425,7 @@ rt:circle
     skos:topConceptOf cs: ;
 .
 
-rt:circlet
+:circlet
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CLT"@en ;
@@ -436,7 +436,7 @@ rt:circlet
     skos:topConceptOf cs: ;
 .
 
-rt:circuit
+:circuit
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -448,7 +448,7 @@ rt:circuit
     skos:topConceptOf cs: ;
 .
 
-rt:circus
+:circus
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CRCS"@en ;
@@ -459,7 +459,7 @@ rt:circus
     skos:topConceptOf cs: ;
 .
 
-rt:close
+:close
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -471,7 +471,7 @@ rt:close
     skos:topConceptOf cs: ;
 .
 
-rt:cluster
+:cluster
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CLR"@en ;
@@ -482,7 +482,7 @@ rt:cluster
     skos:topConceptOf cs: ;
 .
 
-rt:colonnade
+:colonnade
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CLDE"@en ;
@@ -493,7 +493,7 @@ rt:colonnade
     skos:topConceptOf cs: ;
 .
 
-rt:common
+:common
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CMMN"@en ;
@@ -504,7 +504,7 @@ rt:common
     skos:topConceptOf cs: ;
 .
 
-rt:concord
+:concord
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CNCD"@en ;
@@ -515,7 +515,7 @@ rt:concord
     skos:topConceptOf cs: ;
 .
 
-rt:concourse
+:concourse
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -527,7 +527,7 @@ rt:concourse
     skos:topConceptOf cs: ;
 .
 
-rt:connection
+:connection
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CNTN"@en ;
@@ -538,7 +538,7 @@ rt:connection
     skos:topConceptOf cs: ;
 .
 
-rt:copse
+:copse
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CPS"@en ;
@@ -549,7 +549,7 @@ rt:copse
     skos:topConceptOf cs: ;
 .
 
-rt:corner
+:corner
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CNR"@en ;
@@ -560,7 +560,7 @@ rt:corner
     skos:topConceptOf cs: ;
 .
 
-rt:corso
+:corso
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CSO"@en ;
@@ -571,7 +571,7 @@ rt:corso
     skos:topConceptOf cs: ;
 .
 
-rt:course
+:course
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CRSE"@en ;
@@ -582,7 +582,7 @@ rt:course
     skos:topConceptOf cs: ;
 .
 
-rt:court
+:court
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -594,7 +594,7 @@ rt:court
     skos:topConceptOf cs: ;
 .
 
-rt:courts
+:courts
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CTS"@en ;
@@ -605,7 +605,7 @@ rt:courts
     skos:topConceptOf cs: ;
 .
 
-rt:courtyard
+:courtyard
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CTYD"@en ;
@@ -616,7 +616,7 @@ rt:courtyard
     skos:topConceptOf cs: ;
 .
 
-rt:cove
+:cove
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "COVE"@en ;
@@ -627,7 +627,7 @@ rt:cove
     skos:topConceptOf cs: ;
 .
 
-rt:crescent
+:crescent
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -639,7 +639,7 @@ rt:crescent
     skos:topConceptOf cs: ;
 .
 
-rt:crest
+:crest
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -651,7 +651,7 @@ rt:crest
     skos:topConceptOf cs: ;
 .
 
-rt:crief
+:crief
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CRF"@en ;
@@ -662,7 +662,7 @@ rt:crief
     skos:topConceptOf cs: ;
 .
 
-rt:crook
+:crook
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CRK"@en ;
@@ -673,7 +673,7 @@ rt:crook
     skos:topConceptOf cs: ;
 .
 
-rt:cross
+:cross
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CRSS"@en ;
@@ -684,7 +684,7 @@ rt:cross
     skos:topConceptOf cs: ;
 .
 
-rt:crossing
+:crossing
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CRSG"@en ;
@@ -695,7 +695,7 @@ rt:crossing
     skos:topConceptOf cs: ;
 .
 
-rt:cruiseway
+:cruiseway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CUWY"@en ;
@@ -706,7 +706,7 @@ rt:cruiseway
     skos:topConceptOf cs: ;
 .
 
-rt:cul-de-sac
+:cul-de-sac
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CSAC"@en ;
@@ -717,7 +717,7 @@ rt:cul-de-sac
     skos:topConceptOf cs: ;
 .
 
-rt:cutting
+:cutting
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "CUTT"@en ;
@@ -728,7 +728,7 @@ rt:cutting
     skos:topConceptOf cs: ;
 .
 
-rt:dale
+:dale
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DALE"@en ;
@@ -739,7 +739,7 @@ rt:dale
     skos:topConceptOf cs: ;
 .
 
-rt:dash
+:dash
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DASH"@en ;
@@ -750,7 +750,7 @@ rt:dash
     skos:topConceptOf cs: ;
 .
 
-rt:dell
+:dell
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DELL"@en ;
@@ -761,7 +761,7 @@ rt:dell
     skos:topConceptOf cs: ;
 .
 
-rt:dene
+:dene
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DENE"@en ;
@@ -772,7 +772,7 @@ rt:dene
     skos:topConceptOf cs: ;
 .
 
-rt:deviation
+:deviation
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DE"@en ;
@@ -783,7 +783,7 @@ rt:deviation
     skos:topConceptOf cs: ;
 .
 
-rt:dip
+:dip
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DIP"@en ;
@@ -794,7 +794,7 @@ rt:dip
     skos:topConceptOf cs: ;
 .
 
-rt:distributor
+:distributor
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DSTR"@en ;
@@ -805,7 +805,7 @@ rt:distributor
     skos:topConceptOf cs: ;
 .
 
-rt:divide
+:divide
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DIV"@en ;
@@ -816,7 +816,7 @@ rt:divide
     skos:topConceptOf cs: ;
 .
 
-rt:dock
+:dock
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DOCK"@en ;
@@ -827,7 +827,7 @@ rt:dock
     skos:topConceptOf cs: ;
 .
 
-rt:domain
+:domain
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DOM"@en ;
@@ -838,7 +838,7 @@ rt:domain
     skos:topConceptOf cs: ;
 .
 
-rt:down
+:down
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DWN"@en ;
@@ -849,7 +849,7 @@ rt:down
     skos:topConceptOf cs: ;
 .
 
-rt:downs
+:downs
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DWNS"@en ;
@@ -860,7 +860,7 @@ rt:downs
     skos:topConceptOf cs: ;
 .
 
-rt:drive
+:drive
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -872,7 +872,7 @@ rt:drive
     skos:topConceptOf cs: ;
 .
 
-rt:driveway
+:driveway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "DVWY"@en ;
@@ -883,7 +883,7 @@ rt:driveway
     skos:topConceptOf cs: ;
 .
 
-rt:easement
+:easement
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "EASE"@en ;
@@ -894,7 +894,7 @@ rt:easement
     skos:topConceptOf cs: ;
 .
 
-rt:edge
+:edge
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "EDGE"@en ;
@@ -905,7 +905,7 @@ rt:edge
     skos:topConceptOf cs: ;
 .
 
-rt:elbow
+:elbow
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "ELB"@en ;
@@ -916,7 +916,7 @@ rt:elbow
     skos:topConceptOf cs: ;
 .
 
-rt:end
+:end
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "END"@en ;
@@ -927,7 +927,7 @@ rt:end
     skos:topConceptOf cs: ;
 .
 
-rt:entrance
+:entrance
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -939,7 +939,7 @@ rt:entrance
     skos:topConceptOf cs: ;
 .
 
-rt:esplanade
+:esplanade
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -951,7 +951,7 @@ rt:esplanade
     skos:topConceptOf cs: ;
 .
 
-rt:estate
+:estate
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "EST"@en ;
@@ -962,7 +962,7 @@ rt:estate
     skos:topConceptOf cs: ;
 .
 
-rt:expressway
+:expressway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel
@@ -975,7 +975,7 @@ rt:expressway
     skos:topConceptOf cs: ;
 .
 
-rt:fairway
+:fairway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel
@@ -988,7 +988,7 @@ rt:fairway
     skos:topConceptOf cs: ;
 .
 
-rt:firebreak
+:firebreak
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FBRK"@en ;
@@ -999,7 +999,7 @@ rt:firebreak
     skos:topConceptOf cs: ;
 .
 
-rt:fireline
+:fireline
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FLNE"@en ;
@@ -1010,7 +1010,7 @@ rt:fireline
     skos:topConceptOf cs: ;
 .
 
-rt:firetrack
+:firetrack
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FTRK"@en ;
@@ -1021,7 +1021,7 @@ rt:firetrack
     skos:topConceptOf cs: ;
 .
 
-rt:firetrail
+:firetrail
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1033,7 +1033,7 @@ rt:firetrail
     skos:topConceptOf cs: ;
 .
 
-rt:flat
+:flat
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FLAT"@en ;
@@ -1044,7 +1044,7 @@ rt:flat
     skos:topConceptOf cs: ;
 .
 
-rt:flats
+:flats
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FLTS"@en ;
@@ -1055,7 +1055,7 @@ rt:flats
     skos:topConceptOf cs: ;
 .
 
-rt:follow
+:follow
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FOLW"@en ;
@@ -1066,7 +1066,7 @@ rt:follow
     skos:topConceptOf cs: ;
 .
 
-rt:footway
+:footway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FTWY"@en ;
@@ -1077,7 +1077,7 @@ rt:footway
     skos:topConceptOf cs: ;
 .
 
-rt:ford
+:ford
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FORD"@en ;
@@ -1088,7 +1088,7 @@ rt:ford
     skos:topConceptOf cs: ;
 .
 
-rt:foreshore
+:foreshore
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FSHR"@en ;
@@ -1099,7 +1099,7 @@ rt:foreshore
     skos:topConceptOf cs: ;
 .
 
-rt:fork
+:fork
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FORK"@en ;
@@ -1110,7 +1110,7 @@ rt:fork
     skos:topConceptOf cs: ;
 .
 
-rt:formation
+:formation
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FORM"@en ;
@@ -1121,7 +1121,7 @@ rt:formation
     skos:topConceptOf cs: ;
 .
 
-rt:freeway
+:freeway
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1133,7 +1133,7 @@ rt:freeway
     skos:topConceptOf cs: ;
 .
 
-rt:front
+:front
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FRNT"@en ;
@@ -1144,7 +1144,7 @@ rt:front
     skos:topConceptOf cs: ;
 .
 
-rt:frontage
+:frontage
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "FRTG"@en ;
@@ -1155,7 +1155,7 @@ rt:frontage
     skos:topConceptOf cs: ;
 .
 
-rt:gap
+:gap
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "GAP"@en ;
@@ -1166,7 +1166,7 @@ rt:gap
     skos:topConceptOf cs: ;
 .
 
-rt:garden
+:garden
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "GDN"@en ;
@@ -1177,7 +1177,7 @@ rt:garden
     skos:topConceptOf cs: ;
 .
 
-rt:gardens
+:gardens
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "GDNS"@en ;
@@ -1188,7 +1188,7 @@ rt:gardens
     skos:topConceptOf cs: ;
 .
 
-rt:gate
+:gate
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "GTE"@en ;
@@ -1199,7 +1199,7 @@ rt:gate
     skos:topConceptOf cs: ;
 .
 
-rt:gateway
+:gateway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "GTWY"@en ;
@@ -1210,7 +1210,7 @@ rt:gateway
     skos:topConceptOf cs: ;
 .
 
-rt:glade
+:glade
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1222,7 +1222,7 @@ rt:glade
     skos:topConceptOf cs: ;
 .
 
-rt:glen
+:glen
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel
@@ -1235,7 +1235,7 @@ rt:glen
     skos:topConceptOf cs: ;
 .
 
-rt:grange
+:grange
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1247,7 +1247,7 @@ rt:grange
     skos:topConceptOf cs: ;
 .
 
-rt:green
+:green
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1259,7 +1259,7 @@ rt:green
     skos:topConceptOf cs: ;
 .
 
-rt:greens
+:greens
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Greens"@en ;
@@ -1269,7 +1269,7 @@ rt:greens
     skos:topConceptOf cs: ;
 .
 
-rt:grove
+:grove
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1281,7 +1281,7 @@ rt:grove
     skos:topConceptOf cs: ;
 .
 
-rt:gully
+:gully
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "GLY"@en ;
@@ -1292,7 +1292,7 @@ rt:gully
     skos:topConceptOf cs: ;
 .
 
-rt:harbour
+:harbour
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "HRBR"@en ;
@@ -1303,7 +1303,7 @@ rt:harbour
     skos:topConceptOf cs: ;
 .
 
-rt:haven
+:haven
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "HVN"@en ;
@@ -1314,7 +1314,7 @@ rt:haven
     skos:topConceptOf cs: ;
 .
 
-rt:heath
+:heath
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "HTH"@en ;
@@ -1325,7 +1325,7 @@ rt:heath
     skos:topConceptOf cs: ;
 .
 
-rt:heights
+:heights
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "HTS"@en ;
@@ -1336,7 +1336,7 @@ rt:heights
     skos:topConceptOf cs: ;
 .
 
-rt:highroad
+:highroad
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "HIRD"@en ;
@@ -1347,7 +1347,7 @@ rt:highroad
     skos:topConceptOf cs: ;
 .
 
-rt:highway
+:highway
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1359,7 +1359,7 @@ rt:highway
     skos:topConceptOf cs: ;
 .
 
-rt:hill
+:hill
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "HILL"@en ;
@@ -1370,7 +1370,7 @@ rt:hill
     skos:topConceptOf cs: ;
 .
 
-rt:hollow
+:hollow
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "HLLW"@en ;
@@ -1381,7 +1381,7 @@ rt:hollow
     skos:topConceptOf cs: ;
 .
 
-rt:hub
+:hub
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "HUB"@en ;
@@ -1392,7 +1392,7 @@ rt:hub
     skos:topConceptOf cs: ;
 .
 
-rt:interchange
+:interchange
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "INTG"@en ;
@@ -1403,7 +1403,7 @@ rt:interchange
     skos:topConceptOf cs: ;
 .
 
-rt:junction
+:junction
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "JNC"@en ;
@@ -1414,7 +1414,7 @@ rt:junction
     skos:topConceptOf cs: ;
 .
 
-rt:key
+:key
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "KEY"@en ;
@@ -1425,7 +1425,7 @@ rt:key
     skos:topConceptOf cs: ;
 .
 
-rt:keys
+:keys
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "KEYS"@en ;
@@ -1436,7 +1436,7 @@ rt:keys
     skos:topConceptOf cs: ;
 .
 
-rt:knoll
+:knoll
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "KNOL"@en ;
@@ -1447,7 +1447,7 @@ rt:knoll
     skos:topConceptOf cs: ;
 .
 
-rt:ladder
+:ladder
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "LADR"@en ;
@@ -1458,7 +1458,7 @@ rt:ladder
     skos:topConceptOf cs: ;
 .
 
-rt:landing
+:landing
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "LDG"@en ;
@@ -1469,7 +1469,7 @@ rt:landing
     skos:topConceptOf cs: ;
 .
 
-rt:lane
+:lane
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1481,7 +1481,7 @@ rt:lane
     skos:topConceptOf cs: ;
 .
 
-rt:laneway
+:laneway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "LNWY"@en ;
@@ -1492,7 +1492,7 @@ rt:laneway
     skos:topConceptOf cs: ;
 .
 
-rt:leader
+:leader
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "LEDR"@en ;
@@ -1503,7 +1503,7 @@ rt:leader
     skos:topConceptOf cs: ;
 .
 
-rt:line
+:line
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "LINE"@en ;
@@ -1514,7 +1514,7 @@ rt:line
     skos:topConceptOf cs: ;
 .
 
-rt:link
+:link
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "LINK"@en ;
@@ -1525,7 +1525,7 @@ rt:link
     skos:topConceptOf cs: ;
 .
 
-rt:lookout
+:lookout
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "LKT"@en ;
@@ -1536,7 +1536,7 @@ rt:lookout
     skos:topConceptOf cs: ;
 .
 
-rt:loop
+:loop
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1550,7 +1550,7 @@ rt:loop
     skos:topConceptOf cs: ;
 .
 
-rt:loop-road
+:loop-road
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Loop Road"@en ;
@@ -1560,7 +1560,7 @@ rt:loop-road
     skos:topConceptOf cs: ;
 .
 
-rt:lynne
+:lynne
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "LYNN"@en ;
@@ -1571,7 +1571,7 @@ rt:lynne
     skos:topConceptOf cs: ;
 .
 
-rt:mall
+:mall
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1583,7 +1583,7 @@ rt:mall
     skos:topConceptOf cs: ;
 .
 
-rt:manor
+:manor
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "MAN"@en ;
@@ -1594,7 +1594,7 @@ rt:manor
     skos:topConceptOf cs: ;
 .
 
-rt:mead
+:mead
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "MEAD"@en ;
@@ -1605,7 +1605,7 @@ rt:mead
     skos:topConceptOf cs: ;
 .
 
-rt:meander
+:meander
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "MNDR"@en ;
@@ -1616,7 +1616,7 @@ rt:meander
     skos:topConceptOf cs: ;
 .
 
-rt:mew
+:mew
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "MEW"@en ;
@@ -1627,7 +1627,7 @@ rt:mew
     skos:topConceptOf cs: ;
 .
 
-rt:mews
+:mews
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1639,7 +1639,7 @@ rt:mews
     skos:topConceptOf cs: ;
 .
 
-rt:mile
+:mile
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "MILE"@en ;
@@ -1650,7 +1650,7 @@ rt:mile
     skos:topConceptOf cs: ;
 .
 
-rt:motorway
+:motorway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "MWY"@en ;
@@ -1661,7 +1661,7 @@ rt:motorway
     skos:topConceptOf cs: ;
 .
 
-rt:nook
+:nook
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "NOOK"@en ;
@@ -1672,7 +1672,7 @@ rt:nook
     skos:topConceptOf cs: ;
 .
 
-rt:oaks
+:oaks
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "OAKS"@en ;
@@ -1683,7 +1683,7 @@ rt:oaks
     skos:topConceptOf cs: ;
 .
 
-rt:outlet
+:outlet
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "OTLT"@en ;
@@ -1694,7 +1694,7 @@ rt:outlet
     skos:topConceptOf cs: ;
 .
 
-rt:outlook
+:outlook
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "OTLK"@en ;
@@ -1705,7 +1705,7 @@ rt:outlook
     skos:topConceptOf cs: ;
 .
 
-rt:paddock
+:paddock
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "PADK"@en ;
@@ -1716,7 +1716,7 @@ rt:paddock
     skos:topConceptOf cs: ;
 .
 
-rt:parade
+:parade
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1728,7 +1728,7 @@ rt:parade
     skos:topConceptOf cs: ;
 .
 
-rt:park
+:park
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "PARK"@en ;
@@ -1739,7 +1739,7 @@ rt:park
     skos:topConceptOf cs: ;
 .
 
-rt:parkway
+:parkway
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1751,7 +1751,7 @@ rt:parkway
     skos:topConceptOf cs: ;
 .
 
-rt:part
+:part
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "PART"@en ;
@@ -1762,7 +1762,7 @@ rt:part
     skos:topConceptOf cs: ;
 .
 
-rt:pass
+:pass
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "PASS"@en ;
@@ -1773,7 +1773,7 @@ rt:pass
     skos:topConceptOf cs: ;
 .
 
-rt:passage
+:passage
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1785,7 +1785,7 @@ rt:passage
     skos:topConceptOf cs: ;
 .
 
-rt:path
+:path
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1797,7 +1797,7 @@ rt:path
     skos:topConceptOf cs: ;
 .
 
-rt:pathway
+:pathway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel
@@ -1810,7 +1810,7 @@ rt:pathway
     skos:topConceptOf cs: ;
 .
 
-rt:piazza
+:piazza
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "PIAZ"@en ;
@@ -1821,7 +1821,7 @@ rt:piazza
     skos:topConceptOf cs: ;
 .
 
-rt:place
+:place
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1833,7 +1833,7 @@ rt:place
     skos:topConceptOf cs: ;
 .
 
-rt:plaza
+:plaza
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1845,7 +1845,7 @@ rt:plaza
     skos:topConceptOf cs: ;
 .
 
-rt:pocket
+:pocket
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel
@@ -1858,7 +1858,7 @@ rt:pocket
     skos:topConceptOf cs: ;
 .
 
-rt:point
+:point
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "PNT"@en ;
@@ -1869,7 +1869,7 @@ rt:point
     skos:topConceptOf cs: ;
 .
 
-rt:port
+:port
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "PORT"@en ;
@@ -1880,7 +1880,7 @@ rt:port
     skos:topConceptOf cs: ;
 .
 
-rt:precinct
+:precinct
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "PREC"@en ;
@@ -1891,7 +1891,7 @@ rt:precinct
     skos:topConceptOf cs: ;
 .
 
-rt:promenade
+:promenade
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1903,7 +1903,7 @@ rt:promenade
     skos:topConceptOf cs: ;
 .
 
-rt:pursuit
+:pursuit
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "PRST"@en ;
@@ -1914,7 +1914,7 @@ rt:pursuit
     skos:topConceptOf cs: ;
 .
 
-rt:quad
+:quad
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "QUAD"@en ;
@@ -1925,7 +1925,7 @@ rt:quad
     skos:topConceptOf cs: ;
 .
 
-rt:quadrant
+:quadrant
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "QDRT"@en ;
@@ -1936,7 +1936,7 @@ rt:quadrant
     skos:topConceptOf cs: ;
 .
 
-rt:quay
+:quay
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1948,7 +1948,7 @@ rt:quay
     skos:topConceptOf cs: ;
 .
 
-rt:quays
+:quays
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1960,7 +1960,7 @@ rt:quays
     skos:topConceptOf cs: ;
 .
 
-rt:ramble
+:ramble
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RMBL"@en ;
@@ -1971,7 +1971,7 @@ rt:ramble
     skos:topConceptOf cs: ;
 .
 
-rt:ramp
+:ramp
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -1983,7 +1983,7 @@ rt:ramp
     skos:topConceptOf cs: ;
 .
 
-rt:range
+:range
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RNGE"@en ;
@@ -1994,7 +1994,7 @@ rt:range
     skos:topConceptOf cs: ;
 .
 
-rt:reach
+:reach
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RCH"@en ;
@@ -2005,7 +2005,7 @@ rt:reach
     skos:topConceptOf cs: ;
 .
 
-rt:reef
+:reef
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "REEF"@en ;
@@ -2016,7 +2016,7 @@ rt:reef
     skos:topConceptOf cs: ;
 .
 
-rt:reserve
+:reserve
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RES"@en ;
@@ -2027,7 +2027,7 @@ rt:reserve
     skos:topConceptOf cs: ;
 .
 
-rt:rest
+:rest
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "REST"@en ;
@@ -2038,7 +2038,7 @@ rt:rest
     skos:topConceptOf cs: ;
 .
 
-rt:retreat
+:retreat
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2050,7 +2050,7 @@ rt:retreat
     skos:topConceptOf cs: ;
 .
 
-rt:return
+:return
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RTN"@en ;
@@ -2061,7 +2061,7 @@ rt:return
     skos:topConceptOf cs: ;
 .
 
-rt:ride
+:ride
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RIDE"@en ;
@@ -2072,7 +2072,7 @@ rt:ride
     skos:topConceptOf cs: ;
 .
 
-rt:ridge
+:ridge
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2084,7 +2084,7 @@ rt:ridge
     skos:topConceptOf cs: ;
 .
 
-rt:ring
+:ring
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RING"@en ;
@@ -2095,7 +2095,7 @@ rt:ring
     skos:topConceptOf cs: ;
 .
 
-rt:rise
+:rise
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2107,7 +2107,7 @@ rt:rise
     skos:topConceptOf cs: ;
 .
 
-rt:rising
+:rising
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RSNG"@en ;
@@ -2118,7 +2118,7 @@ rt:rising
     skos:topConceptOf cs: ;
 .
 
-rt:road
+:road
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2130,7 +2130,7 @@ rt:road
     skos:topConceptOf cs: ;
 .
 
-rt:roads
+:roads
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RDS"@en ;
@@ -2141,7 +2141,7 @@ rt:roads
     skos:topConceptOf cs: ;
 .
 
-rt:roadway
+:roadway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RDWY"@en ;
@@ -2152,7 +2152,7 @@ rt:roadway
     skos:topConceptOf cs: ;
 .
 
-rt:rotary
+:rotary
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RTY"@en ;
@@ -2163,7 +2163,7 @@ rt:rotary
     skos:topConceptOf cs: ;
 .
 
-rt:round
+:round
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RND"@en ;
@@ -2174,7 +2174,7 @@ rt:round
     skos:topConceptOf cs: ;
 .
 
-rt:route
+:route
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RTE"@en ;
@@ -2185,7 +2185,7 @@ rt:route
     skos:topConceptOf cs: ;
 .
 
-rt:row
+:row
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "ROW"@en ;
@@ -2196,7 +2196,7 @@ rt:row
     skos:topConceptOf cs: ;
 .
 
-rt:rue
+:rue
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RUE"@en ;
@@ -2207,7 +2207,7 @@ rt:rue
     skos:topConceptOf cs: ;
 .
 
-rt:run
+:run
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "RUN"@en ;
@@ -2218,7 +2218,7 @@ rt:run
     skos:topConceptOf cs: ;
 .
 
-rt:serviceway
+:serviceway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "SVWY"@en ;
@@ -2229,7 +2229,7 @@ rt:serviceway
     skos:topConceptOf cs: ;
 .
 
-rt:shunt
+:shunt
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "SHUN"@en ;
@@ -2240,7 +2240,7 @@ rt:shunt
     skos:topConceptOf cs: ;
 .
 
-rt:side-road
+:side-road
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Side Road"@en ;
@@ -2250,7 +2250,7 @@ rt:side-road
     skos:topConceptOf cs: ;
 .
 
-rt:siding
+:siding
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "SDNG"@en ;
@@ -2261,7 +2261,7 @@ rt:siding
     skos:topConceptOf cs: ;
 .
 
-rt:skyline
+:skyline
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "SKLN"@en ;
@@ -2272,7 +2272,7 @@ rt:skyline
     skos:topConceptOf cs: ;
 .
 
-rt:slope
+:slope
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "SLPE"@en ;
@@ -2283,7 +2283,7 @@ rt:slope
     skos:topConceptOf cs: ;
 .
 
-rt:spur
+:spur
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "SPUR"@en ;
@@ -2294,7 +2294,7 @@ rt:spur
     skos:topConceptOf cs: ;
 .
 
-rt:square
+:square
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2306,7 +2306,7 @@ rt:square
     skos:topConceptOf cs: ;
 .
 
-rt:steps
+:steps
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2318,7 +2318,7 @@ rt:steps
     skos:topConceptOf cs: ;
 .
 
-rt:straight
+:straight
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "STRT"@en ;
@@ -2329,7 +2329,7 @@ rt:straight
     skos:topConceptOf cs: ;
 .
 
-rt:strait
+:strait
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "STRI"@en ;
@@ -2340,7 +2340,7 @@ rt:strait
     skos:topConceptOf cs: ;
 .
 
-rt:strand
+:strand
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "STRA"@en ;
@@ -2351,7 +2351,7 @@ rt:strand
     skos:topConceptOf cs: ;
 .
 
-rt:street
+:street
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2363,7 +2363,7 @@ rt:street
     skos:topConceptOf cs: ;
 .
 
-rt:strip
+:strip
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "STRP"@en ;
@@ -2374,7 +2374,7 @@ rt:strip
     skos:topConceptOf cs: ;
 .
 
-rt:subway
+:subway
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2386,7 +2386,7 @@ rt:subway
     skos:topConceptOf cs: ;
 .
 
-rt:tarn
+:tarn
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "TARN"@en ;
@@ -2397,7 +2397,7 @@ rt:tarn
     skos:topConceptOf cs: ;
 .
 
-rt:te-ara
+:te-ara
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "TE ARA"@en ;
@@ -2408,7 +2408,7 @@ rt:te-ara
     skos:topConceptOf cs: ;
 .
 
-rt:terrace
+:terrace
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2420,7 +2420,7 @@ rt:terrace
     skos:topConceptOf cs: ;
 .
 
-rt:tollway
+:tollway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "TLWY"@en ;
@@ -2431,7 +2431,7 @@ rt:tollway
     skos:topConceptOf cs: ;
 .
 
-rt:top
+:top
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "TOP"@en ;
@@ -2442,7 +2442,7 @@ rt:top
     skos:topConceptOf cs: ;
 .
 
-rt:tor
+:tor
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "TOR"@en ;
@@ -2453,7 +2453,7 @@ rt:tor
     skos:topConceptOf cs: ;
 .
 
-rt:track
+:track
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2465,7 +2465,7 @@ rt:track
     skos:topConceptOf cs: ;
 .
 
-rt:trail
+:trail
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2477,7 +2477,7 @@ rt:trail
     skos:topConceptOf cs: ;
 .
 
-rt:traverse
+:traverse
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "TVRS"@en ;
@@ -2488,7 +2488,7 @@ rt:traverse
     skos:topConceptOf cs: ;
 .
 
-rt:triangle
+:triangle
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "TRI"@en ;
@@ -2499,7 +2499,7 @@ rt:triangle
     skos:topConceptOf cs: ;
 .
 
-rt:trunkway
+:trunkway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "TKWY"@en ;
@@ -2510,7 +2510,7 @@ rt:trunkway
     skos:topConceptOf cs: ;
 .
 
-rt:tunnel
+:tunnel
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "TUNL"@en ;
@@ -2521,7 +2521,7 @@ rt:tunnel
     skos:topConceptOf cs: ;
 .
 
-rt:turn
+:turn
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "TURN"@en ;
@@ -2532,7 +2532,7 @@ rt:turn
     skos:topConceptOf cs: ;
 .
 
-rt:twist
+:twist
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "TWST"@en ;
@@ -2543,7 +2543,7 @@ rt:twist
     skos:topConceptOf cs: ;
 .
 
-rt:underpass
+:underpass
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "UPAS"@en ;
@@ -2554,7 +2554,7 @@ rt:underpass
     skos:topConceptOf cs: ;
 .
 
-rt:vale
+:vale
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "VALE"@en ;
@@ -2565,7 +2565,7 @@ rt:vale
     skos:topConceptOf cs: ;
 .
 
-rt:valley
+:valley
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "VLLY"@en ;
@@ -2576,7 +2576,7 @@ rt:valley
     skos:topConceptOf cs: ;
 .
 
-rt:viaduct
+:viaduct
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "VIAD"@en ;
@@ -2587,7 +2587,7 @@ rt:viaduct
     skos:topConceptOf cs: ;
 .
 
-rt:view
+:view
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2599,7 +2599,7 @@ rt:view
     skos:topConceptOf cs: ;
 .
 
-rt:views
+:views
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "VEWS"@en ;
@@ -2610,7 +2610,7 @@ rt:views
     skos:topConceptOf cs: ;
 .
 
-rt:vista
+:vista
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2622,7 +2622,7 @@ rt:vista
     skos:topConceptOf cs: ;
 .
 
-rt:vue
+:vue
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "VUE"@en ;
@@ -2633,7 +2633,7 @@ rt:vue
     skos:topConceptOf cs: ;
 .
 
-rt:wade
+:wade
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "WADE"@en ;
@@ -2644,7 +2644,7 @@ rt:wade
     skos:topConceptOf cs: ;
 .
 
-rt:walk
+:walk
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2656,7 +2656,7 @@ rt:walk
     skos:topConceptOf cs: ;
 .
 
-rt:walkway
+:walkway
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "WKWY"@en ;
@@ -2667,7 +2667,7 @@ rt:walkway
     skos:topConceptOf cs: ;
 .
 
-rt:waters
+:waters
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "WAT"@en ;
@@ -2678,7 +2678,7 @@ rt:waters
     skos:topConceptOf cs: ;
 .
 
-rt:way
+:way
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2690,7 +2690,7 @@ rt:way
     skos:topConceptOf cs: ;
 .
 
-rt:wharf
+:wharf
     a skos:Concept ;
     dcterms:source "AS/NZS 4819:2011 - Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -2702,7 +2702,7 @@ rt:wharf
     skos:topConceptOf cs: ;
 .
 
-rt:wood
+:wood
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "WD"@en ;
@@ -2713,7 +2713,7 @@ rt:wood
     skos:topConceptOf cs: ;
 .
 
-rt:woods
+:woods
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "WDS"@en ;
@@ -2724,7 +2724,7 @@ rt:woods
     skos:topConceptOf cs: ;
 .
 
-rt:wynd
+:wynd
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "WYND"@en ;
@@ -2735,7 +2735,7 @@ rt:wynd
     skos:topConceptOf cs: ;
 .
 
-rt:yard
+:yard
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "YARD"@en ;
@@ -2763,253 +2763,253 @@ cs:
     dcterms:identifier "road-types"^^xsd:token ;
     dcterms:modified "2023-05-11"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/icsm> ;
-    owl:versionIRI rt:1.0 ;
+    owl:versionIRI :1.0 ;
     owl:versionInfo "1.0" ;
-    skos:definition "This vocabulary describes road types. A road type is used as part of a road name and distinguishes the type of road. The road types that do not meet AS/NZS 4819:2011 exist to enable inclusion of roads named prior to the creation of AS/NZS 4819:2011. These types should not be used for any new road designations. "@en ;
+    skos:definition "This vocabulary describes road types. A road type is used as part of a road name and distinguishes the type of road. The road types that do not meet AS/NZS 4819:2011 exist to enable inclusion of roads named prior to the creation of AS/NZS 4819:2011. These types should not be used for any new road designations"@en ;
     skos:hasTopConcept
-        rt:access ,
-        rt:access-road ,
-        rt:alley ,
-        rt:alleyway ,
-        rt:amble ,
-        rt:anchorage ,
-        rt:annex ,
-        rt:approach ,
-        rt:ara ,
-        rt:arcade ,
-        rt:arterial ,
-        rt:artery ,
-        rt:avenue ,
-        rt:banan ,
-        rt:bank ,
-        rt:bay ,
-        rt:beach ,
-        rt:belt ,
-        rt:bend ,
-        rt:boardwalk ,
-        rt:boulevard ,
-        rt:bowl ,
-        rt:brace ,
-        rt:brae ,
-        rt:break ,
-        rt:bridge ,
-        rt:broadwalk ,
-        rt:broadway ,
-        rt:brow ,
-        rt:busway ,
-        rt:bypass ,
-        rt:byway ,
-        rt:causeway ,
-        rt:centre ,
-        rt:centreway ,
-        rt:chase ,
-        rt:circle ,
-        rt:circlet ,
-        rt:circuit ,
-        rt:circus ,
-        rt:close ,
-        rt:cluster ,
-        rt:colonnade ,
-        rt:common ,
-        rt:concord ,
-        rt:concourse ,
-        rt:connection ,
-        rt:copse ,
-        rt:corner ,
-        rt:corso ,
-        rt:course ,
-        rt:court ,
-        rt:courts ,
-        rt:courtyard ,
-        rt:cove ,
-        rt:crescent ,
-        rt:crest ,
-        rt:crief ,
-        rt:crook ,
-        rt:cross ,
-        rt:crossing ,
-        rt:cruiseway ,
-        rt:cul-de-sac ,
-        rt:cutting ,
-        rt:dale ,
-        rt:dash ,
-        rt:dell ,
-        rt:dene ,
-        rt:deviation ,
-        rt:dip ,
-        rt:distributor ,
-        rt:divide ,
-        rt:dock ,
-        rt:domain ,
-        rt:down ,
-        rt:downs ,
-        rt:drive ,
-        rt:driveway ,
-        rt:easement ,
-        rt:edge ,
-        rt:elbow ,
-        rt:end ,
-        rt:entrance ,
-        rt:esplanade ,
-        rt:estate ,
-        rt:expressway ,
-        rt:fairway ,
-        rt:firebreak ,
-        rt:fireline ,
-        rt:firetrack ,
-        rt:firetrail ,
-        rt:flat ,
-        rt:flats ,
-        rt:follow ,
-        rt:footway ,
-        rt:ford ,
-        rt:foreshore ,
-        rt:fork ,
-        rt:formation ,
-        rt:freeway ,
-        rt:front ,
-        rt:frontage ,
-        rt:gap ,
-        rt:garden ,
-        rt:gardens ,
-        rt:gate ,
-        rt:gateway ,
-        rt:glade ,
-        rt:glen ,
-        rt:grange ,
-        rt:green ,
-        rt:greens ,
-        rt:grove ,
-        rt:gully ,
-        rt:harbour ,
-        rt:haven ,
-        rt:heath ,
-        rt:heights ,
-        rt:highroad ,
-        rt:highway ,
-        rt:hill ,
-        rt:hollow ,
-        rt:hub ,
-        rt:interchange ,
-        rt:junction ,
-        rt:key ,
-        rt:keys ,
-        rt:knoll ,
-        rt:ladder ,
-        rt:landing ,
-        rt:lane ,
-        rt:laneway ,
-        rt:leader ,
-        rt:line ,
-        rt:link ,
-        rt:lookout ,
-        rt:loop ,
-        rt:loop-road ,
-        rt:lynne ,
-        rt:mall ,
-        rt:manor ,
-        rt:mead ,
-        rt:meander ,
-        rt:mew ,
-        rt:mews ,
-        rt:mile ,
-        rt:motorway ,
-        rt:nook ,
-        rt:oaks ,
-        rt:outlet ,
-        rt:outlook ,
-        rt:paddock ,
-        rt:parade ,
-        rt:park ,
-        rt:parkway ,
-        rt:part ,
-        rt:pass ,
-        rt:passage ,
-        rt:path ,
-        rt:pathway ,
-        rt:piazza ,
-        rt:place ,
-        rt:plaza ,
-        rt:pocket ,
-        rt:point ,
-        rt:port ,
-        rt:precinct ,
-        rt:promenade ,
-        rt:pursuit ,
-        rt:quad ,
-        rt:quadrant ,
-        rt:quay ,
-        rt:quays ,
-        rt:ramble ,
-        rt:ramp ,
-        rt:range ,
-        rt:reach ,
-        rt:reef ,
-        rt:reserve ,
-        rt:rest ,
-        rt:retreat ,
-        rt:return ,
-        rt:ride ,
-        rt:ridge ,
-        rt:ring ,
-        rt:rise ,
-        rt:rising ,
-        rt:road ,
-        rt:roads ,
-        rt:roadway ,
-        rt:rotary ,
-        rt:round ,
-        rt:route ,
-        rt:row ,
-        rt:rue ,
-        rt:run ,
-        rt:serviceway ,
-        rt:shunt ,
-        rt:side-road ,
-        rt:siding ,
-        rt:skyline ,
-        rt:slope ,
-        rt:spur ,
-        rt:square ,
-        rt:steps ,
-        rt:straight ,
-        rt:strait ,
-        rt:strand ,
-        rt:street ,
-        rt:strip ,
-        rt:subway ,
-        rt:tarn ,
-        rt:te-ara ,
-        rt:terrace ,
-        rt:tollway ,
-        rt:top ,
-        rt:tor ,
-        rt:track ,
-        rt:trail ,
-        rt:traverse ,
-        rt:triangle ,
-        rt:trunkway ,
-        rt:tunnel ,
-        rt:turn ,
-        rt:twist ,
-        rt:underpass ,
-        rt:vale ,
-        rt:valley ,
-        rt:viaduct ,
-        rt:view ,
-        rt:views ,
-        rt:vista ,
-        rt:vue ,
-        rt:wade ,
-        rt:walk ,
-        rt:walkway ,
-        rt:waters ,
-        rt:way ,
-        rt:wharf ,
-        rt:wood ,
-        rt:woods ,
-        rt:wynd ,
-        rt:yard ;
+        :access ,
+        :access-road ,
+        :alley ,
+        :alleyway ,
+        :amble ,
+        :anchorage ,
+        :annex ,
+        :approach ,
+        :ara ,
+        :arcade ,
+        :arterial ,
+        :artery ,
+        :avenue ,
+        :banan ,
+        :bank ,
+        :bay ,
+        :beach ,
+        :belt ,
+        :bend ,
+        :boardwalk ,
+        :boulevard ,
+        :bowl ,
+        :brace ,
+        :brae ,
+        :break ,
+        :bridge ,
+        :broadwalk ,
+        :broadway ,
+        :brow ,
+        :busway ,
+        :bypass ,
+        :byway ,
+        :causeway ,
+        :centre ,
+        :centreway ,
+        :chase ,
+        :circle ,
+        :circlet ,
+        :circuit ,
+        :circus ,
+        :close ,
+        :cluster ,
+        :colonnade ,
+        :common ,
+        :concord ,
+        :concourse ,
+        :connection ,
+        :copse ,
+        :corner ,
+        :corso ,
+        :course ,
+        :court ,
+        :courts ,
+        :courtyard ,
+        :cove ,
+        :crescent ,
+        :crest ,
+        :crief ,
+        :crook ,
+        :cross ,
+        :crossing ,
+        :cruiseway ,
+        :cul-de-sac ,
+        :cutting ,
+        :dale ,
+        :dash ,
+        :dell ,
+        :dene ,
+        :deviation ,
+        :dip ,
+        :distributor ,
+        :divide ,
+        :dock ,
+        :domain ,
+        :down ,
+        :downs ,
+        :drive ,
+        :driveway ,
+        :easement ,
+        :edge ,
+        :elbow ,
+        :end ,
+        :entrance ,
+        :esplanade ,
+        :estate ,
+        :expressway ,
+        :fairway ,
+        :firebreak ,
+        :fireline ,
+        :firetrack ,
+        :firetrail ,
+        :flat ,
+        :flats ,
+        :follow ,
+        :footway ,
+        :ford ,
+        :foreshore ,
+        :fork ,
+        :formation ,
+        :freeway ,
+        :front ,
+        :frontage ,
+        :gap ,
+        :garden ,
+        :gardens ,
+        :gate ,
+        :gateway ,
+        :glade ,
+        :glen ,
+        :grange ,
+        :green ,
+        :greens ,
+        :grove ,
+        :gully ,
+        :harbour ,
+        :haven ,
+        :heath ,
+        :heights ,
+        :highroad ,
+        :highway ,
+        :hill ,
+        :hollow ,
+        :hub ,
+        :interchange ,
+        :junction ,
+        :key ,
+        :keys ,
+        :knoll ,
+        :ladder ,
+        :landing ,
+        :lane ,
+        :laneway ,
+        :leader ,
+        :line ,
+        :link ,
+        :lookout ,
+        :loop ,
+        :loop-road ,
+        :lynne ,
+        :mall ,
+        :manor ,
+        :mead ,
+        :meander ,
+        :mew ,
+        :mews ,
+        :mile ,
+        :motorway ,
+        :nook ,
+        :oaks ,
+        :outlet ,
+        :outlook ,
+        :paddock ,
+        :parade ,
+        :park ,
+        :parkway ,
+        :part ,
+        :pass ,
+        :passage ,
+        :path ,
+        :pathway ,
+        :piazza ,
+        :place ,
+        :plaza ,
+        :pocket ,
+        :point ,
+        :port ,
+        :precinct ,
+        :promenade ,
+        :pursuit ,
+        :quad ,
+        :quadrant ,
+        :quay ,
+        :quays ,
+        :ramble ,
+        :ramp ,
+        :range ,
+        :reach ,
+        :reef ,
+        :reserve ,
+        :rest ,
+        :retreat ,
+        :return ,
+        :ride ,
+        :ridge ,
+        :ring ,
+        :rise ,
+        :rising ,
+        :road ,
+        :roads ,
+        :roadway ,
+        :rotary ,
+        :round ,
+        :route ,
+        :row ,
+        :rue ,
+        :run ,
+        :serviceway ,
+        :shunt ,
+        :side-road ,
+        :siding ,
+        :skyline ,
+        :slope ,
+        :spur ,
+        :square ,
+        :steps ,
+        :straight ,
+        :strait ,
+        :strand ,
+        :street ,
+        :strip ,
+        :subway ,
+        :tarn ,
+        :te-ara ,
+        :terrace ,
+        :tollway ,
+        :top ,
+        :tor ,
+        :track ,
+        :trail ,
+        :traverse ,
+        :triangle ,
+        :trunkway ,
+        :tunnel ,
+        :turn ,
+        :twist ,
+        :underpass ,
+        :vale ,
+        :valley ,
+        :viaduct ,
+        :view ,
+        :views ,
+        :vista ,
+        :vue ,
+        :wade ,
+        :walk ,
+        :walkway ,
+        :waters ,
+        :way ,
+        :wharf ,
+        :wood ,
+        :woods ,
+        :wynd ,
+        :yard ;
     skos:historyNote "This vocabulary contains road types in common usage at the time of publishing. These are sourced from standards including AS/NZS4819:2011, AS4590.1:2017 and jurisdictional datasets across Australia and New Zealand. "@en ;
     skos:prefLabel "Road Types"@en ;
     prov:qualifiedAttribution [

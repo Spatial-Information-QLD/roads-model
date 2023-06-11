@@ -1,16 +1,16 @@
 == Introduction
 
-This model facilitates applying Road Label objects, with potentially many subcomponents, to the geospatial representation of roads - Road Objects. This style of feature label / geospatial feature modelling is informed inherited from the https://linked.data.gov.au/def/fl[Feature Labelling Model] that this model extends.
+This model facilitates applying Road Label objects, with potentially many subcomponents, to the geospatial representation of roads - Road Objects. This style of feature label / geospatial feature modelling is informed inherited from the https://linked.data.gov.au/def/cn[Compound Naming Model] that this model extends.
 
-NOTE: This model does not attempt to assist with detail geospatial or physical road modelling: it only provides an association between labelling components and geospatial representations of the road established using other models. This model also does not link road objects to other, related, objects, such as Localities. Such linking should be represented with Feature / Feature topological relations, such as those within GeoSPARQL <<GEO>>.
+NOTE: This model does not attempt to assist with detail geospatial or physical road modelling: it only provides an association between naming components and geospatial representations of the road established using other models. This model also does not link road objects to other, related, objects, such as Localities. Such linking should be represented with Feature / Feature topological relations, such as those within GeoSPARQL <<GEO>>.
 
 Data made according to this model, when stored in one of the <<RDF>> serialization formats such as <<TTL>>, is directly validatable according to this model through use of validators that are supplied, see Section <<Validation>>.
 
 === Sources of Requirements
 
-This model was initially built to allow Queensland Government to manage roads labelling information in a manner similar to how they manage Address & Geographic Name information: as a collection of Feature Labels for Features which have Geometries. This introduces requirements to both facilitate complex labelling and align with Address etc. modelling.
+This model was initially built to allow Queensland Government to manage roads naming information in a manner similar to how they manage Address & Geographic Name information: as a collection of Feature Labels for Features which have Geometries. This introduces requirements to both facilitate complex naming and align with Address etc. modelling.
 
-To ensure that this model implements that Feature Labels / Features / Geometries pattern, it is a profile of the https://linked.data.gov.au/def/lf[Feature Labelling Model] which captures the pattern in generic form and is also profiled by Queensland Government's Address & Geographic Names Models. Figure <<fig-roads-spatial>> overviews this. This introduces the requirement for all Roads Model information to conform to the Feature Labels Model - the necessary requirement for profiling.
+To ensure that this model implements that Feature Labels / Features / Geometries pattern, it is a profile of the https://linked.data.gov.au/def/cn[Compound Naming Model] which captures the pattern in generic form and is also profiled by Queensland Government's Address & Geographic Names Models. Figure <<fig-roads-spatial>> overviews this. This introduces the requirement for all Roads Model information to conform to the Feature Labels Model - the necessary requirement for profiling.
 
 By profiling that model, this model also remains interoperable with detailed spatial object modelling, for example of the sort implemented in the https://linked.data.gov.au/cad[Cadastre Model].
 
@@ -20,7 +20,7 @@ Detailed requirements for this model all stem from these top-level requirements.
 
 Major modelling principles present in this model are:
 
-. Feature / Feature Labelling differentiation
+. Feature / Feature Naming differentiation
 . Feature / Geometry differentiation
 . Profile Views
 
@@ -28,19 +28,19 @@ These principles are explained in the following sub-sections and the first two r
 
 [[fig-roads-spatial]]
 .Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations
-image::img/roads-spatial.png[width="75%"]
+image::img/Spatiality.svg[width="50%"]
 
-==== Feature / Feature Labelling differentiation
+==== Feature / Feature Naming differentiation
 
-This model details the elements of a road label but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of label/spatial object follows the Address/AddressableObject split in ISO19160-1 <<ISO19160-1>>. Addresses there are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature and Road Labels here are considered a simple case of that.
+This model details the elements of a road label but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of name/spatial object follows the Address/AddressableObject split in ISO19160-1 <<ISO19160-1>>. Addresses there are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature and Road Labels here are considered a simple case of that.
 
-This allows for the representation, and ultimately the management, of labels - text, numbers, identifiers, references - separately to the management of spatial objects.
+This allows for the representation, and ultimately the management, of names - text, numbers, identifiers, references - separately to the management of spatial objects and their properties, such as the physical presentation of a Road.
 
-This Feature / Feature Labelling separation applies to Geographic Names, Roads and Administrative Areas as well as Addresses and this expression of Feature / Feature Labelling separation for addressing is a formal profile of the more general _Feature Labelling Model_ <<FLM>>. There are other profiles for those other domains. The FLM, this model and the other FLM profiles are all pat of Queensland Spatial Information's https://spatial-information-qld.github.io/supermodel/supermodel.html[_Supermodel_] which is an enterprise data model for multi-model data integration.
+This Feature / Feature Naming separation applies to Geographic Names, Roads and Administrative Areas as well as Addresses and this expression of Feature / Feature Naming separation for addressing is a formal profile of the more general _Compound Naming Model_ <<CNM>>. There are other profiles for those other domains. The CNM, this model and the other CNM profiles are all pat of Queensland Spatial Information's https://spatial-information-qld.github.io/supermodel/supermodel.html[_Supermodel_] which is an enterprise data model for multi-model data integration.
 
 ==== Feature / Geometry differentiation
 
-(Geo)spatial objects referenced by this model's labelling objects (Road Labels) are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. See Figure <<fig-roads-spatial>>. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <<ISO19101-1>> and their expression in the Semantic Web spatial standard <<GEO>>.
+(Geo)spatial objects referenced by this model's naming objects (Road Names) are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. See Figure <<fig-roads-spatial>>. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <<ISO19101-1>> and their expression in the Semantic Web spatial standard <<GEO>>.
 
 This Feature / Geometry distinction allows individual spatial objects to have multiple Geometries: different resolutions, in different coordinate systems and even sets of Geometries that have different roles or that show variation over time. This would allow Road Objects to have spatiallity represented with road centrelines, area polygons from cadastre etc., all at the same time, by linking those different spatial representations - the Geometries - to the single conceptual entity - the Feature.
 

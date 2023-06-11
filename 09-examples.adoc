@@ -1,6 +1,25 @@
 == Examples
 
-This model contains examples per Class and Property in the <<Model>> section as well as for each template within in the <<Templating>> section. The examples are all versions of the following:
+This model contains examples per Class and Property in the <<Model>> section as well as for each template within in the <<Templating>> section. Additionally, the following drawn examples are provided to illustrate modelling intentions.
+
+=== Modelling Scenarios
+
+[[fig-eg-naming]]
+.Roads Naming example
+image::img/EG-Naming.svg[width="75%"]
+
+[[fig-eg-classification]]
+.Roads Classification examples
+image::img/EG-Classifications.svg[]
+
+[[fig-eg-parts]]
+.Roads Parts examples
+image::img/EG-Parts.svg[width="75%"]
+
+
+=== Code
+
+The following code is the aggregate of the per-Class and Property examples.
 
 [source,turtle]
 ----
@@ -40,7 +59,7 @@ ex:road-label-1
       time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
     dcterms:type ls:current ;
-  ] ,
+  ] ;
 .
 ----
 

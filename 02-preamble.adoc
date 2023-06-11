@@ -9,28 +9,25 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 
 === Namespaces
 
-This model is built on a small set of well-regarded Semantic Web models which use a variety of namespaces. Prefixes for this namespaces, used throughout this document, are listed below.
+This model is built on a small set of well-regarded Semantic Web models which use a variety of namespacess. Prefixes for these namespaces, used throughout this document, are listed below.
 
 [width=100%, frame=none, grid=none, cols="1,4,5"]
 |===
 |Prefix | Namespace | Description
 
-| `*roads*` | `*https://linked.data.gov.au/def/roads/*` | *Namespace for this model*
-| `dcterms` | `http://purl.org/dc/terms/` | Dublin Core Terms namespace
-| `ex` | `http://example.com/` | Generic examples namespace
-| `geo` | `http://www.opengis.net/ont/geosparql#` | OGC GeoSPARQL model namespace
-| `rct` | `https://linked.data.gov.au/def/roads/ct` | Roads Component Type vocabulary namespace
-| `fl` | `https://linked.data.gov.au/def/fl/` | Feature Label Model namespace
-| `ls` | `https://linked.data.gov.au/def/fl/ls/` | Feature Label Lifecycle State Type vocabulary namespace
-| `owl` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
-| `rct` | `https://linked.data.gov.au/def/rct/` | Feature Label Component Type Vocabulary for Roads namespace
-| `rdfs` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
-| `st` | `https://linked.data.gov.au/def/streetType/` | ICSM's Street Types vocabulary namespace (not implemented yet)
-| `sosa` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
-| `skos` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
-| `time` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
-| `void` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
-| `xsd` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
+| `*:*` | `*https://linked.data.gov.au/def/roads/*` | *This model*
+| `cn` | `https://linked.data.gov.au/def/cn/` | Compound Name Model
+| `dcterms` | `http://purl.org/dc/terms/` | Dublin Core Terms
+| `ex` | `http://example.com/` | Generic examples
+| `geo` | `http://www.opengis.net/ont/geosparql#` | OGC GeoSPARQL model
+| `lm` | `https://linked.data.gov.au/def/lifecycle/` | Lifecycle Model
+| `owl` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology
+| `rdfs` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology
+| `sosa` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology
+| `skos` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology
+| `time` | `http://www.w3.org/2006/time#` | Time Ontology in OWL
+| `void` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology
+| `xsd` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology
 |===
 
 === Conformance
@@ -43,7 +40,7 @@ Figures used in this document use the following key:
 
 [[fig-figure-key]]
 .Key of elements used in this Model's figures
-image::img/key.png[]
+image::img/Key.svg[width="15%"]
 
 ==== Example Data
 Example Data used in this document, for instance in model element "Example" values, are https://www.w3.org/RDF/[RDF] data in the https://www.w3.org/TR/turtle/[Turtle] syntax.

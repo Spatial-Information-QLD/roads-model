@@ -1,3 +1,4 @@
+PREFIX : <https://linked.data.gov.au/def/road-surfaces/>
 PREFIX cs: <https://linked.data.gov.au/def/road-surfaces>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -5,11 +6,10 @@ PREFIX isoroles: <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsibl
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX rst: <https://linked.data.gov.au/def/road-surfaces/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-rst:access
+:access
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Access road"@en ;
@@ -19,7 +19,7 @@ rst:access
     skos:topConceptOf cs: ;
 .
 
-rst:boardwalk
+:boardwalk
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Surface of planks or sleepers, usually of wood, between which water can usually drain"@en ;
@@ -29,7 +29,7 @@ rst:boardwalk
     skos:topConceptOf cs: ;
 .
 
-rst:bridge
+:bridge
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Bridge"@en ;
@@ -39,7 +39,7 @@ rst:bridge
     skos:topConceptOf cs: ;
 .
 
-rst:other
+:other
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Surface type not covered elsewhere"@en ;
@@ -49,7 +49,7 @@ rst:other
     skos:topConceptOf cs: ;
 .
 
-rst:paper-road
+:paper-road
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Road reserve only. No road constructed in cadastral designation"@en ;
@@ -59,7 +59,7 @@ rst:paper-road
     skos:topConceptOf cs: ;
 .
 
-rst:ramp
+:ramp
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "On-ramp or off-ramp"@en ;
@@ -69,7 +69,7 @@ rst:ramp
     skos:topConceptOf cs: ;
 .
 
-rst:roundabout
+:roundabout
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Roundabout"@en ;
@@ -79,7 +79,7 @@ rst:roundabout
     skos:topConceptOf cs: ;
 .
 
-rst:sealed
+:sealed
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Surface of brick, concrete, or asphalt"@en ;
@@ -89,7 +89,7 @@ rst:sealed
     skos:topConceptOf cs: ;
 .
 
-rst:slip
+:slip
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Slip road or slip lane"@en ;
@@ -99,7 +99,7 @@ rst:slip
     skos:topConceptOf cs: ;
 .
 
-rst:tunnel
+:tunnel
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Tunnel"@en ;
@@ -109,7 +109,7 @@ rst:tunnel
     skos:topConceptOf cs: ;
 .
 
-rst:unknown
+:unknown
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Surface type not known"@en ;
@@ -119,7 +119,7 @@ rst:unknown
     skos:topConceptOf cs: ;
 .
 
-rst:unsealed
+:unsealed
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Surface with material other than brick, concrete or asphalt"@en ;
@@ -146,22 +146,22 @@ cs:
     dcterms:identifier "road-surfaces"^^xsd:token ;
     dcterms:modified "2023-05-17"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/icsm> ;
-    owl:versionIRI <https://linked.data.gov.au/def/road-surfaces/'1.0> ;
-    owl:versionInfo "'1.0" ;
-    skos:definition "This vocabulary describes surface type classifications for roads. "@en ;
+    owl:versionIRI <https://linked.data.gov.au/def/road-surfaces/1.0> ;
+    owl:versionInfo "1.0" ;
+    skos:definition "This vocabulary describes surfaces of roads"@en ;
     skos:hasTopConcept
-        rst:access ,
-        rst:boardwalk ,
-        rst:bridge ,
-        rst:other ,
-        rst:paper-road ,
-        rst:ramp ,
-        rst:roundabout ,
-        rst:sealed ,
-        rst:slip ,
-        rst:tunnel ,
-        rst:unknown ,
-        rst:unsealed ;
+        :access ,
+        :boardwalk ,
+        :bridge ,
+        :other ,
+        :paper-road ,
+        :ramp ,
+        :roundabout ,
+        :sealed ,
+        :slip ,
+        :tunnel ,
+        :unknown ,
+        :unsealed ;
     skos:historyNote "This vocabulary contains surface type classifications for roads, sourced from Queensland Roads and Tracks data. "@en ;
     skos:prefLabel "Road Surfaces"@en ;
     prov:qualifiedAttribution [

@@ -11,7 +11,7 @@
 
 [[fig-overview]]
 .An overview of this model
-image::img/overview.png[width=75%]
+image::img/Overview.svg[]
 
 :sectnums:
 

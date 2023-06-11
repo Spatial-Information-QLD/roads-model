@@ -6,7 +6,7 @@
 |**Preferred Label** | Roads Model
 |**Definition** | A Semantic Web data model of roads information. It caters specifically for Australian & New Zealand's road labelling (naming) needs.
 |**Created** | 2023-04-11
-|**Modified** | 2023-04-16
+|**Modified** | 2023-06-12
 |**Issued** | 0000-00-00 - _not formally issued yet_
 |**Creator** | https://orcid.org/0000-0002-8742-7730[Nicholas J. Car]
 |**Publisher** | https://linked.data.gov.au/org/qsi[Queensland Spatial Information]

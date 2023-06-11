@@ -1,22 +1,21 @@
 == Supporting Vocabularies
 
+This model depends on several vocabularies to give specific values for certain theming - general classification - and sub-typing properties.
 
+The vocabularies are all independently-published and governed Knowledge Graph artifacts and do not record any relation to this model in their own data.
 
-This model depends on several vocabularies to give specific values to typing properties for `FeatureLabelComponent`, `LifecycelStage` and so on. Only one of those vocabularies is defined here - <<Feature Label Component Types for Roads>>. All other vocabularies are defined in the Feature Labelling Model <<FL>>.
-
-=== Feature Label Component Types for Roads
-
-This vocabulary is a specialised form of <<ISO19160-1>>'s `AddressComponentType` vocabulary. The original 8 concepts from that standard are not included as they apply either to addresses or provide only one component type for roads - `thoroughfareName.
+The vocabularies' details are given in the table below.
 
 |===
-| IRI | Name | Description | Status | Expected Form | Usage directive
+| Persistent IRI | Name | Description  | Model property
 
-| `rct:RoadPrefix` | Road Prefix | A literal initial part of a road's label that comes before the road's name | original | literal | Use
-| `rct:RoadName` | Road Name | The literal name of the road, without any expression of the road's type | original | literal | Use
-| `rct:RoadType` | Road Type | A reference to the type of the road, selected from a controlled list of road (street) types | original | object reference | Use
-| `rct:RoadSuffix` | Road Suffix | A literal initial part of a road's label that comes after the road's name and type value | original | literal | Use
+4+| *Road Objects*
+| `https://linked.data.gov.au/def/road-classifications` | Road Classifications | This vocabulary describes hierarchy classification types for roads | `sdo:additionalType` for a Road Object
+| `https://linked.data.gov.au/def/road-operational-statuses` | Road Operational Statuses | This vocabulary describes the operational status for roads | `dcat:theme` for a Road Object
+| `https://linked.data.gov.au/def/road-sub-classes` | Road Sub-Classes | This vocabulary describes sub classifications of roads | `dcat:theme` for a Road Object
+| `https://linked.data.gov.au/def/road-surfaces` | Road Surfaces | This vocabulary describes surfaces of roads | `dcat:theme` for a Road Object
+4+| *Road Names*
+| `https://linked.data.gov.au/def/road-name-part-types` | Road Compound Name Types | This vocabulary describes values of name part types used in road naming | `sdo:additionalType` for a Road Name's Compound Name part
+| `https://linked.data.gov.au/def/road-types` | Road Types | This vocabulary describes road types. A road type is used as part of a road name and distinguishes the type of road. The road types that do not meet AS/NZS 4819:2011 exist to enable inclusion of roads named prior to the creation of AS/NZS 4819:2011. These types should not be used for any new road designations | `rdf:value` for a Road Name's Compound Name part of `sdo:additionalType` Road Type
+| `https://linked.data.gov.au/def/road-suffixes` | Road Suffixes | This vocabulary describes values of suffixes used in road naming | `rdf:value` for a Road Name's Compound Name part of `sdo:additionalType` Road Suffix
 |===
-
-This vocabulary is available in machine-readable form at *https://linked.data.gov.au/def/rct*.
-
-Three of the four elements above are literal values, e.g. a Road Name of "Yundah". The exception is Road Type which sould be a reference to a Road (Street) Type controlled vocabulary object, such as an instance of a Concepts from Australia's ICSM's _StreetTypes_ vocabulary. A textual representation for Road Type can be acquired from such an object by importing one of its potentially many labels.

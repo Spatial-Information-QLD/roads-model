@@ -1,3 +1,4 @@
+PREFIX : <https://linked.data.gov.au/def/road-suffixes/>
 PREFIX cs: <https://linked.data.gov.au/def/road-suffixes>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -5,11 +6,10 @@ PREFIX isoroles: <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsibl
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX rs: <https://linked.data.gov.au/def/road-suffixes/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-rs:central
+:central
     a skos:Concept ;
     dcterms:source "AS 4590.1:2017 | Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -21,7 +21,7 @@ rs:central
     skos:topConceptOf cs: ;
 .
 
-rs:east
+:east
     a skos:Concept ;
     dcterms:source "AS 4590.1:2017 | Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -33,7 +33,7 @@ rs:east
     skos:topConceptOf cs: ;
 .
 
-rs:extension
+:extension
     a skos:Concept ;
     dcterms:source "AS 4590.1:2017 | Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -45,7 +45,7 @@ rs:extension
     skos:topConceptOf cs: ;
 .
 
-rs:lower
+:lower
     a skos:Concept ;
     dcterms:source "AS 4590.1:2017 | Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -57,7 +57,7 @@ rs:lower
     skos:topConceptOf cs: ;
 .
 
-rs:north
+:north
     a skos:Concept ;
     dcterms:source "AS 4590.1:2017 | Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -69,7 +69,7 @@ rs:north
     skos:topConceptOf cs: ;
 .
 
-rs:north-east
+:north-east
     a skos:Concept ;
     dcterms:source "AS 4590.1:2017 | Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -81,7 +81,7 @@ rs:north-east
     skos:topConceptOf cs: ;
 .
 
-rs:north-west
+:north-west
     a skos:Concept ;
     dcterms:source "AS 4590.1:2017 | Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -93,7 +93,7 @@ rs:north-west
     skos:topConceptOf cs: ;
 .
 
-rs:south
+:south
     a skos:Concept ;
     dcterms:source "AS 4590.1:2017 | Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -105,7 +105,7 @@ rs:south
     skos:topConceptOf cs: ;
 .
 
-rs:south-east
+:south-east
     a skos:Concept ;
     dcterms:source "AS 4590.1:2017 | Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -117,7 +117,7 @@ rs:south-east
     skos:topConceptOf cs: ;
 .
 
-rs:south-west
+:south-west
     a skos:Concept ;
     dcterms:source "AS 4590.1:2017 | Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -129,7 +129,7 @@ rs:south-west
     skos:topConceptOf cs: ;
 .
 
-rs:upper
+:upper
     a skos:Concept ;
     dcterms:source "AS 4590.1:2017 | Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -141,7 +141,7 @@ rs:upper
     skos:topConceptOf cs: ;
 .
 
-rs:west
+:west
     a skos:Concept ;
     dcterms:source "AS 4590.1:2017 | Standards Australia"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
@@ -170,22 +170,22 @@ cs:
     dcterms:identifier "road-suffixes"^^xsd:token ;
     dcterms:modified "2023-05-15"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/icsm> ;
-    owl:versionIRI <https://linked.data.gov.au/def/road-suffixes/'1.0> ;
-    owl:versionInfo "'1.0" ;
-    skos:definition "This vocabulary describes types of sub-address. A sub-address distinguishes the type of separately identifiable portion within a building, complex or marina. These are sometimes referred to as sub-dwelling types or unit types. "@en ;
+    owl:versionIRI <https://linked.data.gov.au/def/road-suffixes/1.0> ;
+    owl:versionInfo "1.0" ;
+    skos:definition "This vocabulary described values of suffixes used in road naming"@en ;
     skos:hasTopConcept
-        rs:central ,
-        rs:east ,
-        rs:extension ,
-        rs:lower ,
-        rs:north ,
-        rs:north-east ,
-        rs:north-west ,
-        rs:south ,
-        rs:south-east ,
-        rs:south-west ,
-        rs:upper ,
-        rs:west ;
+        :central ,
+        :east ,
+        :extension ,
+        :lower ,
+        :north ,
+        :north-east ,
+        :north-west ,
+        :south ,
+        :south-east ,
+        :south-west ,
+        :upper ,
+        :west ;
     skos:historyNote "This vocabulary contains road suffixes in common usage at the time of publishing. These are sourced from standard AS4590.1:2017."@en ;
     skos:prefLabel "Road Suffixes"@en ;
     prov:qualifiedAttribution [

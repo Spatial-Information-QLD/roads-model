@@ -1,8 +1,8 @@
 == Bibliography
 
-* [[CONNEGP]] [CONNEGP] World Wide Web Consortium, _Content Negotiation by Profile_, W3C Working Draft (20 March 2022). https://w3c.github.io/dx-connegp/connegp/
+* [[CNM]] [CNM] Australian Government Linked Data Working Group. _Compound Naming Model_. Semantic Web data model (2023). https://linked.data.gov.au/def/cn
 
-* [[FL]] [FLM] The State of Queensland (Department of Resources). _Feature Labelling Model_. Semantic Web data model (2023). https://linked.data.gov.au/def/fl
+* [[CONNEGP]] [CONNEGP] World Wide Web Consortium, _Content Negotiation by Profile_, W3C Working Draft (20 March 2022). https://w3c.github.io/dx-connegp/connegp/
 
 * [[GEO]] [GEO] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1_ (2021). OGC Implementation Specification. http://www.opengis.net/doc/IS/geosparql/1.1
 
@@ -14,13 +14,17 @@
 
 * [[ISO19160-1]] [ISO19160-1] International Organization for Standardization, _ISO 19160-1: Addressing Part 1: Conceptual model_ (2015). https://www.iso.org/standard/61710.html
 
+* [[LM]] [LM] Australian Government Linked Data Working Group. _Lifecycle Model (2023). https://linked.data.gov.au/def/lifecycle
+
 * [[OWL]] [OWL] World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendation (11 December 2012). https://www.w3.org/TR/owl2-overview/
 
 * [[PROF]] [PROF] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/dx-prof/
 
 * [[PROV]] [PROV] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/dx-prof/
 
-* [[RDF]] [RDF]World Wide Web Consortium, _RDF 1.1 Concepts and Abstract Syntax_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/rdf11-concepts/
+* [[RDF]] [RDF] World Wide Web Consortium, _RDF 1.1 Concepts and Abstract Syntax_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/rdf11-concepts/
+
+* [[RDFS]] [RDFS] World Wide Web Consortium, _RDF 1.2 Schema_, W3C First Public Working Draft (16 May 2023). https://www.w3.org/TR/rdf12-schema/
 
 * [[SDO]] [SDO] W3C Schema.org Community Group, _schema.org_. Community ontology (2015). https://schema.org
 
