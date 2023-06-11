@@ -1,0 +1,227 @@
+PREFIX cs: <https://linked.data.gov.au/def/road-sub-classes>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX isoroles: <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rsc: <https://linked.data.gov.au/def/road-sub-classes/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+rsc:4wd
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Track suitable for 4WD vehicles."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "4WD"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:access
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Access road."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Access"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:bridge
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Bridge."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Bridge"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:causeway
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A raised thoroughfare across low or wet ground."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Causeway"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:crossover
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Crossover, predominantly used for emergency service use."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Crossover"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:level-crossing
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Level crossing."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Level Crossing"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:na
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Not applicable."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "NA"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:non-vehicular-track
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Track not for vehicle use."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Non vehicular track"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:passenger-ferry
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Passenger only ferry."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Passenger ferry"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:ramp
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "On-ramp or off-ramp."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Ramp"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:roundabout
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Roundabout."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Roundabout"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:shared-use-track
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Shared track for vehicular and non-vehicular users."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Shared use track"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:slip
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Slip road or slip lane."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Slip"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:tunnel
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Tunnel."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Tunnel"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:u-turn
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "U-turn bay."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "U turn"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:unknown
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Unknown."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Unknown"@en ;
+    skos:topConceptOf cs: ;
+.
+
+rsc:vehicular-ferry
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Ferry that a vehicle can be transported on."@en ;
+    skos:historyNote "Queensland Roads and Tracks dataset" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Vehicular ferry"@en ;
+    skos:topConceptOf cs: ;
+.
+
+<https://linked.data.gov.au/org/qsi>
+    a prov:Agent ;
+    rdfs:label "Qsi" ;
+.
+
+<https://linked.data.gov.au/org/icsm>
+    a prov:Agent ;
+    rdfs:label "Icsm" ;
+.
+
+cs:
+    a skos:ConceptScheme ;
+    dcterms:created "2023-05-17"^^xsd:date ;
+    dcterms:creator <https://linked.data.gov.au/org/qsi> ;
+    dcterms:identifier "road-sub-classes"^^xsd:token ;
+    dcterms:modified "2023-05-17"^^xsd:date ;
+    dcterms:publisher <https://linked.data.gov.au/org/icsm> ;
+    owl:versionIRI <https://linked.data.gov.au/def/road-sub-classes/'1.0> ;
+    owl:versionInfo "'1.0" ;
+    skos:definition "This vocabulary describes sub classification types for roads. "@en ;
+    skos:hasTopConcept
+        rsc:4wd ,
+        rsc:access ,
+        rsc:bridge ,
+        rsc:causeway ,
+        rsc:crossover ,
+        rsc:level-crossing ,
+        rsc:na ,
+        rsc:non-vehicular-track ,
+        rsc:passenger-ferry ,
+        rsc:ramp ,
+        rsc:roundabout ,
+        rsc:shared-use-track ,
+        rsc:slip ,
+        rsc:tunnel ,
+        rsc:u-turn ,
+        rsc:unknown ,
+        rsc:vehicular-ferry ;
+    skos:historyNote "This vocabulary contains sub classification types for roads, sourced from Queensland Roads and Tracks data. "@en ;
+    skos:prefLabel "Road Sub-Classes"@en ;
+    prov:qualifiedAttribution [
+            dcat:hadRole isoroles:custodian ;
+            prov:agent <https://linked.data.gov.au/org/icsm>
+        ] ;
+.
+
