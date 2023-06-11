@@ -466,11 +466,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#Properties">4.2. Properties</a></li>
 </ul>
 </li>
-<li><a href="#_supporting_vocabularies">5. Supporting Vocabularies</a>
-<ul class="sectlevel2">
-<li><a href="#_feature_label_component_types_for_roads">5.1. Feature Label Component Types for Roads</a></li>
-</ul>
-</li>
+<li><a href="#_supporting_vocabularies">5. Supporting Vocabularies</a></li>
 <li><a href="#_requirements">6. Requirements</a>
 <ul class="sectlevel2">
 <li><a href="#_requirements_list">6.1. Requirements List</a></li>
@@ -483,7 +479,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_short_form_template">8.2. Short Form Template</a></li>
 </ul>
 </li>
-<li><a href="#_examples">9. Examples</a></li>
+<li><a href="#_examples">9. Examples</a>
+<ul class="sectlevel2">
+<li><a href="#_modelling_scenarios">9.1. Modelling Scenarios</a></li>
+<li><a href="#_code">9.2. Code</a></li>
+</ul>
+</li>
 <li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
@@ -493,7 +494,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h4 id="_a_semantic_web_data_model_used_for_roads_information"><a class="anchor" href="#_a_semantic_web_data_model_used_for_roads_information"></a><em>A Semantic Web data model used for roads information</em></h4>
 <div id="fig-overview" class="imageblock">
 <div class="content">
-<img src="img/overview.png" alt="overview" width="75%">
+<img src="img/Overview.svg" alt="Overview">
 </div>
 <div class="title">Figure 1. An overview of this model</div>
 </div>
@@ -525,7 +526,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2023-04-16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2023-06-12</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -595,7 +596,7 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <div class="sect2">
 <h3 id="_namespaces"><a class="anchor" href="#_namespaces"></a>2.2. Namespaces</h3>
 <div class="paragraph">
-<p>This model is built on a small set of well-regarded Semantic Web models which use a variety of namespaces. Prefixes for this namespaces, used throughout this document, are listed below.</p>
+<p>This model is built on a small set of well-regarded Semantic Web models which use a variety of namespacess. Prefixes for these namespaces, used throughout this document, are listed below.</p>
 </div>
 <table class="tableblock frame-none grid-none stripes-even stretch">
 <colgroup>
@@ -612,84 +613,69 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>roads</strong></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>:</strong></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><a href="https://linked.data.gov.au/def/roads/" class="bare">https://linked.data.gov.au/def/roads/</a></strong></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Namespace for this model</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>This model</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cn</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/cn/" class="bare">https://linked.data.gov.au/def/cn/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compound Name Model</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://purl.org/dc/terms/" class="bare">http://purl.org/dc/terms/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dublin Core Terms namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dublin Core Terms</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ex</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://example.com/" class="bare">http://example.com/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generic examples namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generic examples</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.opengis.net/ont/geosparql#" class="bare">http://www.opengis.net/ont/geosparql#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OGC GeoSPARQL model namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OGC GeoSPARQL model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rct</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/roads/ct" class="bare">https://linked.data.gov.au/def/roads/ct</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Roads Component Type vocabulary namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/fl/" class="bare">https://linked.data.gov.au/def/fl/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Model namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ls</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/fl/ls/" class="bare">https://linked.data.gov.au/def/fl/ls/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Lifecycle State Type vocabulary namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lm</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/lifecycle/" class="bare">https://linked.data.gov.au/def/lifecycle/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lifecycle Model</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>owl</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2002/07/owl#" class="bare">http://www.w3.org/2002/07/owl#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Web Ontology Language ontology namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rct</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/rct/" class="bare">https://linked.data.gov.au/def/rct/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Component Type Vocabulary for Roads namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web Ontology Language ontology</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdfs</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2000/01/rdf-schema#" class="bare">http://www.w3.org/2000/01/rdf-schema#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RDF Schema ontology namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>st</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/streetType/" class="bare">https://linked.data.gov.au/def/streetType/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ICSM&#8217;s Street Types vocabulary namespace (not implemented yet)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RDF Schema ontology</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sosa</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/ns/sosa/" class="bare">http://www.w3.org/ns/sosa/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sensor, Observation, Sample, and Actuator ontology namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensor, Observation, Sample, and Actuator ontology</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>skos</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2004/02/skos/core#" class="bare">http://www.w3.org/2004/02/skos/core#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Simple Knowledge Organization System (SKOS) ontology namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simple Knowledge Organization System (SKOS) ontology</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>time</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2006/time#" class="bare">http://www.w3.org/2006/time#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Time Ontology in OWL namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time Ontology in OWL</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://rdfs.org/ns/void#" class="bare">http://rdfs.org/ns/void#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Vocabulary of Interlinked Data (VoID) ontology namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vocabulary of Interlinked Data (VoID) ontology</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2001/XMLSchema#" class="bare">http://www.w3.org/2001/XMLSchema#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XML Schema Definitions ontology namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XML Schema Definitions ontology</p></td>
 </tr>
 </tbody>
 </table>
@@ -706,7 +692,7 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 </div>
 <div id="fig-figure-key" class="imageblock">
 <div class="content">
-<img src="img/key.png" alt="key">
+<img src="img/Key.svg" alt="Key" width="15%">
 </div>
 <div class="title">Figure 2. Key of elements used in this Model&#8217;s figures</div>
 </div>
@@ -724,7 +710,7 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>3. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This model facilitates applying Road Label objects, with potentially many subcomponents, to the geospatial representation of roads - Road Objects. This style of feature label / geospatial feature modelling is informed inherited from the <a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a> that this model extends.</p>
+<p>This model facilitates applying Road Label objects, with potentially many subcomponents, to the geospatial representation of roads - Road Objects. This style of feature label / geospatial feature modelling is informed inherited from the <a href="https://linked.data.gov.au/def/cn">Compound Naming Model</a> that this model extends.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -733,7 +719,7 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <div class="title">Note</div>
 </td>
 <td class="content">
-This model does not attempt to assist with detail geospatial or physical road modelling: it only provides an association between labelling components and geospatial representations of the road established using other models. This model also does not link road objects to other, related, objects, such as Localities. Such linking should be represented with Feature / Feature topological relations, such as those within GeoSPARQL <a href="#GEO">[GEO]</a>.
+This model does not attempt to assist with detail geospatial or physical road modelling: it only provides an association between naming components and geospatial representations of the road established using other models. This model also does not link road objects to other, related, objects, such as Localities. Such linking should be represented with Feature / Feature topological relations, such as those within GeoSPARQL <a href="#GEO">[GEO]</a>.
 </td>
 </tr>
 </table>
@@ -744,10 +730,10 @@ This model does not attempt to assist with detail geospatial or physical road mo
 <div class="sect2">
 <h3 id="_sources_of_requirements"><a class="anchor" href="#_sources_of_requirements"></a>3.1. Sources of Requirements</h3>
 <div class="paragraph">
-<p>This model was initially built to allow Queensland Government to manage roads labelling information in a manner similar to how they manage Address &amp; Geographic Name information: as a collection of Feature Labels for Features which have Geometries. This introduces requirements to both facilitate complex labelling and align with Address etc. modelling.</p>
+<p>This model was initially built to allow Queensland Government to manage roads naming information in a manner similar to how they manage Address &amp; Geographic Name information: as a collection of Feature Labels for Features which have Geometries. This introduces requirements to both facilitate complex naming and align with Address etc. modelling.</p>
 </div>
 <div class="paragraph">
-<p>To ensure that this model implements that Feature Labels / Features / Geometries pattern, it is a profile of the <a href="https://linked.data.gov.au/def/lf">Feature Labelling Model</a> which captures the pattern in generic form and is also profiled by Queensland Government&#8217;s Address &amp; Geographic Names Models. Figure <a href="#fig-roads-spatial">Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations</a> overviews this. This introduces the requirement for all Roads Model information to conform to the Feature Labels Model - the necessary requirement for profiling.</p>
+<p>To ensure that this model implements that Feature Labels / Features / Geometries pattern, it is a profile of the <a href="https://linked.data.gov.au/def/cn">Compound Naming Model</a> which captures the pattern in generic form and is also profiled by Queensland Government&#8217;s Address &amp; Geographic Names Models. Figure <a href="#fig-roads-spatial">Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations</a> overviews this. This introduces the requirement for all Roads Model information to conform to the Feature Labels Model - the necessary requirement for profiling.</p>
 </div>
 <div class="paragraph">
 <p>By profiling that model, this model also remains interoperable with detailed spatial object modelling, for example of the sort implemented in the <a href="https://linked.data.gov.au/cad">Cadastre Model</a>.</p>
@@ -764,7 +750,7 @@ This model does not attempt to assist with detail geospatial or physical road mo
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Feature / Feature Labelling differentiation</p>
+<p>Feature / Feature Naming differentiation</p>
 </li>
 <li>
 <p>Feature / Geometry differentiation</p>
@@ -779,26 +765,26 @@ This model does not attempt to assist with detail geospatial or physical road mo
 </div>
 <div id="fig-roads-spatial" class="imageblock">
 <div class="content">
-<img src="img/roads-spatial.png" alt="roads spatial" width="75%">
+<img src="img/Spatiality.svg" alt="Spatiality" width="50%">
 </div>
 <div class="title">Figure 3. Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations</div>
 </div>
 <div class="sect3">
-<h4 id="_feature_feature_labelling_differentiation"><a class="anchor" href="#_feature_feature_labelling_differentiation"></a>3.2.1. Feature / Feature Labelling differentiation</h4>
+<h4 id="_feature_feature_naming_differentiation"><a class="anchor" href="#_feature_feature_naming_differentiation"></a>3.2.1. Feature / Feature Naming differentiation</h4>
 <div class="paragraph">
-<p>This model details the elements of a road label but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of label/spatial object follows the Address/AddressableObject split in ISO19160-1 <a href="#ISO19160-1">[ISO19160-1]</a>. Addresses there are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature and Road Labels here are considered a simple case of that.</p>
+<p>This model details the elements of a road label but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of name/spatial object follows the Address/AddressableObject split in ISO19160-1 <a href="#ISO19160-1">[ISO19160-1]</a>. Addresses there are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature and Road Labels here are considered a simple case of that.</p>
 </div>
 <div class="paragraph">
-<p>This allows for the representation, and ultimately the management, of labels - text, numbers, identifiers, references - separately to the management of spatial objects.</p>
+<p>This allows for the representation, and ultimately the management, of names - text, numbers, identifiers, references - separately to the management of spatial objects and their properties, such as the physical presentation of a Road.</p>
 </div>
 <div class="paragraph">
-<p>This Feature / Feature Labelling separation applies to Geographic Names, Roads and Administrative Areas as well as Addresses and this expression of Feature / Feature Labelling separation for addressing is a formal profile of the more general <em>Feature Labelling Model</em> <a href="#FLM">[FLM]</a>. There are other profiles for those other domains. The FLM, this model and the other FLM profiles are all pat of Queensland Spatial Information&#8217;s <a href="https://spatial-information-qld.github.io/supermodel/supermodel.html"><em>Supermodel</em></a> which is an enterprise data model for multi-model data integration.</p>
+<p>This Feature / Feature Naming separation applies to Geographic Names, Roads and Administrative Areas as well as Addresses and this expression of Feature / Feature Naming separation for addressing is a formal profile of the more general <em>Compound Naming Model</em> <a href="#CNM">[CNM]</a>. There are other profiles for those other domains. The CNM, this model and the other CNM profiles are all pat of Queensland Spatial Information&#8217;s <a href="https://spatial-information-qld.github.io/supermodel/supermodel.html"><em>Supermodel</em></a> which is an enterprise data model for multi-model data integration.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_feature_geometry_differentiation"><a class="anchor" href="#_feature_geometry_differentiation"></a>3.2.2. Feature / Geometry differentiation</h4>
 <div class="paragraph">
-<p>(Geo)spatial objects referenced by this model&#8217;s labelling objects (Road Labels) are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. See Figure <a href="#fig-roads-spatial">Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations</a>. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <a href="#ISO19101-1">[ISO19101-1]</a> and their expression in the Semantic Web spatial standard <a href="#GEO">[GEO]</a>.</p>
+<p>(Geo)spatial objects referenced by this model&#8217;s naming objects (Road Names) are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. See Figure <a href="#fig-roads-spatial">Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations</a>. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <a href="#ISO19101-1">[ISO19101-1]</a> and their expression in the Semantic Web spatial standard <a href="#GEO">[GEO]</a>.</p>
 </div>
 <div class="paragraph">
 <p>This Feature / Geometry distinction allows individual spatial objects to have multiple Geometries: different resolutions, in different coordinate systems and even sets of Geometries that have different roles or that show variation over time. This would allow Road Objects to have spatiallity represented with road centrelines, area polygons from cadastre etc., all at the same time, by linking those different spatial representations - the Geometries - to the single conceptual entity - the Feature.</p>
@@ -882,37 +868,43 @@ This model does not attempt to assist with detail geospatial or physical road mo
 <h2 id="_model"><a class="anchor" href="#_model"></a>4. Model</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This model is composed of Web Ontology Language (OWL) <a href="#OWL">[OWL]</a> Classes and Properties. While some of the properties are restricted in their use to various classes, the Classes and Properties are actually defined individually and both are "first class model citizens", with global identity, that can be used in isolation and together. This is in contrast to Unified Modelling Language (UML) <em>Class Diagrams</em> which treat Properties as sub-parts of particular classes.</p>
+<p>This model is composed of Web Ontology Language (OWL) <a href="#OWL">[OWL]</a> Classes and Properties. While some properties are restricted in their use to various classes, the Classes and Properties are actually defined individually and both are "first class model citizens", with global identity, that can be used in isolation and together. This is in contrast to Unified Modelling Language (UML) <em>Class Diagrams</em> which treat Properties as sub-parts of particular classes.</p>
 </div>
 <div class="paragraph">
-<p>This model defines some Classes and Properties and also requires certain existing Cs &amp; Ps for reuse. All Cs &amp; Ps in this model, both defined and reused, are listed here with an indication of where the element is defined given in the <em>Is Defined By</em> field.</p>
+<p>This model defines only two Classes and no Properties but reuses many Classes and Properties from other models. Where it does, basic details of, a reference to that Class or Properties' definition via <code>rdfs:isDefinedBy</code>, and a scope note about using it in this model are given.</p>
 </div>
 <div class="sect2">
 <h3 id="Classes"><a class="anchor" href="#Classes"></a>4.1. Classes</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#RoadLabel">Road Label</a></p>
+<p><a href="#RoadName">Road Name</a></p>
 </li>
 <li>
 <p><a href="#RoadObject">Road Object</a></p>
 </li>
 <li>
-<p><a href="#FeatureLabelComponent">Feature Label Component</a></p>
-</li>
-<li>
-<p><a href="#FeatureLabelComponentType">Feature Label Component Type</a></p>
+<p><a href="#CompoundName">Compound Name</a></p>
 </li>
 <li>
 <p><a href="#LifecycleStage">Lifecycle Stage</a></p>
 </li>
 <li>
-<p><a href="#FeatureLabelLifecycleStageType">Feature Label Lifecycle Stage Type</a></p>
+<p><a href="#Feature">Feature</a></p>
+</li>
+<li>
+<p><a href="#Geometry">Geometry</a></p>
+</li>
+<li>
+<p><a href="#Concept">Concept</a></p>
+</li>
+<li>
+<p><a href="#Resource">Resource</a></p>
 </li>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="RoadLabel"><a class="anchor" href="#RoadLabel"></a>4.1.1. Road Label</h4>
+<h4 id="RoadName"><a class="anchor" href="#RoadName"></a>4.1.1. Road Name</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -927,15 +919,15 @@ This model does not attempt to assist with detail geospatial or physical road mo
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:RoadLabel</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:RoadName</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Road Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Road Label class represents structured information that allows unambiguous determination of a Road Object for the purposes of identification and location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Road Name class represents structured information that allows unambiguous determination of a Road Object for the purposes of identification and location</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
@@ -943,36 +935,36 @@ This model does not attempt to assist with detail geospatial or physical road mo
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl/FeatureLabel"><code>fl:FeatureLabel</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/cn/CompoundName"><code>cn:CompoundName</code></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specialised from <a href="#FL">[FL]</a>'s Feature Label class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">History Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specialised from <a href="#CNM">[CNM]</a>'s Feature Label class</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isLabelFor">[isLabelFor]</a>, <a href="#hasLabelComponent">[hasLabelComponent]</a>, <a href="#hasLifecycleStage">has lifecycle stage</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isNameFor">is name for</a>, <a href="#value">value</a>, <a href="#additionalType">additionalType</a>, <a href="#hasPart">hasPart</a>, <a href="#hasLifecycleStage">has lifecycle stage</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle"># Yundah Street South
-ex:road-label-1
-  a roads:RoadLabel ;
-  fl:isLabelFor &lt;some-external-object&gt; ;
-  fl:hasFeatureLabelComponent
+ex:road-name-1
+  a :RoadLabel ;
+  cn:isNameFor &lt;some-external-object&gt; ;
+  cn:hasFeatureLabelComponent
     [
-      fl:hasValue "Yundah" ;
-      fl:hasComponentType rct:RoadName ;
+      rdf:value "Yundah" ;
+      sdo:additionalType rct:RoadName ;
     ] ,
     [
-      fl:hasValue st:Street ;
-      fl:hasComponentType rct:RoadType ;
+      rdf:value st:Street ;
+      sdo:additionalType rct:RoadType ;
     ] ,
     [
-      fl:hasValueText "South" ;
-      fl:hasComponentType rct:RoadSuffix ;
+      rdf:valueText "South" ;
+      sdo:additionalType rct:RoadSuffix ;
     ] ;
 .</code></pre>
 </div>
@@ -997,7 +989,7 @@ ex:road-label-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:RoadObject</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:RoadObject</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1017,8 +1009,8 @@ ex:road-label-1
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature"><code>geo:Feature</code></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specialised from <a href="#GEO">[GEO]</a>'s Feature class, as used in <a href="#FL">[FL]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">History Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specialised from <a href="#GEO">[GEO]</a>'s Feature class, as used in <a href="#CNM">[CNM]</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
@@ -1026,21 +1018,21 @@ ex:road-label-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasFeatureLabel">has feature label</a>, <a href="http://www.opengis.net/ont/geosparql#hasGeometry"><code>geo:hasGeometry</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasGeometry">hasGeometry</a>, <a href="#additionalType">additionalType</a>, <a href="#theme">[theme]</a>, <a href="#hasPart">hasPart</a>,</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle"># ex:parcel-x is inferred to be a Road Object
-# due to the property fl:hasFeatureLabel indicated for it
+# due to the property cn:hasFeatureLabel indicated for it
 # that in tern indicates a Road Label instance
 
-ex:parcel-aggregate-x fl:hasFeatureLabel ex:road-label-1 .
+ex:parcel-aggregate-x cn:hasFeatureLabel ex:road-name-1 .
 
 # this object is declared to be a Road Label
-ex:road-label-1
-  a roads:RoadLabel ;
+ex:road-name-1
+  a :RoadLabel ;
   ...
 .</code></pre>
 </div>
@@ -1050,7 +1042,7 @@ ex:road-label-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="FeatureLabelComponent"><a class="anchor" href="#FeatureLabelComponent"></a>4.1.3. Feature Label Component</h4>
+<h4 id="CompoundName"><a class="anchor" href="#CompoundName"></a>4.1.3. Compound Name</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1065,72 +1057,29 @@ ex:road-label-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:FeatureLabelComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cn:CompoundName</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Component</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compound Name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A component that is a constituent part of a Feature Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Compound Name is a literal value, or objects that can be interpreted as literal values, that describe or name a Feature</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CNM">[CNM]</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived by the Feature Labelling Model, derived in concept from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponent</code> class</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Components can be literals - numbers, words etc. - or complex objects - Localities, water feature etc. If the Feature Label Component is a complex object, a textual representation of it must be provided when a textual rendering of all of an Feature Labels' components are required, for example for letter printing.</p>
-<p class="tableblock">Complex objects are preferred for use over literals when the object referred to has independent identity.</p>
-<p class="tableblock">Ordering of Feature Label Components, for example for letter printing, is not fixed within this model but should be implemented with a positioning preference system utilising the Feature Label Component&#8217;s <code>fl:hasComponentType</code> values which should come from a controlled vocabulary of Feature Label Component Type values. This may be a template.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasValue">has value</a>, <a href="#hasValueText">has value text</a>, <a href="#hasComponentType">[hasComponentType]</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># here ex:road-1 indicated three Feature Label Components
-# that may be printed as 'Yundah Street South'
-# or perhaps in short form, using another template:
-# 'Yundah St Sth'
-
-ex:road-1
-  a roads:RoadLabel ;
-  fl:isLabelFor &lt;some-external-object&gt; ;
-  fl:hasFeatureLabelComponent
-    [
-      fl:hasValue "Yundah" ;
-      fl:hasComponentType rct:RoadName ;
-    ] ,
-    [
-      fl:hasValue st:Street ;
-      fl:hasComponentType rct:RoadType ;
-    ] ,
-    [
-      fl:hasValueText "South" ;
-      fl:hasComponentType rct:RoadSuffix ;
-    ] ;
-.</code></pre>
-</div>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The basis for the Road Name class. This class is also used for instances of Road Name parts</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="FeatureLabelComponentType"><a class="anchor" href="#FeatureLabelComponentType"></a>4.1.4. Feature Label Component Type</h4>
+<h4 id="LifecycleStage"><a class="anchor" href="#LifecycleStage"></a>4.1.4. Lifecycle Stage</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1145,74 +1094,29 @@ ex:road-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:FeatureLabelComponentType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lm:LifecycleStage</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label Component Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compound Name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The kind of Feature Label Component</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Compound Name is a literal value, or objects that can be interpreted as literal values, that describe or name a Feature</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/lifecycle">Lifecycle Model</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>addressComponentType</code> codelist</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Feature Label Component&#8217;s type should be indicated with values from a controlled vocabulary - a code list.</p>
-<p class="tableblock">A SKOS vocabulary of Road Model component types is supplied with this model, see <a href="#_supporting_vocabularies">Supporting Vocabularies</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standard properties for a SKOS Concept</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># three Feature Label Component Types are indicated here
-# by the fl:hasComponentType property
-ex:road-1
-  a roads:RoadLabel ;
-  fl:isLabelFor &lt;some-external-object&gt; ;
-  fl:hasFeatureLabelComponent
-    [
-      fl:hasValue "Yundah" ;
-      fl:hasComponentType rct:RoadName ;
-    ] ,
-    [
-      fl:hasValue st:Street ;
-      fl:hasComponentType rct:RoadType ;
-    ] ,
-    [
-      fl:hasValueText "South" ;
-      fl:hasComponentType rct:RoadSuffix ;
-    ] ;
-.</code></pre>
-</div>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to indicate the lifecycle stage of any Roads Model part. Different stage types may be necessary for different class instances such as Road Name and Road Object and may be sourced from different vocabularies</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="LifecycleStage"><a class="anchor" href="#LifecycleStage"></a>4.1.5. Lifecycle Stage</h4>
-<div id="fig-lifecycle" class="imageblock">
-<div class="content">
-<img src="img/roads-lifecycle.png" alt="roads lifecycle">
-</div>
-<div class="title">Figure 4. A) An example Road Label, <code>road-label-x</code>, with Lifecycle Stages and B) An example Feature Label Component part of a Road Label with a Lifecycle Stage indicated</div>
-</div>
+<h4 id="Feature"><a class="anchor" href="#Feature"></a>4.1.5. Feature</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1227,74 +1131,29 @@ ex:road-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:LifecycleStage</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:Feature</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address Lifecycle Stage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feature</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Represents the different lifecycle stages of an Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A discrete spatial phenomenon in a universe of discourse</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#GEO">[GEO]</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycle</code> class</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An Address Lifecycle Stage&#8217;s type should be indicated with values from a controlled vocabulary - a code list.</p>
-<p class="tableblock">A SKOS vocabulary of Address Lifecycle Stages is supplied with this model.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standard properties for a SKOS Concept</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with two Lifecycle Stages indicated:
-# one current and one past
-ex:road-label-x
-  a roads:RoadLabel ;
-  fl:hasLifeCycleStage [
-    # this Stage has ceased
-    time:hasTime [
-      time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
-      time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
-    ] ;
-    dcterms:type ls:proposed ;
-  ] ,
-  [
-    # this Stage is still in effect - no hasEnd given
-    time:hasTime [
-      time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
-    ] ;
-    dcterms:type ls:current ;
-  ] ,
-.
-
-# The Address Lifecycle Stage 'proposed'
-# from the Address Lifecycle Stage Types vocabulary
-# indicating only some properties
-ls:proposed
-    a skos:Concept ;
-    ...
-    skos:prefLabel "Proposed" ;
-.</code></pre>
-</div>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used as the basis for the Road Object class</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="FeatureLabelLifecycleStageType"><a class="anchor" href="#FeatureLabelLifecycleStageType"></a>4.1.6. Feature Label Lifecycle Stage Type</h4>
+<h4 id="Geometry"><a class="anchor" href="#Geometry"></a>4.1.6. Geometry</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1309,53 +1168,97 @@ ls:proposed
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:FeatureLabelLifecycleStageType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:Geometry</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address Lifecycle Stage Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geometry</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Code that specifies the kind of Address Lifecycle Stage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#GEO">[GEO]</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to give spatial representation information for a Road Object</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycle</code> class' codelist of types</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Feature Label Lifecycle Stage&#8217;s type should be indicated with values from a controlled vocabulary - a code list.</p>
-<p class="tableblock">A SKOS vocabulary of Lifecycle Stage Types is supplied with the Feature Labelling Model <a href="#FL">[FL]</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standard properties for a SKOS Concept</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># A Road Label with a Lifecycle Stages indicated
-# which then indicates its type
-ex:addr-1
-  a roads:RoadLabel ;
-  fl:hasLifeCycleStage [
-    ...
-    dcterms:type ls:proposed ;
-  ] ;
-  ...
-.</code></pre>
+</tbody>
+</table>
 </div>
-</div></div></td>
+<div class="sect3">
+<h4 id="Concept"><a class="anchor" href="#Concept"></a>4.1.7. Concept</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skos:Concept</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Concept</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An idea or notion; a unit of thought</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SKOS">[SKOS]</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to indicate a value that should come from a vocabulary (modelled as a `skos:ConceptScheme)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="Resource"><a class="anchor" href="#Resource"></a>4.1.8. Resource</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdfs:Resource</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resource</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The class resource, everything</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#RDFS">[RDFS]</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to indicate any kind of RDF value - a literal, IRI or Blank Node</p></td>
 </tr>
 </tbody>
 </table>
@@ -1366,27 +1269,27 @@ ex:addr-1
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#isFeatureLabelFor">is feature label for</a></p>
-</li>
-<li>
-<p><a href="#hasFeatureLabel">has feature label</a></p>
-</li>
-<li>
-<p><a href="#hasFeatureLabelComponent">has feature label component</a></p>
+<p><a href="#isNameFor">is name for</a></p>
 </li>
 <li>
 <p><a href="#hasLifecycleStage">has lifecycle stage</a></p>
 </li>
 <li>
-<p><a href="#hasValue">has value</a></p>
+<p><a href="#value">value</a></p>
 </li>
 <li>
-<p><a href="#hasValueText">has value text</a></p>
+<p><a href="#additionalType">additionalType</a></p>
+</li>
+<li>
+<p><a href="#hasPart">hasPart</a></p>
+</li>
+<li>
+<p><a href="#hasGeometry">hasGeometry</a></p>
 </li>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="isFeatureLabelFor"><a class="anchor" href="#isFeatureLabelFor"></a>4.2.1. is address for</h4>
+<h4 id="isNameFor"><a class="anchor" href="#isNameFor"></a>4.2.1. is name for</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1401,54 +1304,47 @@ ex:addr-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:isFeatureLabelFor</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cn:isNameFor</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">is feature label for</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is name for</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates a Feature that a Feature Label is allocated to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inverse of <code>sdo:name</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-property Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#label"><code>rdfs:label</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inverse Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasFeatureLabel">has feature label</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s object relations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;&lt;CNM&gt;</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl/FeatureLabel">Feature Label</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CompoundName">Compound Name</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature">Feature</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Feature">Feature</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to link a name to a feature</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># a geospatial Road Object instance, which is a specialised form of Feature
-ex:road-x
-    a ex:Road ;
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># A road with a name
+PREFIX ex: &lt;http://example.com/&gt;
+
+ex:road-name-x
+    a :RoadName ;
+    cn:isNameFor ex:road-object-y ;
 .
 
-# Road Label, which is a specialised form of Feature Label
-ex:road-label-1
-  a roads:RoadLabel ;
-  fl:isLabelFor ex:road-x ;
-  ...
+ex:road-object-y
+    a :RoadObject , geo:Feature ;
+    sdo:name ex:road-name-x ;
 .</code></pre>
 </div>
 </div></div></td>
@@ -1457,7 +1353,7 @@ ex:road-label-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasFeatureLabel"><a class="anchor" href="#hasFeatureLabel"></a>4.2.2. has feature label</h4>
+<h4 id="hasLifecycleStage"><a class="anchor" href="#hasLifecycleStage"></a>4.2.2. has lifecycle stage</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1472,198 +1368,7 @@ ex:road-label-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:hasFeatureLabel</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">has address</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates a Feature Label has been allocated for a Feature</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inverse Of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isFeatureLabelFor">is address for</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s object relations</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature">Feature</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl/FeatureLabel">Feature Label</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># a geospatial Road Object instance, which is a specialised form of Feature
-ex:road-x
-    a ex:Road ;
-    fl:hasFeatureLabel ex:road-label-1 ;
-    ...
-.
-
-# Road Label, which is a specialised form of Feature Label
-ex:road-label-1
-  a roads:RoadLabel ;
-  ...
-.</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="hasFeatureLabelComponent"><a class="anchor" href="#hasFeatureLabelComponent"></a>4.2.3. has feature label component</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:hasFeatureLabelComponent</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">has feature label component</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates a component of a Feature Label</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s object relations</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl/FeatureLabel">Feature Label</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#FeatureLabelComponent">Feature Label Component</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># a Road Label, a specialised form of Feature Label,
-# has a Feature Label Component, a street name, indicated
-ex:addr-1
-  a roads:RoadLabel ;
-  fl:hasFeatureLabelComponent [
-      fl:hasValue "Yundah" ;
-      fl:hasComponentType addrct:streetName ;
-    ] ,
-  ...
-.</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="hasFeatureLabelComponentType"><a class="anchor" href="#hasFeatureLabelComponentType"></a>4.2.4. has feature label component type</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:hasFeatureLabelComponentType</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">has feature label component type</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an Feature Label Component&#8217;s type</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s object relations</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#FeatureLabelComponent">Feature Label Component</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#FeatureLabelComponentType">Feature Label Component Type</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># a Road Label's Feature Label Component, indicates its type, a street name
-ex:addr-1
-  a roads:RoadLabel ;
-  fl:hasFeatureLabelComponent [
-      fl:hasValue "Yundah" ;
-      fl:hasComponentType addrct:streetName ;
-    ] ,
-  ...
-.</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="hasLifecycleStage"><a class="anchor" href="#hasLifecycleStage"></a>4.2.5. has lifecycle stage</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:hasLifecycleStage</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lm:hasLifeCycleStage</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
@@ -1675,19 +1380,19 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s object relations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#LM">[LM]</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdf:Resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Resource">Resource</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl/FeatureLabel">Lifecycle Stage</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#LifecycleStage">Lifecycle Stage</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to indicate an object&#8217;s lifecycle stage</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
@@ -1695,22 +1400,22 @@ ex:addr-1
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle"># A Road Label with two Lifecycle Stages indicated:
 # one current and one past
-ex:road-label-1
-  a roads:RoadLabel ;
-  fl:hasLifeCycleStage [
+ex:road-name-x
+  a :RoadLabel ;
+  lm:hasLifeCycleStage [
     # this Stage has ceased
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
       time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    dcterms:type ls:proposed ;
+    sdo:additionalType lm:proposed ;
   ] ,
   [
     # this Stage is still in effect - no hasEnd given
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    dcterms:type ls:current ;
+    sdo:additionalType lm:current ;
   ] ,
 .</code></pre>
 </div>
@@ -1720,7 +1425,7 @@ ex:road-label-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasValue"><a class="anchor" href="#hasValue"></a>4.2.6. has value</h4>
+<h4 id="value"><a class="anchor" href="#value"></a>4.2.3. value</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1735,65 +1440,29 @@ ex:road-label-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:hasValue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdf:value</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">has value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the value of a Feature Label Component</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Idiomatic property used for structured values</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/fl">Feature Labelling Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#RDF">[RDF]</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s AddressComponent object&#8217;s properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#FeatureLabelComponent">Feature Label Component</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a> (IRI or literal)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:addr-1
-  a roads:RoadLabel ;
-  fl:hasFeatureLabelComponent
-    [
-      # "StreetNumber" type
-      fl:hasValue 20 ;
-      fl:hasComponentType addrct:streetNumber ;
-    ] ,
-    [
-      # "StreetName" type
-      fl:hasValue "Oxford" ;
-      fl:hasComponentType addrct:thoroughfareName ;
-    ] ,
-    [
-      # "Locality" type
-      fl:hasValue &lt;http://example.com/lga/1234&gt; ;
-      # textual value of complex object
-      fl:hasValueText "Shorncliffe" ;
-      fl:hasComponentType addrct:locality ;
-    ] ,
-    ...</code></pre>
-</div>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to indicate literal or object values for <a href="#CompoundName">Compound Name</a> objects</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasValueText"><a class="anchor" href="#hasValueText"></a>4.2.7. has value text</h4>
+<h4 id="additionalType"><a class="anchor" href="#additionalType"></a>4.2.4. additionalType</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1808,65 +1477,105 @@ ex:road-label-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fl:hasValueText</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:additionalType</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">has value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">additionalType</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the textual rendering of an Address Component</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This property is to be used to represent the textual value of Address Components that are literals and also complex objects. For a literal, the same value will be present for hasValue and hasValueText, e.g. a street number of 20 or a property name of "Bonnie Doon", however for a complex object, e.g. the locality <code><a href="http://example.com/lga/1234" class="bare">http://example.com/lga/1234</a></code>, a textual representation of it must be selected. Likely a simple name for the object will do, i.e. a Locality name or a Street Locality name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An additional type for the item, typically used for adding more specific types from external vocabularies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SDO">[SDO]</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s AddressComponent object&#8217;s properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to indicate a subtype for Road Name and Road Object instances</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="hasPart"><a class="anchor" href="#hasPart"></a>4.2.5. hasPart</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:hasPart</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has part</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates a part of a whole</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SDO">[SDO]</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to indicate the parts of a Road Name or of a Road Object</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="hasGeometry"><a class="anchor" href="#hasGeometry"></a>4.2.6. hasGeometry</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:hasGeometry</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has geometry</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A spatial representation for a given Feature</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#GEO">[GEO]</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressComponent">Address Component</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Feature">Feature</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#string"><code>xsd:string</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Geometry">Geometry</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:addr-1
-  a roads:RoadsLabel ;
-  fl:hasFeatureLabelComponent
-    [
-      # "StreetNumber" type
-      fl:hasValue 20 ;
-      fl:hasValueText "20" ;
-      fl:hasComponentType addrct:streetNumber ;
-    ] ,
-    [
-      # "StreetName" type
-      fl:hasValue "Oxford" ;
-      fl:hasValueText "Oxford" ;
-      fl:hasComponentType addrct:thoroughfareName ;
-    ] ,
-    [
-      # "Locality" type
-      fl:hasValue &lt;http://example.com/lga/1234&gt; ;
-      # textual value of complex object
-      fl:hasValueText "Shorncliffe" ;
-      fl:hasComponentType addrct:locality ;
-    ] ,
-    ...</code></pre>
-</div>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to indicate the Geometry of a Feature, such as a Road Object</p></td>
 </tr>
 </tbody>
 </table>
@@ -1878,74 +1587,80 @@ ex:road-label-1
 <h2 id="_supporting_vocabularies"><a class="anchor" href="#_supporting_vocabularies"></a>5. Supporting Vocabularies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This model depends on several vocabularies to give specific values to typing properties for <code>FeatureLabelComponent</code>, <code>LifecycelStage</code> and so on. Only one of those vocabularies is defined here - <a href="#_feature_label_component_types_for_roads">Feature Label Component Types for Roads</a>. All other vocabularies are defined in the Feature Labelling Model <a href="#FL">[FL]</a>.</p>
+<p>This model depends on several vocabularies to give specific values for certain theming - general classification - and sub-typing properties.</p>
 </div>
-<div class="sect2">
-<h3 id="_feature_label_component_types_for_roads"><a class="anchor" href="#_feature_label_component_types_for_roads"></a>5.1. Feature Label Component Types for Roads</h3>
 <div class="paragraph">
-<p>This vocabulary is a specialised form of <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponentType</code> vocabulary. The original 8 concepts from that standard are not included as they apply either to addresses or provide only one component type for roads - `thoroughfareName.</p>
+<p>The vocabularies are all independently-published and governed Knowledge Graph artifacts and do not record any relation to this model in their own data.</p>
+</div>
+<div class="paragraph">
+<p>The vocabularies' details are given in the table below.</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.667%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">IRI</th>
+<th class="tableblock halign-left valign-top">Persistent IRI</th>
 <th class="tableblock halign-left valign-top">Name</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Status</th>
-<th class="tableblock halign-left valign-top">Expected Form</th>
-<th class="tableblock halign-left valign-top">Usage directive</th>
+<th class="tableblock halign-left valign-top">Model property</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rct:RoadPrefix</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Road Prefix</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A literal initial part of a road&#8217;s label that comes before the road&#8217;s name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">literal</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Road Objects</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rct:RoadName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Road Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The literal name of the road, without any expression of the road&#8217;s type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">literal</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-classifications" class="bare">https://linked.data.gov.au/def/road-classifications</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Classifications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes hierarchy classification types for roads</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:additionalType</code> for a Road Object</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rct:RoadType</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Road Type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A reference to the type of the road, selected from a controlled list of road (street) types</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">object reference</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-operational-statuses" class="bare">https://linked.data.gov.au/def/road-operational-statuses</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Operational Statuses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes the operational status for roads</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcat:theme</code> for a Road Object</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rct:RoadSuffix</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Road Suffix</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A literal initial part of a road&#8217;s label that comes after the road&#8217;s name and type value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">literal</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-sub-classes" class="bare">https://linked.data.gov.au/def/road-sub-classes</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Sub-Classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes sub classifications of roads</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcat:theme</code> for a Road Object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-surfaces" class="bare">https://linked.data.gov.au/def/road-surfaces</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Surfaces</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes surfaces of roads</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcat:theme</code> for a Road Object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Road Names</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-name-part-types" class="bare">https://linked.data.gov.au/def/road-name-part-types</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Compound Name Types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes values of name part types used in road naming</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:additionalType</code> for a Road Name&#8217;s Compound Name part</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-types" class="bare">https://linked.data.gov.au/def/road-types</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes road types. A road type is used as part of a road name and distinguishes the type of road. The road types that do not meet AS/NZS 4819:2011 exist to enable inclusion of roads named prior to the creation of AS/NZS 4819:2011. These types should not be used for any new road designations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdf:value</code> for a Road Name&#8217;s Compound Name part of <code>sdo:additionalType</code> Road Type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-suffixes" class="bare">https://linked.data.gov.au/def/road-suffixes</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Suffixes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes values of suffixes used in road naming</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdf:value</code> for a Road Name&#8217;s Compound Name part of <code>sdo:additionalType</code> Road Suffix</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>This vocabulary is available in machine-readable form at <strong><a href="https://linked.data.gov.au/def/rct" class="bare">https://linked.data.gov.au/def/rct</a></strong>.</p>
-</div>
-<div class="paragraph">
-<p>Three of the four elements above are literal values, e.g. a Road Name of "Yundah". The exception is Road Type which sould be a reference to a Road (Street) Type controlled vocabulary object, such as an instance of a Concepts from Australia&#8217;s ICSM&#8217;s <em>StreetTypes</em> vocabulary. A textual representation for Road Type can be acquired from such an object by importing one of its potentially many labels.</p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2154,7 +1869,33 @@ road_label = "Yundah Street South"</code></pre>
 <h2 id="_examples"><a class="anchor" href="#_examples"></a>9. Examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This model contains examples per Class and Property in the <a href="#_model">Model</a> section as well as for each template within in the <a href="#_templating">Templating</a> section. The examples are all versions of the following:</p>
+<p>This model contains examples per Class and Property in the <a href="#_model">Model</a> section as well as for each template within in the <a href="#_templating">Templating</a> section. Additionally, the following drawn examples are provided to illustrate modelling intentions.</p>
+</div>
+<div class="sect2">
+<h3 id="_modelling_scenarios"><a class="anchor" href="#_modelling_scenarios"></a>9.1. Modelling Scenarios</h3>
+<div id="fig-eg-naming" class="imageblock">
+<div class="content">
+<img src="img/EG-Naming.svg" alt="EG Naming" width="75%">
+</div>
+<div class="title">Figure 4. Roads Naming example</div>
+</div>
+<div id="fig-eg-classification" class="imageblock">
+<div class="content">
+<img src="img/EG-Classifications.svg" alt="EG Classifications">
+</div>
+<div class="title">Figure 5. Roads Classification examples</div>
+</div>
+<div id="fig-eg-parts" class="imageblock">
+<div class="content">
+<img src="img/EG-Parts.svg" alt="EG Parts" width="75%">
+</div>
+<div class="title">Figure 6. Roads Parts examples</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_code"><a class="anchor" href="#_code"></a>9.2. Code</h3>
+<div class="paragraph">
+<p>The following code is the aggregate of the per-Class and Property examples.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2194,12 +1935,13 @@ ex:road-label-1
       time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
     dcterms:type ls:current ;
-  ] ,
+  ] ;
 .</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>The example above prints out as "Yundah Street South" using the <em>Basic Template</em> provided in the <a href="#_templating">Templating</a> section and "Yundah St Sth" using that section&#8217;s <em>Short Form Template</em>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -2209,10 +1951,10 @@ ex:road-label-1
 <div class="ulist">
 <ul>
 <li>
-<p><a id="CONNEGP"></a> [CONNEGP] World Wide Web Consortium, <em>Content Negotiation by Profile</em>, W3C Working Draft (20 March 2022). <a href="https://w3c.github.io/dx-connegp/connegp/" class="bare">https://w3c.github.io/dx-connegp/connegp/</a></p>
+<p><a id="CNM"></a> [CNM] Australian Government Linked Data Working Group. <em>Compound Naming Model</em>. Semantic Web data model (2023). <a href="https://linked.data.gov.au/def/cn" class="bare">https://linked.data.gov.au/def/cn</a></p>
 </li>
 <li>
-<p><a id="FL"></a> [FLM] The State of Queensland (Department of Resources). <em>Feature Labelling Model</em>. Semantic Web data model (2023). <a href="https://linked.data.gov.au/def/fl" class="bare">https://linked.data.gov.au/def/fl</a></p>
+<p><a id="CONNEGP"></a> [CONNEGP] World Wide Web Consortium, <em>Content Negotiation by Profile</em>, W3C Working Draft (20 March 2022). <a href="https://w3c.github.io/dx-connegp/connegp/" class="bare">https://w3c.github.io/dx-connegp/connegp/</a></p>
 </li>
 <li>
 <p><a id="GEO"></a> [GEO] Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1</em> (2021). OGC Implementation Specification. <a href="http://www.opengis.net/doc/IS/geosparql/1.1" class="bare">http://www.opengis.net/doc/IS/geosparql/1.1</a></p>
@@ -2230,6 +1972,9 @@ ex:road-label-1
 <p><a id="ISO19160-1"></a> [ISO19160-1] International Organization for Standardization, <em>ISO 19160-1: Addressing Part 1: Conceptual model</em> (2015). <a href="https://www.iso.org/standard/61710.html" class="bare">https://www.iso.org/standard/61710.html</a></p>
 </li>
 <li>
+<p><a id="LM"></a> [LM] Australian Government Linked Data Working Group. _Lifecycle Model (2023). <a href="https://linked.data.gov.au/def/lifecycle" class="bare">https://linked.data.gov.au/def/lifecycle</a></p>
+</li>
+<li>
 <p><a id="OWL"></a> [OWL] World Wide Web Consortium, <em>OWL 2 Web Ontology Language Document Overview (Second Edition)</em>, W3C Recommendation (11 December 2012). <a href="https://www.w3.org/TR/owl2-overview/" class="bare">https://www.w3.org/TR/owl2-overview/</a></p>
 </li>
 <li>
@@ -2239,7 +1984,10 @@ ex:road-label-1
 <p><a id="PROV"></a> [PROV] World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
 </li>
 <li>
-<p><a id="RDF"></a> [RDF]World Wide Web Consortium, <em>RDF 1.1 Concepts and Abstract Syntax</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/rdf11-concepts/" class="bare">https://www.w3.org/TR/rdf11-concepts/</a></p>
+<p><a id="RDF"></a> [RDF] World Wide Web Consortium, <em>RDF 1.1 Concepts and Abstract Syntax</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/rdf11-concepts/" class="bare">https://www.w3.org/TR/rdf11-concepts/</a></p>
+</li>
+<li>
+<p><a id="RDFS"></a> [RDFS] World Wide Web Consortium, <em>RDF 1.2 Schema</em>, W3C First Public Working Draft (16 May 2023). <a href="https://www.w3.org/TR/rdf12-schema/" class="bare">https://www.w3.org/TR/rdf12-schema/</a></p>
 </li>
 <li>
 <p><a id="SDO"></a> [SDO] W3C Schema.org Community Group, <em>schema.org</em>. Community ontology (2015). <a href="https://schema.org" class="bare">https://schema.org</a></p>
@@ -2260,7 +2008,7 @@ ex:road-label-1
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-16 04:10:43 UTC
+Last updated 2023-06-11 14:42:32 UTC
 </div>
 </div>
 </body>
