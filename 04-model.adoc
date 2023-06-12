@@ -28,16 +28,16 @@ This model defines only two Classes and no Properties but reuses many Classes an
 | Definition | The Road Name class represents structured information that allows unambiguous determination of a Road Object for the purposes of identification and location
 | Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
 | Sub-class Of | https://linked.data.gov.au/def/cn/CompoundName[`cn:CompoundName`]
-| History Note | Specialised from <<CNM>>'s Feature Label class
+| History Note | Specialised from <<CNM>>'s Compound Name class
 | Expected Properties | <<isNameFor>>, <<value>>, <<additionalType>>, <<hasPart>>, <<hasLifecycleStage>>
 | Example 
 a| [source,turtle]
 ----
 # Yundah Street South
 ex:road-name-1
-  a :RoadLabel ;
+  a :RoadName ;
   cn:isNameFor <some-external-object> ;
-  cn:hasFeatureLabelComponent
+  sdo:hasPart
     [
       rdf:value "Yundah" ;
       sdo:additionalType rct:RoadName ;
@@ -63,7 +63,7 @@ ex:road-name-1
 
 | IRI | `:RoadObject`
 | Preferred Label | Road Object
-| Definition | A geospatial object that is unambiguously identified by a Road Label.
+| Definition | A geospatial object that is unambiguously identified by a Road Name.
 
 Examples of types of RoadObjects are a sequences of cadastral parcels of type _road_.
 | Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
@@ -74,15 +74,13 @@ Examples of types of RoadObjects are a sequences of cadastral parcels of type _r
 | Example 
 a| [source,turtle]
 ----
-# ex:parcel-x is inferred to be a Road Object
-# due to the property cn:hasFeatureLabel indicated for it
-# that in tern indicates a Road Label instance
+# ex:parcel-aggregate-x is inferred to be a Road Object
+# due to the property cn:isNameFor indicating it
+# on a Road Name instance
 
-ex:parcel-aggregate-x cn:hasFeatureLabel ex:road-name-1 .
-
-# this object is declared to be a Road Label
 ex:road-name-1
-  a :RoadLabel ;
+  a :RoadName ;
+  cn:isNameFor ex:parcel-aggregate-x ;
   ...
 .
 ----
@@ -181,6 +179,7 @@ ex:road-name-1
 * <<additionalType>>
 * <<hasPart>>
 * <<hasGeometry>>
+* <<theme>>
 
 [[isNameFor]]
 ==== is name for
@@ -231,10 +230,10 @@ ex:road-object-y
 | Example 
 a| [source,turtle]
 ----
-# A Road Label with two Lifecycle Stages indicated:
+# A Road Name with two Lifecycle Stages indicated:
 # one current and one past
 ex:road-name-x
-  a :RoadLabel ;
+  a :RoadName ;
   lm:hasLifeCycleStage [
     # this Stage has ceased
     time:hasTime [
@@ -310,4 +309,19 @@ ex:road-name-x
 | Domain | <<Feature>>
 | Range | <<Geometry>>
 | Scope Note | Used to indicate the Geometry of a Feature, such as a Road Object
+|===
+
+[[theme]]
+==== theme
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `dcat:theme`
+| Preferred Label | theme
+| Definition | A main category of the resource. A resource can have multiple themes
+| Is Defined By | <<DCAT>>
+| Range | <<Concept>>
+| Scope Note | Used to indicate Road Object cetegorisations
 |===

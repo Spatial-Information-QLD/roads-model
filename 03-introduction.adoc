@@ -10,7 +10,7 @@ Data made according to this model, when stored in one of the <<RDF>> serializati
 
 This model was initially built to allow Queensland Government to manage roads naming information in a manner similar to how they manage Address & Geographic Name information: as a collection of Feature Names for Features which have Geometries. This introduces requirements to both facilitate complex naming and align with Address etc. modelling.
 
-To ensure that this model implements that Feature Names / Features / Geometries pattern, it is a profile of the https://linked.data.gov.au/def/cn[Compound Naming Model] which captures the pattern in generic form and is also profiled by Queensland Government's Address & Geographic Names Models. Figure <<fig-roads-spatial>> overviews this. This introduces the requirement for all Roads Model information to conform to the Compound Names Model - the necessary requirement for profiling.
+To ensure that this model implements that Feature Name / Feature / Geometry pattern, it is a profile of the https://linked.data.gov.au/def/cn[Compound Naming Model] which captures the pattern in generic form and is also profiled by Queensland Government's Address & Geographic Names Models. Figure <<fig-roads-spatial>> overviews this. This introduces the requirement for all Roads Model information to conform to the Compound Names Model - the necessary requirement for profiling.
 
 By profiling that model, this model also remains interoperable with detailed spatial object modelling, for example of the sort implemented in the https://linked.data.gov.au/cad[Cadastre Model].
 
@@ -32,7 +32,7 @@ image::img/Spatiality.svg[width="50%"]
 
 ==== Feature / Feature Naming differentiation
 
-This model details the elements of a road label but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of name/spatial object follows the Address/AddressableObject split in ISO19160-1 <<ISO19160-1>>. Addresses there are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature and Road Names here are considered a simple case of that.
+This model details the elements of a road name but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of name/spatial object follows the Address/AddressableObject split in ISO19160-1 <<ISO19160-1>>. Addresses there are seen as a form of complex, multi-part, label - Feature Name - for a spatial Feature and Road Names here are considered a simple case of that.
 
 This allows for the representation, and ultimately the management, of names - text, numbers, identifiers, references - separately to the management of spatial objects and their properties, such as the physical presentation of a Road.
 
@@ -46,7 +46,7 @@ This Feature / Geometry distinction allows individual spatial objects to have mu
 
 === Profile Views
 
-Road Names have multiple roles: they indicate places with names (or Features with Names), they are things to be managed by data holders, and they have statuses, lifecycles and so on. Sometimes we are only interested in one of these aspects of a Road Label or one _profile_ and not the total information held. We may also be interested only in a reduced set of properties of a Road Label even when others within that role are present, e.g. the current status, not all the statues an Address has ever had. Finally, different implementers of this model may want to implement different jurisdictional profiles of the model that, for example, mandate certain information be stored for Road Names, that may be meaningless outside that jurisdiction.
+Road Names have multiple roles: they indicate places with names (or Features with Names), they are things to be managed by data holders, and they have statuses, lifecycles and so on. Sometimes we are only interested in one of these aspects of a Road Name or one _profile_ and not the total information held. We may also be interested only in a reduced set of properties of a Road Name even when others within that role are present, e.g. the current status, not all the statues an Address has ever had. Finally, different implementers of this model may want to implement different jurisdictional profiles of the model that, for example, mandate certain information be stored for Road Names, that may be meaningless outside that jurisdiction.
 
 All of these sorts of _profiles_ of Road Names are handled in a similar way in this model: they are declared Profiles of the model that may implement additional rules and/or requirements on data, however they must always conform to the main Roads Model itself.
 

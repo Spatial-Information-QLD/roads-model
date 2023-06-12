@@ -4,6 +4,8 @@
 
 * [[CONNEGP]] [CONNEGP] World Wide Web Consortium, _Content Negotiation by Profile_, W3C Working Draft (20 March 2022). https://w3c.github.io/dx-connegp/connegp/
 
+* [[DCAT]] [DCAT] World Wide Web Consortium, _Data Catalog Vocabulary (DCAT) - Version 2_, W3C Recommendation 04 February 2020, https://www.w3.org/TR/vocab-dcat-2/
+
 * [[GEO]] [GEO] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1_ (2021). OGC Implementation Specification. http://www.opengis.net/doc/IS/geosparql/1.1
 
 * [[ISO-IEC-14977]] [ISO-IEC-14977] International Organization for Standardization, _ISO/IEC 14977 : 1996(E): Extended Backus–Naur form_. International Organization for Standardization (1996). https://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf

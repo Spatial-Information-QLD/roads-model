@@ -1,12 +1,12 @@
 == Templating
 
-To present - on screen or in print form - the consolidated label for a Road, the Feature Label Components of a Road Label need to be assembled in a particular order and perhaps processes to make contractions etc. The logic for this is not contained in the Classes or Properties of the model but in this Templating section.
+To present - on screen or in print form - the consolidated name for a Road Name, the parts need to be assembled in a particular order and perhaps processes to make contractions etc. The logic for this is not contained in the Classes or Properties of the model but in this Templating section.
 
 Users of this model are free to implement additional templates and template logic to suit their needs.
 
 === Basic Template
 
-This template assembled the Road Label's Feature Label Components in the most basic manner, which is also the manner expected to be used most commonly.
+This template assembled elements of a Road Name's in the most basic manner, and is expected to be the most commonly used template.
 
 The template, in EBNF form <<ISO-IEC-14977>>, is:
 
@@ -28,12 +28,12 @@ type_spaced = space, type
 suffix = extended_letters
 suffix_spaced = space, suffix
 
-road_label = [prefix_spaced], name, [type_spaced], [suffix_spaced]
+road_name = [prefix_spaced], name, [type_spaced], [suffix_spaced]
 ```
 
-Consider a Road Label with the following Feature Label Components:
+Consider a Road Name with the following parts:
 
-* Road Name, value text "Yundah"
+* Road Given Name, value text "Yundah"
 * Road Type, value text "Street"
 * Road Suffix, value text "South"
 
@@ -47,7 +47,7 @@ type_spaced = " Street"
 suffix = "South"
 suffix_spaced = " South"
 
-road_label = "Yundah Street South"
+road_name = "Yundah Street South"
 ```
 
 === Short Form Template
@@ -69,9 +69,9 @@ Etc., as per address regulations such as AS 4590.
 ** East -> Est
 ** West -> Wst
 
-Consider a Road Label with the following Feature Label Components:
+Consider a Road Name with the following parts:
 
-* Road Name, value text "Yundah"
+* Road Given Name, value text "Yundah"
 * Road Type, value text "Street"
 * Road Suffix, value text "South"
 

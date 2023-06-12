@@ -2,7 +2,7 @@
 
 === Abstract
 
-A Semantic Web data model of roads information. It caters specifically for Australian & New Zealand's road labelling (naming) needs.
+A Semantic Web data model of roads information. It caters specifically for Australian & New Zealand's road naming needs.
 
 [NOTE]
 This model was made for Queensland Spatial Information, a unit of the Queensland Department of Resources, to assist with their future address and roads database design. It is a Component Model of their 'QSI Supermodel' which includes models for Address, Place Name and Cadastral information which are all designed to work together, however they may all be used independently too.

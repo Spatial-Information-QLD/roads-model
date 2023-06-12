@@ -8,7 +8,7 @@ Here are the itemised Requirements referenced in the<<Sources of Requirements>> 
 |===
 | ID | Name | Description
 
-| Req01 | _MUST_ align with Address modelling | Profiles from the Feature Labelling Model which the QSI Address Model also profiles from
-| Req02 | _MUST_ implement the Feature Labels / Features / Geometries relationships of the Feature Labelling Model | Profiles from the Feature Labelling Model
-| Req03 | _MUST_ be interoperable with detailed spatial object modelling, for example of the sort implemented in the Cadastre Model | Profiles from the Feature Labelling Model which associated Feature Labels with Features which may have any form of further detailed modelling
+| Req01 | _MUST_ align with Address modelling | Profiles the Compound Naming Model <<CNM>> and the Lifecycle Model <<LM>> which the QSI Address Model also profiles
+| Req02 | _MUST_ implement the Feature Name / Feature pattern | Implements Road Name & Road Object to specialise the pattern for roads
+| Req03 | _MUST_ be interoperable with detailed spatial object modelling, for example of the sort implemented in the Cadastre Model | Implements Road Object as a GeoSPARQL Feature to which any GeoSPARQL spatial modelling can be applied
 |===
