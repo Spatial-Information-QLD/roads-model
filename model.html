@@ -541,7 +541,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/qsi">Queensland Spatial Information</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Provenance</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>History Note</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This model was made for Queensland Spatial Information, a unit of the Queensland Department of Resources, to assist with their future address and roads database design. It is a Component Model of their 'QSI Supermodel' which includes models for Address, Place Name and Cadastral information which are all designed to work together, however they may all be used independently too.</p></td>
 </tr>
 <tr>
@@ -550,7 +550,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Version</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads:0.0.1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:0.0.1</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Code Repository</strong></p></td>
@@ -596,7 +596,7 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <div class="sect2">
 <h3 id="_namespaces"><a class="anchor" href="#_namespaces"></a>2.2. Namespaces</h3>
 <div class="paragraph">
-<p>This model is built on a small set of well-regarded Semantic Web models which use a variety of namespacess. Prefixes for these namespaces, used throughout this document, are listed below.</p>
+<p>This model is built on a small set of well-regarded Semantic Web models which use a variety of namespaces. Prefixes for these namespaces, used throughout this document, are listed below.</p>
 </div>
 <table class="tableblock frame-none grid-none stripes-even stretch">
 <colgroup>
@@ -710,7 +710,7 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>3. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This model facilitates applying Road Label objects, with potentially many subcomponents, to the geospatial representation of roads - Road Objects. This style of feature label / geospatial feature modelling is informed inherited from the <a href="https://linked.data.gov.au/def/cn">Compound Naming Model</a> that this model extends.</p>
+<p>This model facilitates applying Road Name objects, with potentially many subcomponents, to the geospatial representation of roads - Road Objects. This style of feature name / geospatial feature modelling is informed inherited from the <a href="https://linked.data.gov.au/def/cn">Compound Naming Model</a> that this model extends.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -719,7 +719,7 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <div class="title">Note</div>
 </td>
 <td class="content">
-This model does not attempt to assist with detail geospatial or physical road modelling: it only provides an association between naming components and geospatial representations of the road established using other models. This model also does not link road objects to other, related, objects, such as Localities. Such linking should be represented with Feature / Feature topological relations, such as those within GeoSPARQL <a href="#GEO">[GEO]</a>.
+This model does not attempt to assist with detail geospatial aspects of road modelling: it only provides an association between naming components and geospatial representations of the road established using other models and with categorisation of road objects. This model also does not link road objects to other, related, objects, such as Localities. Such linking should be represented with Feature / Feature topological relations, such as those within GeoSPARQL <a href="#GEO">[GEO]</a>.
 </td>
 </tr>
 </table>
@@ -730,10 +730,10 @@ This model does not attempt to assist with detail geospatial or physical road mo
 <div class="sect2">
 <h3 id="_sources_of_requirements"><a class="anchor" href="#_sources_of_requirements"></a>3.1. Sources of Requirements</h3>
 <div class="paragraph">
-<p>This model was initially built to allow Queensland Government to manage roads naming information in a manner similar to how they manage Address &amp; Geographic Name information: as a collection of Feature Labels for Features which have Geometries. This introduces requirements to both facilitate complex naming and align with Address etc. modelling.</p>
+<p>This model was initially built to allow Queensland Government to manage roads naming information in a manner similar to how they manage Address &amp; Geographic Name information: as a collection of Feature Names for Features which have Geometries. This introduces requirements to both facilitate complex naming and align with Address etc. modelling.</p>
 </div>
 <div class="paragraph">
-<p>To ensure that this model implements that Feature Labels / Features / Geometries pattern, it is a profile of the <a href="https://linked.data.gov.au/def/cn">Compound Naming Model</a> which captures the pattern in generic form and is also profiled by Queensland Government&#8217;s Address &amp; Geographic Names Models. Figure <a href="#fig-roads-spatial">Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations</a> overviews this. This introduces the requirement for all Roads Model information to conform to the Feature Labels Model - the necessary requirement for profiling.</p>
+<p>To ensure that this model implements that Feature Names / Features / Geometries pattern, it is a profile of the <a href="https://linked.data.gov.au/def/cn">Compound Naming Model</a> which captures the pattern in generic form and is also profiled by Queensland Government&#8217;s Address &amp; Geographic Names Models. Figure <a href="#fig-roads-spatial">Roads Object spatial modelling</a> overviews this. This introduces the requirement for all Roads Model information to conform to the Compound Names Model - the necessary requirement for profiling.</p>
 </div>
 <div class="paragraph">
 <p>By profiling that model, this model also remains interoperable with detailed spatial object modelling, for example of the sort implemented in the <a href="https://linked.data.gov.au/cad">Cadastre Model</a>.</p>
@@ -767,12 +767,12 @@ This model does not attempt to assist with detail geospatial or physical road mo
 <div class="content">
 <img src="img/Spatiality.svg" alt="Spatiality" width="50%">
 </div>
-<div class="title">Figure 3. Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations</div>
+<div class="title">Figure 3. Roads Object spatial modelling</div>
 </div>
 <div class="sect3">
 <h4 id="_feature_feature_naming_differentiation"><a class="anchor" href="#_feature_feature_naming_differentiation"></a>3.2.1. Feature / Feature Naming differentiation</h4>
 <div class="paragraph">
-<p>This model details the elements of a road label but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of name/spatial object follows the Address/AddressableObject split in ISO19160-1 <a href="#ISO19160-1">[ISO19160-1]</a>. Addresses there are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature and Road Labels here are considered a simple case of that.</p>
+<p>This model details the elements of a road label but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of name/spatial object follows the Address/AddressableObject split in ISO19160-1 <a href="#ISO19160-1">[ISO19160-1]</a>. Addresses there are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature and Road Names here are considered a simple case of that.</p>
 </div>
 <div class="paragraph">
 <p>This allows for the representation, and ultimately the management, of names - text, numbers, identifiers, references - separately to the management of spatial objects and their properties, such as the physical presentation of a Road.</p>
@@ -784,7 +784,7 @@ This model does not attempt to assist with detail geospatial or physical road mo
 <div class="sect3">
 <h4 id="_feature_geometry_differentiation"><a class="anchor" href="#_feature_geometry_differentiation"></a>3.2.2. Feature / Geometry differentiation</h4>
 <div class="paragraph">
-<p>(Geo)spatial objects referenced by this model&#8217;s naming objects (Road Names) are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. See Figure <a href="#fig-roads-spatial">Roads Label / Roads Object and Feature / Feature, Feature / Geometry relations</a>. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <a href="#ISO19101-1">[ISO19101-1]</a> and their expression in the Semantic Web spatial standard <a href="#GEO">[GEO]</a>.</p>
+<p>(Geo)spatial objects referenced by this model&#8217;s naming objects (Road Names) are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. See Figure <a href="#fig-roads-spatial">Roads Object spatial modelling</a>. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <a href="#ISO19101-1">[ISO19101-1]</a> and their expression in the Semantic Web spatial standard <a href="#GEO">[GEO]</a>.</p>
 </div>
 <div class="paragraph">
 <p>This Feature / Geometry distinction allows individual spatial objects to have multiple Geometries: different resolutions, in different coordinate systems and even sets of Geometries that have different roles or that show variation over time. This would allow Road Objects to have spatiallity represented with road centrelines, area polygons from cadastre etc., all at the same time, by linking those different spatial representations - the Geometries - to the single conceptual entity - the Feature.</p>
@@ -794,10 +794,10 @@ This model does not attempt to assist with detail geospatial or physical road mo
 <div class="sect2">
 <h3 id="_profile_views"><a class="anchor" href="#_profile_views"></a>3.3. Profile Views</h3>
 <div class="paragraph">
-<p>Road Labels have multiple roles: they indicate places with names (or Features with Labels), they are things to be managed by data holders, and they have statuses, lifecycles and so on. Sometimes we are only interested in one of these aspects of a Road Label or one <em>profile</em> and not the total information held. We may also be interested only in a reduced set of properties of a Road Label even when others within that role are present, e.g. the current status, not all the statues an Address has ever had. Finally, different implementers of this model may want to implement different jurisdictional profiles of the model that, for example, mandate certain information be stored for Road Labels, that may be meaningless outside that jurisdiction.</p>
+<p>Road Names have multiple roles: they indicate places with names (or Features with Names), they are things to be managed by data holders, and they have statuses, lifecycles and so on. Sometimes we are only interested in one of these aspects of a Road Label or one <em>profile</em> and not the total information held. We may also be interested only in a reduced set of properties of a Road Label even when others within that role are present, e.g. the current status, not all the statues an Address has ever had. Finally, different implementers of this model may want to implement different jurisdictional profiles of the model that, for example, mandate certain information be stored for Road Names, that may be meaningless outside that jurisdiction.</p>
 </div>
 <div class="paragraph">
-<p>All of these sorts of <em>profiles</em> of Road Labels are handled in a similar way in this model: they are declared Profiles of the model that may implement additional rules and/or requirements on data, however they must always conform to the main Roads Model itself.</p>
+<p>All of these sorts of <em>profiles</em> of Road Names are handled in a similar way in this model: they are declared Profiles of the model that may implement additional rules and/or requirements on data, however they must always conform to the main Roads Model itself.</p>
 </div>
 <div class="paragraph">
 <p>Profile modelling is given in <a href="#PROF">[PROF]</a> and requesting profiles from data conforming to a model is given in <a href="#CONNEGP">[CONNEGP]</a>.</p>
@@ -2008,7 +2008,7 @@ ex:road-label-1
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-06-12 02:37:39 UTC
+Last updated 2023-06-12 06:57:12 UTC
 </div>
 </div>
 </body>
