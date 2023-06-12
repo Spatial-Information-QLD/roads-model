@@ -9,7 +9,7 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 
 === Namespaces
 
-This model is built on a small set of well-regarded Semantic Web models which use a variety of namespacess. Prefixes for these namespaces, used throughout this document, are listed below.
+This model is built on a small set of well-regarded Semantic Web models which use a variety of namespaces. Prefixes for these namespaces, used throughout this document, are listed below.
 
 [width=100%, frame=none, grid=none, cols="1,4,5"]
 |===

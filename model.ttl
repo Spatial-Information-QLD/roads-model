@@ -1,4 +1,4 @@
-PREFIX roads: <https://linked.data.gov.au/def/roads/>
+PREFIX : <https://linked.data.gov.au/def/roads/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -11,7 +11,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 <https://linked.data.gov.au/def/roads>
     a owl:Ontology ;
     dcterms:provenance "This model was created for Queensland Spatial Information's CAM (Cadastre & Addressing Modernisation) project in 2023." ;
-    owl:versionIRI roads:0.0.1 ;
+    owl:versionIRI :0.0.1 ;
     owl:versionInfo "0.0.1" ;
     sdo:codeRepository "https://github.com/spatial-information-qld/roads-model/"^^xsd:anyURI ;
     sdo:copyrightHolder <https://linked.data.gov.au/org/qld-resources> ;
