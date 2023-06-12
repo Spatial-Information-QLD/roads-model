@@ -578,7 +578,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_abstract"><a class="anchor" href="#_abstract"></a>2.1. Abstract</h3>
 <div class="paragraph">
-<p>A Semantic Web data model of roads information. It caters specifically for Australian &amp; New Zealand&#8217;s road labelling (naming) needs.</p>
+<p>A Semantic Web data model of roads information. It caters specifically for Australian &amp; New Zealand&#8217;s road naming needs.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -733,7 +733,7 @@ This model does not attempt to assist with detail geospatial aspects of road mod
 <p>This model was initially built to allow Queensland Government to manage roads naming information in a manner similar to how they manage Address &amp; Geographic Name information: as a collection of Feature Names for Features which have Geometries. This introduces requirements to both facilitate complex naming and align with Address etc. modelling.</p>
 </div>
 <div class="paragraph">
-<p>To ensure that this model implements that Feature Names / Features / Geometries pattern, it is a profile of the <a href="https://linked.data.gov.au/def/cn">Compound Naming Model</a> which captures the pattern in generic form and is also profiled by Queensland Government&#8217;s Address &amp; Geographic Names Models. Figure <a href="#fig-roads-spatial">Roads Object spatial modelling</a> overviews this. This introduces the requirement for all Roads Model information to conform to the Compound Names Model - the necessary requirement for profiling.</p>
+<p>To ensure that this model implements that Feature Name / Feature / Geometry pattern, it is a profile of the <a href="https://linked.data.gov.au/def/cn">Compound Naming Model</a> which captures the pattern in generic form and is also profiled by Queensland Government&#8217;s Address &amp; Geographic Names Models. Figure <a href="#fig-roads-spatial">Roads Object spatial modelling</a> overviews this. This introduces the requirement for all Roads Model information to conform to the Compound Names Model - the necessary requirement for profiling.</p>
 </div>
 <div class="paragraph">
 <p>By profiling that model, this model also remains interoperable with detailed spatial object modelling, for example of the sort implemented in the <a href="https://linked.data.gov.au/cad">Cadastre Model</a>.</p>
@@ -772,7 +772,7 @@ This model does not attempt to assist with detail geospatial aspects of road mod
 <div class="sect3">
 <h4 id="_feature_feature_naming_differentiation"><a class="anchor" href="#_feature_feature_naming_differentiation"></a>3.2.1. Feature / Feature Naming differentiation</h4>
 <div class="paragraph">
-<p>This model details the elements of a road label but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of name/spatial object follows the Address/AddressableObject split in ISO19160-1 <a href="#ISO19160-1">[ISO19160-1]</a>. Addresses there are seen as a form of complex, multi-part, label - Feature Label - for a spatial Feature and Road Names here are considered a simple case of that.</p>
+<p>This model details the elements of a road name but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of name/spatial object follows the Address/AddressableObject split in ISO19160-1 <a href="#ISO19160-1">[ISO19160-1]</a>. Addresses there are seen as a form of complex, multi-part, label - Feature Name - for a spatial Feature and Road Names here are considered a simple case of that.</p>
 </div>
 <div class="paragraph">
 <p>This allows for the representation, and ultimately the management, of names - text, numbers, identifiers, references - separately to the management of spatial objects and their properties, such as the physical presentation of a Road.</p>
@@ -794,7 +794,7 @@ This model does not attempt to assist with detail geospatial aspects of road mod
 <div class="sect2">
 <h3 id="_profile_views"><a class="anchor" href="#_profile_views"></a>3.3. Profile Views</h3>
 <div class="paragraph">
-<p>Road Names have multiple roles: they indicate places with names (or Features with Names), they are things to be managed by data holders, and they have statuses, lifecycles and so on. Sometimes we are only interested in one of these aspects of a Road Label or one <em>profile</em> and not the total information held. We may also be interested only in a reduced set of properties of a Road Label even when others within that role are present, e.g. the current status, not all the statues an Address has ever had. Finally, different implementers of this model may want to implement different jurisdictional profiles of the model that, for example, mandate certain information be stored for Road Names, that may be meaningless outside that jurisdiction.</p>
+<p>Road Names have multiple roles: they indicate places with names (or Features with Names), they are things to be managed by data holders, and they have statuses, lifecycles and so on. Sometimes we are only interested in one of these aspects of a Road Name or one <em>profile</em> and not the total information held. We may also be interested only in a reduced set of properties of a Road Name even when others within that role are present, e.g. the current status, not all the statues an Address has ever had. Finally, different implementers of this model may want to implement different jurisdictional profiles of the model that, for example, mandate certain information be stored for Road Names, that may be meaningless outside that jurisdiction.</p>
 </div>
 <div class="paragraph">
 <p>All of these sorts of <em>profiles</em> of Road Names are handled in a similar way in this model: they are declared Profiles of the model that may implement additional rules and/or requirements on data, however they must always conform to the main Roads Model itself.</p>
@@ -939,7 +939,7 @@ This model does not attempt to assist with detail geospatial aspects of road mod
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">History Note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specialised from <a href="#CNM">[CNM]</a>'s Feature Label class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specialised from <a href="#CNM">[CNM]</a>'s Compound Name class</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
@@ -951,9 +951,9 @@ This model does not attempt to assist with detail geospatial aspects of road mod
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle"># Yundah Street South
 ex:road-name-1
-  a :RoadLabel ;
+  a :RoadName ;
   cn:isNameFor &lt;some-external-object&gt; ;
-  cn:hasFeatureLabelComponent
+  sdo:hasPart
     [
       rdf:value "Yundah" ;
       sdo:additionalType rct:RoadName ;
@@ -997,7 +997,7 @@ ex:road-name-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A geospatial object that is unambiguously identified by a Road Label.</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A geospatial object that is unambiguously identified by a Road Name.</p>
 <p class="tableblock">Examples of types of RoadObjects are a sequences of cadastral parcels of type <em>road</em>.</p></td>
 </tr>
 <tr>
@@ -1018,21 +1018,19 @@ ex:road-name-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasGeometry">hasGeometry</a>, <a href="#additionalType">additionalType</a>, <a href="#theme">[theme]</a>, <a href="#hasPart">hasPart</a>,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasGeometry">hasGeometry</a>, <a href="#additionalType">additionalType</a>, <a href="#theme">theme</a>, <a href="#hasPart">hasPart</a>,</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># ex:parcel-x is inferred to be a Road Object
-# due to the property cn:hasFeatureLabel indicated for it
-# that in tern indicates a Road Label instance
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># ex:parcel-aggregate-x is inferred to be a Road Object
+# due to the property cn:isNameFor indicating it
+# on a Road Name instance
 
-ex:parcel-aggregate-x cn:hasFeatureLabel ex:road-name-1 .
-
-# this object is declared to be a Road Label
 ex:road-name-1
-  a :RoadLabel ;
+  a :RoadName ;
+  cn:isNameFor ex:parcel-aggregate-x ;
   ...
 .</code></pre>
 </div>
@@ -1286,6 +1284,9 @@ ex:road-name-1
 <li>
 <p><a href="#hasGeometry">hasGeometry</a></p>
 </li>
+<li>
+<p><a href="#theme">theme</a></p>
+</li>
 </ul>
 </div>
 <div class="sect3">
@@ -1398,10 +1399,10 @@ ex:road-object-y
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># A Road Label with two Lifecycle Stages indicated:
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># A Road Name with two Lifecycle Stages indicated:
 # one current and one past
 ex:road-name-x
-  a :RoadLabel ;
+  a :RoadName ;
   lm:hasLifeCycleStage [
     # this Stage has ceased
     time:hasTime [
@@ -1580,6 +1581,47 @@ ex:road-name-x
 </tbody>
 </table>
 </div>
+<div class="sect3">
+<h4 id="theme"><a class="anchor" href="#theme"></a>4.2.7. theme</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcat:theme</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">theme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A main category of the resource. A resource can have multiple themes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#DCAT">[DCAT]</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Concept">Concept</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to indicate Road Object cetegorisations</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -1688,17 +1730,17 @@ ex:road-name-x
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Req01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>MUST</em> align with Address modelling</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Profiles from the Feature Labelling Model which the QSI Address Model also profiles from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profiles the Compound Naming Model <a href="#CNM">[CNM]</a> and the Lifecycle Model <a href="#LM">[LM]</a> which the QSI Address Model also profiles</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Req02</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>MUST</em> implement the Feature Labels / Features / Geometries relationships of the Feature Labelling Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Profiles from the Feature Labelling Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>MUST</em> implement the Feature Name / Feature pattern</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implements Road Name &amp; Road Object to specialise the pattern for roads</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Req03</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>MUST</em> be interoperable with detailed spatial object modelling, for example of the sort implemented in the Cadastre Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Profiles from the Feature Labelling Model which associated Feature Labels with Features which may have any form of further detailed modelling</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implements Road Object as a GeoSPARQL Feature to which any GeoSPARQL spatial modelling can be applied</p></td>
 </tr>
 </tbody>
 </table>
@@ -1709,7 +1751,7 @@ ex:road-name-x
 <h2 id="_validation"><a class="anchor" href="#_validation"></a>7. Validation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>This section will be completed when Business Rules for Road Labels are determined - etc. June, 2023</em></p>
+<p><em>This section will be completed when Business Rules for Road Names are determined - etc. June, 2023</em></p>
 </div>
 </div>
 </div>
@@ -1717,7 +1759,7 @@ ex:road-name-x
 <h2 id="_templating"><a class="anchor" href="#_templating"></a>8. Templating</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To present - on screen or in print form - the consolidated label for a Road, the Feature Label Components of a Road Label need to be assembled in a particular order and perhaps processes to make contractions etc. The logic for this is not contained in the Classes or Properties of the model but in this Templating section.</p>
+<p>To present - on screen or in print form - the consolidated name for a Road Name, the parts need to be assembled in a particular order and perhaps processes to make contractions etc. The logic for this is not contained in the Classes or Properties of the model but in this Templating section.</p>
 </div>
 <div class="paragraph">
 <p>Users of this model are free to implement additional templates and template logic to suit their needs.</p>
@@ -1725,7 +1767,7 @@ ex:road-name-x
 <div class="sect2">
 <h3 id="_basic_template"><a class="anchor" href="#_basic_template"></a>8.1. Basic Template</h3>
 <div class="paragraph">
-<p>This template assembled the Road Label&#8217;s Feature Label Components in the most basic manner, which is also the manner expected to be used most commonly.</p>
+<p>This template assembled elements of a Road Name&#8217;s in the most basic manner, and is expected to be the most commonly used template.</p>
 </div>
 <div class="paragraph">
 <p>The template, in EBNF form <a href="#ISO-IEC-14977">[ISO-IEC-14977]</a>, is:</p>
@@ -1749,16 +1791,16 @@ type_spaced = space, type
 suffix = extended_letters
 suffix_spaced = space, suffix
 
-road_label = [prefix_spaced], name, [type_spaced], [suffix_spaced]</code></pre>
+road_name = [prefix_spaced], name, [type_spaced], [suffix_spaced]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Consider a Road Label with the following Feature Label Components:</p>
+<p>Consider a Road Name with the following parts:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Road Name, value text "Yundah"</p>
+<p>Road Given Name, value text "Yundah"</p>
 </li>
 <li>
 <p>Road Type, value text "Street"</p>
@@ -1780,7 +1822,7 @@ type_spaced = " Street"
 suffix = "South"
 suffix_spaced = " South"
 
-road_label = "Yundah Street South"</code></pre>
+road_name = "Yundah Street South"</code></pre>
 </div>
 </div>
 </div>
@@ -1839,12 +1881,12 @@ road_label = "Yundah Street South"</code></pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>Consider a Road Label with the following Feature Label Components:</p>
+<p>Consider a Road Name with the following parts:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Road Name, value text "Yundah"</p>
+<p>Road Given Name, value text "Yundah"</p>
 </li>
 <li>
 <p>Road Type, value text "Street"</p>
@@ -1904,22 +1946,22 @@ ex:road-x
     a ex:Road ;
 .
 
-# Yundah Street South with Feature Label and Lifecycle Stages indicated
-ex:road-label-1
-  a roads:RoadLabel ;
-  fl:isLabelFor ex:road-x ;
-  fl:hasFeatureLabelComponent
+# Yundah Street South with Feature Name and Lifecycle Stages indicated
+ex:road-name-1
+  a roads:RoadName ;
+  cn:isNameFor ex:road-x ;
+  sdo:hasPart
     [
-      fl:hasValue "Yundah" ;
-      fl:hasComponentType rct:RoadName ;
+      rdf:value "Yundah" ;
+      sdo:additionalType rct:RoadName ;
     ] ,
     [
-      fl:hasValue st:Street ;
-      fl:hasComponentType rct:RoadType ;
+      rdf:value st:Street ;
+      sdo:additionalType rct:RoadType ;
     ] ,
     [
-      fl:hasValueText "South" ;
-      fl:hasComponentType rct:RoadSuffix ;
+      rdf:value "South" ;
+      sdo:additionalType rct:RoadSuffix ;
     ] ;
   roads:hasLifeCycleStage [
     # this Stage has ceased
@@ -1955,6 +1997,9 @@ ex:road-label-1
 </li>
 <li>
 <p><a id="CONNEGP"></a> [CONNEGP] World Wide Web Consortium, <em>Content Negotiation by Profile</em>, W3C Working Draft (20 March 2022). <a href="https://w3c.github.io/dx-connegp/connegp/" class="bare">https://w3c.github.io/dx-connegp/connegp/</a></p>
+</li>
+<li>
+<p><a id="DCAT"></a> [DCAT] World Wide Web Consortium, <em>Data Catalog Vocabulary (DCAT) - Version 2</em>, W3C Recommendation 04 February 2020, <a href="https://www.w3.org/TR/vocab-dcat-2/" class="bare">https://www.w3.org/TR/vocab-dcat-2/</a></p>
 </li>
 <li>
 <p><a id="GEO"></a> [GEO] Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1</em> (2021). OGC Implementation Specification. <a href="http://www.opengis.net/doc/IS/geosparql/1.1" class="bare">http://www.opengis.net/doc/IS/geosparql/1.1</a></p>
@@ -2008,7 +2053,7 @@ ex:road-label-1
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-06-12 06:57:12 UTC
+Last updated 2023-06-12 08:45:34 UTC
 </div>
 </div>
 </body>
