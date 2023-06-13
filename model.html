@@ -618,6 +618,16 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>This model</strong></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rnpt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><a href="https://linked.data.gov.au/def/road-name-part-types" class="bare">https://linked.data.gov.au/def/road-name-part-types</a></strong>/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supporting vocabulary - Road Name Part Types</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><a href="https://linked.data.gov.au/def/road-types" class="bare">https://linked.data.gov.au/def/road-types</a></strong>/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supporting vocabulary - Road Types</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cn</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/cn/" class="bare">https://linked.data.gov.au/def/cn/</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compound Name Model</p></td>
@@ -931,7 +941,7 @@ This model does not attempt to assist with detail geospatial aspects of road mod
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This model</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
@@ -956,15 +966,15 @@ ex:road-name-1
   sdo:hasPart
     [
       rdf:value "Yundah" ;
-      sdo:additionalType rct:RoadName ;
+      sdo:additionalType rnpt:RoadGivenName ;
     ] ,
     [
       rdf:value st:Street ;
-      sdo:additionalType rct:RoadType ;
+      sdo:additionalType rnpt:RoadType ;
     ] ,
     [
       rdf:valueText "South" ;
-      sdo:additionalType rct:RoadSuffix ;
+      sdo:additionalType rnpt:RoadSuffix ;
     ] ;
 .</code></pre>
 </div>
@@ -1002,7 +1012,7 @@ ex:road-name-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/roads">Road Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This model</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
@@ -1317,7 +1327,7 @@ ex:road-name-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;&lt;CNM&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CNM">[CNM]</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
@@ -1617,7 +1627,7 @@ ex:road-name-x
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to indicate Road Object cetegorisations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to indicate Road Object categorisations</p></td>
 </tr>
 </tbody>
 </table>
@@ -1654,6 +1664,27 @@ ex:road-name-x
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Road Names</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-name-part-types" class="bare">https://linked.data.gov.au/def/road-name-part-types</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Name Part Types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes values of name part types used in road naming</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:additionalType</code> for a Road Name&#8217;s Compound Name part</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-types" class="bare">https://linked.data.gov.au/def/road-types</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes road types. A road type is used as part of a road name and distinguishes the type of road. The road types that do not meet AS/NZS 4819:2011 exist to enable inclusion of roads named prior to the creation of AS/NZS 4819:2011. These types should not be used for any new road designations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdf:value</code> for a Road Name&#8217;s Compound Name part of <code>sdo:additionalType</code> Road Type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-suffixes" class="bare">https://linked.data.gov.au/def/road-suffixes</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Suffixes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes values of suffixes used in road naming</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdf:value</code> for a Road Name&#8217;s Compound Name part of <code>sdo:additionalType</code> Road Suffix</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Road Objects</strong></p></td>
 </tr>
 <tr>
@@ -1680,27 +1711,6 @@ ex:road-name-x
 <td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes surfaces of roads</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcat:theme</code> for a Road Object</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Road Names</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-name-part-types" class="bare">https://linked.data.gov.au/def/road-name-part-types</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Road Compound Name Types</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes values of name part types used in road naming</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:additionalType</code> for a Road Name&#8217;s Compound Name part</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-types" class="bare">https://linked.data.gov.au/def/road-types</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Road Types</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes road types. A road type is used as part of a road name and distinguishes the type of road. The road types that do not meet AS/NZS 4819:2011 exist to enable inclusion of roads named prior to the creation of AS/NZS 4819:2011. These types should not be used for any new road designations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdf:value</code> for a Road Name&#8217;s Compound Name part of <code>sdo:additionalType</code> Road Type</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/road-suffixes" class="bare">https://linked.data.gov.au/def/road-suffixes</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Road Suffixes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This vocabulary describes values of suffixes used in road naming</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdf:value</code> for a Road Name&#8217;s Compound Name part of <code>sdo:additionalType</code> Road Suffix</p></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -1709,7 +1719,7 @@ ex:road-name-x
 <h2 id="_requirements"><a class="anchor" href="#_requirements"></a>6. Requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Here are the itemised Requirements referenced in the<a href="#_sources_of_requirements">Sources of Requirements</a> subsection of the <a href="#_introduction">Introduction</a> and note for them on how this model satisfies them.</p>
+<p>Here are the itemised Requirements referenced in the <a href="#_sources_of_requirements">Sources of Requirements</a> subsection of the <a href="#_introduction">Introduction</a> and note for them on how this model satisfies them.</p>
 </div>
 <div class="sect2">
 <h3 id="_requirements_list"><a class="anchor" href="#_requirements_list"></a>6.1. Requirements List</h3>
@@ -2053,7 +2063,7 @@ ex:road-name-1
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-06-12 08:45:34 UTC
+Last updated 2023-06-13 12:08:29 UTC
 </div>
 </div>
 </body>
