@@ -16,6 +16,8 @@ This model is built on a small set of well-regarded Semantic Web models which us
 |Prefix | Namespace | Description
 
 | `*:*` | `*https://linked.data.gov.au/def/roads/*` | *This model*
+| `rnpt` | `*https://linked.data.gov.au/def/road-name-part-types*/` | Supporting vocabulary - Road Name Part Types
+| `rt` | `*https://linked.data.gov.au/def/road-types*/` | Supporting vocabulary - Road Types
 | `cn` | `https://linked.data.gov.au/def/cn/` | Compound Name Model
 | `dcterms` | `http://purl.org/dc/terms/` | Dublin Core Terms
 | `ex` | `http://example.com/` | Generic examples

@@ -1,6 +1,6 @@
 == Requirements
 
-Here are the itemised Requirements referenced in the<<Sources of Requirements>> subsection of the <<Introduction>> and note for them on how this model satisfies them.
+Here are the itemised Requirements referenced in the <<Sources of Requirements>> subsection of the <<Introduction>> and note for them on how this model satisfies them.
 
 === Requirements List
 

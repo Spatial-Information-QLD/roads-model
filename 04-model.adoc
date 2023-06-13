@@ -26,7 +26,7 @@ This model defines only two Classes and no Properties but reuses many Classes an
 | IRI | `:RoadName`
 | Preferred Label | Road Name
 | Definition | The Road Name class represents structured information that allows unambiguous determination of a Road Object for the purposes of identification and location
-| Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
+| Is Defined By | This model
 | Sub-class Of | https://linked.data.gov.au/def/cn/CompoundName[`cn:CompoundName`]
 | History Note | Specialised from <<CNM>>'s Compound Name class
 | Expected Properties | <<isNameFor>>, <<value>>, <<additionalType>>, <<hasPart>>, <<hasLifecycleStage>>
@@ -40,15 +40,15 @@ ex:road-name-1
   sdo:hasPart
     [
       rdf:value "Yundah" ;
-      sdo:additionalType rct:RoadName ;
+      sdo:additionalType rnpt:RoadGivenName ;
     ] ,
     [
       rdf:value st:Street ;
-      sdo:additionalType rct:RoadType ;
+      sdo:additionalType rnpt:RoadType ;
     ] ,
     [
       rdf:valueText "South" ;
-      sdo:additionalType rct:RoadSuffix ;
+      sdo:additionalType rnpt:RoadSuffix ;
     ] ;
 .
 ----
@@ -66,7 +66,7 @@ ex:road-name-1
 | Definition | A geospatial object that is unambiguously identified by a Road Name.
 
 Examples of types of RoadObjects are a sequences of cadastral parcels of type _road_.
-| Is Defined By | https://linked.data.gov.au/def/roads[Road Model]
+| Is Defined By | This model
 | Sub-class Of | https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature[`geo:Feature`]
 | History Note | Specialised from <<GEO>>'s Feature class, as used in <<CNM>>
 | Scope note | Judgement as to what makes for a permissible RoadObject rests with the implementer. This model's technical requirements are only that the object is a legal `geo:Feature` object, thus implementers may make Road Objects of almost anything.
@@ -191,7 +191,7 @@ ex:road-name-1
 | IRI | `cn:isNameFor`
 | Preferred Label | is name for
 | Definition | Inverse of `sdo:name`
-| Is Defined By | <<CNM>
+| Is Defined By | <<CNM>>
 | Domain | <<CompoundName>>
 | Range | <<Feature>>
 | Scope Note | Used to link a name to a feature
@@ -323,5 +323,5 @@ ex:road-name-x
 | Definition | A main category of the resource. A resource can have multiple themes
 | Is Defined By | <<DCAT>>
 | Range | <<Concept>>
-| Scope Note | Used to indicate Road Object cetegorisations
+| Scope Note | Used to indicate Road Object categorisations
 |===

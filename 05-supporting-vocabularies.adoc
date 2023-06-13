@@ -9,13 +9,13 @@ The vocabularies' details are given in the table below.
 |===
 | Persistent IRI | Name | Description  | Model property
 
+4+| *Road Names*
+| `https://linked.data.gov.au/def/road-name-part-types` | Road Name Part Types | This vocabulary describes values of name part types used in road naming | `sdo:additionalType` for a Road Name's Compound Name part
+| `https://linked.data.gov.au/def/road-types` | Road Types | This vocabulary describes road types. A road type is used as part of a road name and distinguishes the type of road. The road types that do not meet AS/NZS 4819:2011 exist to enable inclusion of roads named prior to the creation of AS/NZS 4819:2011. These types should not be used for any new road designations | `rdf:value` for a Road Name's Compound Name part of `sdo:additionalType` Road Type
+| `https://linked.data.gov.au/def/road-suffixes` | Road Suffixes | This vocabulary describes values of suffixes used in road naming | `rdf:value` for a Road Name's Compound Name part of `sdo:additionalType` Road Suffix
 4+| *Road Objects*
 | `https://linked.data.gov.au/def/road-classifications` | Road Classifications | This vocabulary describes hierarchy classification types for roads | `sdo:additionalType` for a Road Object
 | `https://linked.data.gov.au/def/road-operational-statuses` | Road Operational Statuses | This vocabulary describes the operational status for roads | `dcat:theme` for a Road Object
 | `https://linked.data.gov.au/def/road-sub-classes` | Road Sub-Classes | This vocabulary describes sub classifications of roads | `dcat:theme` for a Road Object
 | `https://linked.data.gov.au/def/road-surfaces` | Road Surfaces | This vocabulary describes surfaces of roads | `dcat:theme` for a Road Object
-4+| *Road Names*
-| `https://linked.data.gov.au/def/road-name-part-types` | Road Compound Name Types | This vocabulary describes values of name part types used in road naming | `sdo:additionalType` for a Road Name's Compound Name part
-| `https://linked.data.gov.au/def/road-types` | Road Types | This vocabulary describes road types. A road type is used as part of a road name and distinguishes the type of road. The road types that do not meet AS/NZS 4819:2011 exist to enable inclusion of roads named prior to the creation of AS/NZS 4819:2011. These types should not be used for any new road designations | `rdf:value` for a Road Name's Compound Name part of `sdo:additionalType` Road Type
-| `https://linked.data.gov.au/def/road-suffixes` | Road Suffixes | This vocabulary describes values of suffixes used in road naming | `rdf:value` for a Road Name's Compound Name part of `sdo:additionalType` Road Suffix
 |===
