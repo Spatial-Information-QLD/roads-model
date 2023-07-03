@@ -6,11 +6,11 @@ Users of this model are free to implement additional templates and template logi
 
 === Basic Template
 
-This template assembled elements of a Road Name's in the most basic manner, and is expected to be the most commonly used template.
+This template assembles the parts of a Road Name's in the most basic manner, and is expected to be the most commonly used template.
 
 The template, in EBNF form <<ISO-IEC-14977>>, is:
 
-```
+----
 space = " "
 extended_letters = "A" | "B" | "C" | "D" | "E" | "F" | "G"
        | "H" | "I" | "J" | "K" | "L" | "M" | "N"
@@ -29,7 +29,7 @@ suffix = extended_letters
 suffix_spaced = space, suffix
 
 road_name = [prefix_spaced], name, [type_spaced], [suffix_spaced]
-```
+----
 
 Consider a Road Name with the following parts:
 
@@ -39,7 +39,7 @@ Consider a Road Name with the following parts:
 
 The template would result in this:
 
-```
+----
 space = " "
 name = "Yundah"
 type = "Street"
@@ -48,7 +48,7 @@ suffix = "South"
 suffix_spaced = " South"
 
 road_name = "Yundah Street South"
-```
+----
 
 === Short Form Template
 
@@ -77,6 +77,6 @@ Consider a Road Name with the following parts:
 
 This template's result for these values will be calculated as per the Basic Template example with the same input values but with the contractions from the lists above applied result in:
 
-```
+----
 Yundah St Sth
-```
+----
