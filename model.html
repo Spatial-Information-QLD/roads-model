@@ -729,13 +729,13 @@ This model was made for Queensland Spatial Information, a unit of the Queensland
 <div class="title">Note</div>
 </td>
 <td class="content">
-This model does not attempt to assist with detail geospatial aspects of road modelling: it only provides an association between naming components and geospatial representations of the road established using other models and with categorisation of road objects. This model also does not link road objects to other, related, objects, such as Localities. Such linking should be represented with Feature / Feature topological relations, such as those within GeoSPARQL <a href="#GEO">[GEO]</a>.
+This model does not attempt to assist with detail geospatial aspects of road modelling: it only provides an association between naming components and geospatial representations of the road established using other models and with categorisation of road objects. This model also does not link road objects to other, related, objects, such as Localities. Such linking should be represented with Feature / Feature topological relations, such as those within GeoSPARQL <a href="#GEO">GEO</a>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Data made according to this model, when stored in one of the <a href="#RDF">[RDF]</a> serialization formats such as <a href="#TTL">[TTL]</a>, is directly validatable according to this model through use of validators that are supplied, see Section <a href="#_validation">Validation</a>.</p>
+<p>Data made according to this model, when stored in one of the <a href="#RDF">RDF</a> serialization formats such as <a href="#TTL">TTL</a>, is directly validatable according to this model through use of validators that are supplied, see Section <a href="#_validation">Validation</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="_sources_of_requirements"><a class="anchor" href="#_sources_of_requirements"></a>3.1. Sources of Requirements</h3>
@@ -782,19 +782,19 @@ This model does not attempt to assist with detail geospatial aspects of road mod
 <div class="sect3">
 <h4 id="_feature_feature_naming_differentiation"><a class="anchor" href="#_feature_feature_naming_differentiation"></a>3.2.1. Feature / Feature Naming differentiation</h4>
 <div class="paragraph">
-<p>This model details the elements of a road name but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of name/spatial object follows the Address/AddressableObject split in ISO19160-1 <a href="#ISO19160-1">[ISO19160-1]</a>. Addresses there are seen as a form of complex, multi-part, label - Feature Name - for a spatial Feature and Road Names here are considered a simple case of that.</p>
+<p>This model details the elements of a road name but not details of the spatial objects that addresses are assigned to - the geospatial road objects. The general conceptual split of name/spatial object follows the Address/AddressableObject split in ISO19160-1 <a href="#ISO19160-1">ISO19160-1</a>. Addresses there are seen as a form of complex, multi-part, label - Feature Name - for a spatial Feature and Road Names here are considered a simple case of that.</p>
 </div>
 <div class="paragraph">
 <p>This allows for the representation, and ultimately the management, of names - text, numbers, identifiers, references - separately to the management of spatial objects and their properties, such as the physical presentation of a Road.</p>
 </div>
 <div class="paragraph">
-<p>This Feature / Feature Naming separation applies to Geographic Names, Roads and Administrative Areas as well as Addresses and this expression of Feature / Feature Naming separation for addressing is a formal profile of the more general <em>Compound Naming Model</em> <a href="#CNM">[CNM]</a>. There are other profiles for those other domains. The CNM, this model and the other CNM profiles are all pat of Queensland Spatial Information&#8217;s <a href="https://spatial-information-qld.github.io/supermodel/supermodel.html"><em>Supermodel</em></a> which is an enterprise data model for multi-model data integration.</p>
+<p>This Feature / Feature Naming separation applies to Geographic Names, Roads and Administrative Areas as well as Addresses and this expression of Feature / Feature Naming separation for addressing is a formal profile of the more general <em>Compound Naming Model</em> <a href="#CNM">CNM</a>. There are other profiles for those other domains. The CNM, this model and the other CNM profiles are all pat of Queensland Spatial Information&#8217;s <a href="https://spatial-information-qld.github.io/supermodel/supermodel.html"><em>Supermodel</em></a> which is an enterprise data model for multi-model data integration.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_feature_geometry_differentiation"><a class="anchor" href="#_feature_geometry_differentiation"></a>3.2.2. Feature / Geometry differentiation</h4>
 <div class="paragraph">
-<p>(Geo)spatial objects referenced by this model&#8217;s naming objects (Road Names) are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. See Figure <a href="#fig-roads-spatial">Roads Object spatial modelling</a>. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <a href="#ISO19101-1">[ISO19101-1]</a> and their expression in the Semantic Web spatial standard <a href="#GEO">[GEO]</a>.</p>
+<p>(Geo)spatial objects referenced by this model&#8217;s naming objects (Road Names) are not geometries but conceptual spatial objects that have as an expression of their spatial projection one or more geometries. See Figure <a href="#fig-roads-spatial">Roads Object spatial modelling</a>. This conceptual object - Feature - and spatial expression - Geometry - split is based on fundamental spatial modelling in standards such as <a href="#ISO19101-1">ISO19101-1</a> and their expression in the Semantic Web spatial standard <a href="#GEO">GEO</a>.</p>
 </div>
 <div class="paragraph">
 <p>This Feature / Geometry distinction allows individual spatial objects to have multiple Geometries: different resolutions, in different coordinate systems and even sets of Geometries that have different roles or that show variation over time. This would allow Road Objects to have spatiallity represented with road centrelines, area polygons from cadastre etc., all at the same time, by linking those different spatial representations - the Geometries - to the single conceptual entity - the Feature.</p>
@@ -810,7 +810,7 @@ This model does not attempt to assist with detail geospatial aspects of road mod
 <p>All of these sorts of <em>profiles</em> of Road Names are handled in a similar way in this model: they are declared Profiles of the model that may implement additional rules and/or requirements on data, however they must always conform to the main Roads Model itself.</p>
 </div>
 <div class="paragraph">
-<p>Profile modelling is given in <a href="#PROF">[PROF]</a> and requesting profiles from data conforming to a model is given in <a href="#CONNEGP">[CONNEGP]</a>.</p>
+<p>Profile modelling is given in <a href="#PROF">PROF</a> and requesting profiles from data conforming to a model is given in <a href="#CONNEGP">CONNEGP</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -878,7 +878,7 @@ This model does not attempt to assist with detail geospatial aspects of road mod
 <h2 id="_model"><a class="anchor" href="#_model"></a>4. Model</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This model is composed of Web Ontology Language (OWL) <a href="#OWL">[OWL]</a> Classes and Properties. While some properties are restricted in their use to various classes, the Classes and Properties are actually defined individually and both are "first class model citizens", with global identity, that can be used in isolation and together. This is in contrast to Unified Modelling Language (UML) <em>Class Diagrams</em> which treat Properties as sub-parts of particular classes.</p>
+<p>This model is composed of Web Ontology Language (OWL) <a href="#OWL">OWL</a> Classes and Properties. While some properties are restricted in their use to various classes, the Classes and Properties are actually defined individually and both are "first class model citizens", with global identity, that can be used in isolation and together. This is in contrast to Unified Modelling Language (UML) <em>Class Diagrams</em> which treat Properties as sub-parts of particular classes.</p>
 </div>
 <div class="paragraph">
 <p>This model defines only two Classes and no Properties but reuses many Classes and Properties from other models. Where it does, basic details of, a reference to that Class or Properties' definition via <code>rdfs:isDefinedBy</code>, and a scope note about using it in this model are given.</p>
@@ -949,7 +949,7 @@ This model does not attempt to assist with detail geospatial aspects of road mod
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">History Note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specialised from <a href="#CNM">[CNM]</a>'s Compound Name class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specialised from <a href="#CNM">CNM</a>'s Compound Name class</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
@@ -1020,7 +1020,7 @@ ex:road-name-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">History Note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specialised from <a href="#GEO">[GEO]</a>'s Feature class, as used in <a href="#CNM">[CNM]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specialised from <a href="#GEO">GEO</a>'s Feature class, as used in <a href="#CNM">CNM</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
@@ -1077,7 +1077,7 @@ ex:road-name-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CNM">[CNM]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CNM">CNM</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
@@ -1151,7 +1151,7 @@ ex:road-name-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#GEO">[GEO]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#GEO">GEO</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
@@ -1188,7 +1188,7 @@ ex:road-name-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#GEO">[GEO]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#GEO">GEO</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
@@ -1225,7 +1225,7 @@ ex:road-name-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SKOS">[SKOS]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SKOS">SKOS</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
@@ -1262,7 +1262,7 @@ ex:road-name-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#RDFS">[RDFS]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#RDFS">RDFS</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
@@ -1327,7 +1327,7 @@ ex:road-name-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CNM">[CNM]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CNM">CNM</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
@@ -1391,7 +1391,7 @@ ex:road-object-y
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#LM">[LM]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#LM">LM</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
@@ -1463,7 +1463,7 @@ ex:road-name-x
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#RDF">[RDF]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#RDF">RDF</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
@@ -1500,7 +1500,7 @@ ex:road-name-x
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SDO">[SDO]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SDO">SDO</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
@@ -1537,7 +1537,7 @@ ex:road-name-x
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SDO">[SDO]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SDO">SDO</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
@@ -1574,7 +1574,7 @@ ex:road-name-x
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#GEO">[GEO]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#GEO">GEO</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
@@ -1619,7 +1619,7 @@ ex:road-name-x
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#DCAT">[DCAT]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#DCAT">DCAT</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
@@ -1740,7 +1740,7 @@ ex:road-name-x
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Req01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>MUST</em> align with Address modelling</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Profiles the Compound Naming Model <a href="#CNM">[CNM]</a> and the Lifecycle Model <a href="#LM">[LM]</a> which the QSI Address Model also profiles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profiles the Compound Naming Model <a href="#CNM">CNM</a> and the Lifecycle Model <a href="#LM">LM</a> which the QSI Address Model also profiles</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Req02</p></td>
@@ -1780,7 +1780,7 @@ ex:road-name-x
 <p>This template assembles the parts of a Road Name&#8217;s in the most basic manner, and is expected to be the most commonly used template.</p>
 </div>
 <div class="paragraph">
-<p>The template, in EBNF form <a href="#ISO-IEC-14977">[ISO-IEC-14977]</a>, is:</p>
+<p>The template, in EBNF form <a href="#ISO-IEC-14977">ISO-IEC-14977</a>, is:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2000,70 +2000,88 @@ ex:road-name-1
 <div class="sect1">
 <h2 id="_bibliography"><a class="anchor" href="#_bibliography"></a>Bibliography</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a id="CNM"></a> [CNM] Australian Government Linked Data Working Group. <em>Compound Naming Model</em>. Semantic Web data model (2023). <a href="https://linked.data.gov.au/def/cn" class="bare">https://linked.data.gov.au/def/cn</a></p>
-</li>
-<li>
-<p><a id="CONNEGP"></a> [CONNEGP] World Wide Web Consortium, <em>Content Negotiation by Profile</em>, W3C Working Draft (20 March 2022). <a href="https://w3c.github.io/dx-connegp/connegp/" class="bare">https://w3c.github.io/dx-connegp/connegp/</a></p>
-</li>
-<li>
-<p><a id="DCAT"></a> [DCAT] World Wide Web Consortium, <em>Data Catalog Vocabulary (DCAT) - Version 2</em>, W3C Recommendation 04 February 2020, <a href="https://www.w3.org/TR/vocab-dcat-2/" class="bare">https://www.w3.org/TR/vocab-dcat-2/</a></p>
-</li>
-<li>
-<p><a id="GEO"></a> [GEO] Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1</em> (2021). OGC Implementation Specification. <a href="http://www.opengis.net/doc/IS/geosparql/1.1" class="bare">http://www.opengis.net/doc/IS/geosparql/1.1</a></p>
-</li>
-<li>
-<p><a id="ISO-IEC-14977"></a> [ISO-IEC-14977] International Organization for Standardization, <em>ISO/IEC 14977 : 1996(E): Extended Backus–Naur form</em>. International Organization for Standardization (1996). <a href="https://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf" class="bare">https://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf</a></p>
-</li>
-<li>
-<p><a id="ISO19101-1"></a> [ISO19101-1] International Organization for Standardization, <em>ISO 19101-1:2014 Geographic information — Reference model — Part 1: Fundamentals</em> (2014)</p>
-</li>
-<li>
-<p><a id="ISO19156"></a> [ISO19156] International Organization for Standardization, <em>ISO 19156: Geographic information — Observations and measurements</em> (2011)</p>
-</li>
-<li>
-<p><a id="ISO19160-1"></a> [ISO19160-1] International Organization for Standardization, <em>ISO 19160-1: Addressing Part 1: Conceptual model</em> (2015). <a href="https://www.iso.org/standard/61710.html" class="bare">https://www.iso.org/standard/61710.html</a></p>
-</li>
-<li>
-<p><a id="LM"></a> [LM] Australian Government Linked Data Working Group. _Lifecycle Model (2023). <a href="https://linked.data.gov.au/def/lifecycle" class="bare">https://linked.data.gov.au/def/lifecycle</a></p>
-</li>
-<li>
-<p><a id="OWL"></a> [OWL] World Wide Web Consortium, <em>OWL 2 Web Ontology Language Document Overview (Second Edition)</em>, W3C Recommendation (11 December 2012). <a href="https://www.w3.org/TR/owl2-overview/" class="bare">https://www.w3.org/TR/owl2-overview/</a></p>
-</li>
-<li>
-<p><a id="PROF"></a> [PROF] World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
-</li>
-<li>
-<p><a id="PROV"></a> [PROV] World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
-</li>
-<li>
-<p><a id="RDF"></a> [RDF] World Wide Web Consortium, <em>RDF 1.1 Concepts and Abstract Syntax</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/rdf11-concepts/" class="bare">https://www.w3.org/TR/rdf11-concepts/</a></p>
-</li>
-<li>
-<p><a id="RDFS"></a> [RDFS] World Wide Web Consortium, <em>RDF 1.2 Schema</em>, W3C First Public Working Draft (16 May 2023). <a href="https://www.w3.org/TR/rdf12-schema/" class="bare">https://www.w3.org/TR/rdf12-schema/</a></p>
-</li>
-<li>
-<p><a id="SDO"></a> [SDO] W3C Schema.org Community Group, <em>schema.org</em>. Community ontology (2015). <a href="https://schema.org" class="bare">https://schema.org</a></p>
-</li>
-<li>
-<p><a id="SSN"></a> [SSN] World Wide Web Consortium, <em>Semantic Sensor Network Ontology</em>, W3C Recommendation (19 October 2017). <a href="https://www.w3.org/TR/vocab-ssn/" class="bare">https://www.w3.org/TR/vocab-ssn/</a></p>
-</li>
-<li>
-<p><a id="SKOS"></a> [SKOS] World Wide Web Consortium, <em>SKOS Simple Knowledge Organization System Reference</em>, W3C Recommendation (18 August 2009). <a href="https://www.w3.org/TR/skos-reference/" class="bare">https://www.w3.org/TR/skos-reference/</a></p>
-</li>
-<li>
-<p><a id="TTL"></a> [TTL] World Wide Web Consortium, <em>RDF 1.1 Turtle Terse RDF Triple Language</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/turtle/" class="bare">https://www.w3.org/TR/turtle/</a></p>
-</li>
-</ul>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="CNM"></a> CNM</dt>
+<dd>
+<p>Australian Government Linked Data Working Group. <em>Compound Naming Model</em>. Semantic Web data model (2023). <a href="https://linked.data.gov.au/def/cn" class="bare">https://linked.data.gov.au/def/cn</a></p>
+</dd>
+<dt class="hdlist1"><a id="CONNEGP"></a> CONNEGP</dt>
+<dd>
+<p>World Wide Web Consortium, <em>Content Negotiation by Profile</em>, W3C Working Draft (20 March 2022). <a href="https://w3c.github.io/dx-connegp/connegp/" class="bare">https://w3c.github.io/dx-connegp/connegp/</a></p>
+</dd>
+<dt class="hdlist1"><a id="DCAT"></a> DCAT</dt>
+<dd>
+<p>World Wide Web Consortium, <em>Data Catalog Vocabulary (DCAT) - Version 2</em>, W3C Recommendation 04 February 2020, <a href="https://www.w3.org/TR/vocab-dcat-2/" class="bare">https://www.w3.org/TR/vocab-dcat-2/</a></p>
+</dd>
+<dt class="hdlist1"><a id="GEO"></a> GEO</dt>
+<dd>
+<p>Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1</em> (2021). OGC Implementation Specification. <a href="http://www.opengis.net/doc/IS/geosparql/1.1" class="bare">http://www.opengis.net/doc/IS/geosparql/1.1</a></p>
+</dd>
+<dt class="hdlist1"><a id="ISO-IEC-14977"></a> ISO-IEC-14977</dt>
+<dd>
+<p>International Organization for Standardization, <em>ISO/IEC 14977 : 1996(E): Extended Backus–Naur form</em>. International Organization for Standardization (1996). <a href="https://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf" class="bare">https://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf</a></p>
+</dd>
+<dt class="hdlist1"><a id="ISO19101-1"></a> ISO19101-1</dt>
+<dd>
+<p>International Organization for Standardization, <em>ISO 19101-1:2014 Geographic information — Reference model — Part 1: Fundamentals</em> (2014)</p>
+</dd>
+<dt class="hdlist1"><a id="ISO19156"></a> ISO19156</dt>
+<dd>
+<p>International Organization for Standardization, <em>ISO 19156: Geographic information — Observations and measurements</em> (2011)</p>
+</dd>
+<dt class="hdlist1"><a id="ISO19160-1"></a> ISO19160-1</dt>
+<dd>
+<p>International Organization for Standardization, <em>ISO 19160-1: Addressing Part 1: Conceptual model</em> (2015). <a href="https://www.iso.org/standard/61710.html" class="bare">https://www.iso.org/standard/61710.html</a></p>
+</dd>
+<dt class="hdlist1"><a id="LM"></a> LM</dt>
+<dd>
+<p>Australian Government Linked Data Working Group. _Lifecycle Model (2023). <a href="https://linked.data.gov.au/def/lifecycle" class="bare">https://linked.data.gov.au/def/lifecycle</a></p>
+</dd>
+<dt class="hdlist1"><a id="OWL"></a> OWL</dt>
+<dd>
+<p>World Wide Web Consortium, <em>OWL 2 Web Ontology Language Document Overview (Second Edition)</em>, W3C Recommendation (11 December 2012). <a href="https://www.w3.org/TR/owl2-overview/" class="bare">https://www.w3.org/TR/owl2-overview/</a></p>
+</dd>
+<dt class="hdlist1"><a id="PROF"></a> PROF</dt>
+<dd>
+<p>World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
+</dd>
+<dt class="hdlist1"><a id="PROV"></a> PROV</dt>
+<dd>
+<p>World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
+</dd>
+<dt class="hdlist1"><a id="RDF"></a> RDF</dt>
+<dd>
+<p>World Wide Web Consortium, <em>RDF 1.1 Concepts and Abstract Syntax</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/rdf11-concepts/" class="bare">https://www.w3.org/TR/rdf11-concepts/</a></p>
+</dd>
+<dt class="hdlist1"><a id="RDFS"></a> RDFS</dt>
+<dd>
+<p>World Wide Web Consortium, <em>RDF 1.2 Schema</em>, W3C First Public Working Draft (16 May 2023). <a href="https://www.w3.org/TR/rdf12-schema/" class="bare">https://www.w3.org/TR/rdf12-schema/</a></p>
+</dd>
+<dt class="hdlist1"><a id="SDO"></a> SDO</dt>
+<dd>
+<p>W3C Schema.org Community Group, <em>schema.org</em>. Community ontology (2015). <a href="https://schema.org" class="bare">https://schema.org</a></p>
+</dd>
+<dt class="hdlist1"><a id="SSN"></a> SSN</dt>
+<dd>
+<p>World Wide Web Consortium, <em>Semantic Sensor Network Ontology</em>, W3C Recommendation (19 October 2017). <a href="https://www.w3.org/TR/vocab-ssn/" class="bare">https://www.w3.org/TR/vocab-ssn/</a></p>
+</dd>
+<dt class="hdlist1"><a id="SKOS"></a> SKOS</dt>
+<dd>
+<p>World Wide Web Consortium, <em>SKOS Simple Knowledge Organization System Reference</em>, W3C Recommendation (18 August 2009). <a href="https://www.w3.org/TR/skos-reference/" class="bare">https://www.w3.org/TR/skos-reference/</a></p>
+</dd>
+<dt class="hdlist1"><a id="TTL"></a> TTL</dt>
+<dd>
+<p>World Wide Web Consortium, <em>RDF 1.1 Turtle Terse RDF Triple Language</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/turtle/" class="bare">https://www.w3.org/TR/turtle/</a></p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-07-03 04:02:36 UTC
+Last updated 2023-07-03 07:12:04 UTC
 </div>
 </div>
 </body>
