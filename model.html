@@ -1777,14 +1777,14 @@ ex:road-name-x
 <div class="sect2">
 <h3 id="_basic_template"><a class="anchor" href="#_basic_template"></a>8.1. Basic Template</h3>
 <div class="paragraph">
-<p>This template assembled elements of a Road Name&#8217;s in the most basic manner, and is expected to be the most commonly used template.</p>
+<p>This template assembles the parts of a Road Name&#8217;s in the most basic manner, and is expected to be the most commonly used template.</p>
 </div>
 <div class="paragraph">
 <p>The template, in EBNF form <a href="#ISO-IEC-14977">[ISO-IEC-14977]</a>, is:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>space = " "
+<pre>space = " "
 extended_letters = "A" | "B" | "C" | "D" | "E" | "F" | "G"
        | "H" | "I" | "J" | "K" | "L" | "M" | "N"
        | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
@@ -1801,7 +1801,7 @@ type_spaced = space, type
 suffix = extended_letters
 suffix_spaced = space, suffix
 
-road_name = [prefix_spaced], name, [type_spaced], [suffix_spaced]</code></pre>
+road_name = [prefix_spaced], name, [type_spaced], [suffix_spaced]</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1825,14 +1825,14 @@ road_name = [prefix_spaced], name, [type_spaced], [suffix_spaced]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>space = " "
+<pre>space = " "
 name = "Yundah"
 type = "Street"
 type_spaced = " Street"
 suffix = "South"
 suffix_spaced = " South"
 
-road_name = "Yundah Street South"</code></pre>
+road_name = "Yundah Street South"</pre>
 </div>
 </div>
 </div>
@@ -1911,7 +1911,7 @@ road_name = "Yundah Street South"</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>Yundah St Sth</code></pre>
+<pre>Yundah St Sth</pre>
 </div>
 </div>
 </div>
@@ -2063,7 +2063,7 @@ ex:road-name-1
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-06-13 12:08:29 UTC
+Last updated 2023-07-03 04:02:36 UTC
 </div>
 </div>
 </body>
